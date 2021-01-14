@@ -18,7 +18,7 @@
 import { mapActions, mapState } from 'vuex'
 
 export default {
-  name: 'Home',
+  name: 'Header',
   components: { 
   },
   data: function () {

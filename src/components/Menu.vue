@@ -12,7 +12,7 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'Home',
+  name: 'Menu',
   computed: {
       ...mapState(['menuOpen'])
   }
