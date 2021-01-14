@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div :class="['menu', { 'menu--open': menuOpen }]">
       <div class="menu__links">
         <router-link class="menu__link" to="/">Accueil</router-link>
         <router-link class="menu__link" to="/jeu">Jeu</router-link>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Home',
-  methods: {
-      onClick() {
-
-      }
+  computed: {
+      ...mapState(['menuOpen'])
   }
 }
 </script>
@@ -34,8 +34,11 @@ export default {
         height: 100vh;
         top: 0px;
         z-index: 8;
-        // transform: translateX(175px);
-        // transition: 100ms ease-in-out;
+        transform: translateX(175px);
+        transition: 100ms ease-in-out;
+        &--open {
+            transform: translateX(0px);
+        }
         &__links{
             display: flex;
             flex-direction: column;

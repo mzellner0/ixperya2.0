@@ -5,19 +5,30 @@
             <h1>IXPERYA</h1>
             <p>Développement web</p>
         </div>
-        <div class="menuOpener">
-            <p>Menu</p>
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+        <div class="menuOpener" @click="toggleMenu">
+            <p :style="{ opacity: menuOpen ? 0 : 1 }">Menu</p>
+            <div :class="[{ 'menuOpener__bar1--active': menuOpen }]"></div>
+            <div :class="[{ 'menuOpener__bar2--active': menuOpen }]"></div>
+            <div :class="[{ 'menuOpener__bar3--active': menuOpen }]"></div>
         </div>
     </header>
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+
 export default {
   name: 'Home',
   components: { 
+  },
+  data: function () {
+      return {}
+  },
+  computed: {
+      ...mapState(['menuOpen'])
+  },
+  methods: {
+      ...mapActions(['toggleMenu'])
   }
 }
 </script>
@@ -80,6 +91,7 @@ header {
             color: $color-header-dark;
             font-size: 12px;
             font-weight: 600;
+            transition: 200ms;
         }
         div {
             background-color: $color-header-middle;
@@ -89,6 +101,21 @@ header {
             margin: 7px 0px;
             transform-origin: right center;
             transition: 200ms;
+        }
+        &__bar1 {
+            &--active {
+                transform: rotateZ(-36deg);
+            }
+        }
+        &__bar2 {
+            &--active {
+                opacity: 0;
+            }
+        }
+        &__bar3 {
+            &--active {
+                transform: rotateZ(36deg);
+            }
         }
     }
     @media (max-width: 500px){
