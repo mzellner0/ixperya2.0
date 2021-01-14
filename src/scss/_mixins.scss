@@ -1,0 +1,11 @@
+@mixin after-title-point($left, $leftmin) {
+    h2{
+        &::after {
+            left: $left;
+            @media (max-width: 1000px){
+                left: $leftmin;
+                width: 25%;
+            }
+        }
+    }
+}

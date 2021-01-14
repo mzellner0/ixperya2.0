@@ -1,0 +1,153 @@
+@keyframes hover-scales {
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.15);
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes waves {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes upDownArrow {
+    0%{
+        bottom: 90px;
+    }
+    50% {
+        bottom: 100px;
+    }
+    100%{
+        bottom: 90px;
+    }
+}
+
+@keyframes titleUp {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes titleOpacity {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes border-anim-left {
+    0% {
+        opacity: 0;
+        transform: translate(70px, 70px);
+    }
+    50%{
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    55%{
+        opacity: 1;
+    }
+    56%{
+        opacity: 0;
+    }
+    65%{
+        opacity: 0;
+    }
+    66%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    76%{
+        opacity: 0;
+    }
+    79%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes border-anim-right {
+    0% {
+        opacity: 0;
+        transform: translate(-70px, -70px);
+    }
+    50%{
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    55%{
+        opacity: 1;
+    }
+    56%{
+        opacity: 0;
+    }
+    65%{
+        opacity: 0;
+    }
+    66%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    76%{
+        opacity: 0;
+    }
+    79%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.anim-border-left{
+    animation: border-anim-left 1000ms ease-in-out forwards;
+}
+
+.anim-border-right{
+    animation: border-anim-right 1000ms ease-in-out;
+}
+
+.title-up{
+    animation: titleUp 1000ms ease-in-out forwards;
+}
+
+.title-opacity{
+    animation: titleOpacity 1000ms ease-in-out forwards;
+}
