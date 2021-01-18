@@ -1,30 +1,42 @@
 <template>
   <div class="Accueil">
     <div class="questions">
-      <p>{{ question }}</p>
       <canvas id="threeAccueil"></canvas>
     </div>
   </div>
 </template>
 
 <script>
-// import * as THREE from 'three';
-import Scene3DMixin from "@/mixins/Scene3DMixin";
+import Scene from "@/classes/Scene.js";
+import Gltf from "@/classes/Gltf.js";
 
 export default {
   name: 'Accueil',
   components: {
   },
-  mixins: [Scene3DMixin],
   data: function() {
     return {
-      question: "Bonjour, quel est votre situation ?"
+      scene: null,
+      robot: null
     }
   },
   mounted() {
-    this.init3DScene(document.getElementById("threeAccueil"));
+    this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 6, z: 20 });
+    this.robot = new Gltf(this.scene, "src/gltf/robot_v003.glb", true, this.playHelloAnimation.bind(this));
   },
   methods: {
+    playHelloAnimation() {
+      this.robot.playAnimation("hello");
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#threeAccueil {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+</style>

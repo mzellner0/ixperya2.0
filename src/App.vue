@@ -18,11 +18,26 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  margin: 0px;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+    
+  &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+      background-color: $color-header-dark;
+      border-radius: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: white;
+      border: 4px solid rgba(0, 0, 0, 0);
+      border-radius: 10px;
+      background-clip: content-box;
+  }
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 </style>
