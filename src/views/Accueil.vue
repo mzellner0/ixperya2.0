@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted() {
-    this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 6, z: 20 });
+    this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 6, z: 20 }, 2, 1);
     this.robot = new Gltf(this.scene, "src/gltf/robot_v003.glb", true, this.playHelloAnimation.bind(this));
   },
   beforeUnmount() {
@@ -42,5 +42,6 @@ export default {
   z-index: 0;
   top: 0;
   left: 0;
+  margin-left: 45%;
 }
 </style>
