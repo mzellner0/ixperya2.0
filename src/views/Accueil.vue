@@ -24,6 +24,10 @@ export default {
     this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 6, z: 20 });
     this.robot = new Gltf(this.scene, "src/gltf/robot_v003.glb", true, this.playHelloAnimation.bind(this));
   },
+  beforeUnmount() {
+    this.robot.stopAnimate();
+    this.scene.stopAnimate();
+  },
   methods: {
     playHelloAnimation() {
       this.robot.playAnimation("hello");
