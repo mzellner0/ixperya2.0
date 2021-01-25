@@ -116,7 +116,7 @@ export default {
     }
   }
   &__border-futura {
-    @include border-futura(120px, 150px);
+    @include border-futura-left(120px, 150px);
   }
   &__answers {
     padding-top: 100px;

@@ -16,7 +16,7 @@ export default {
   components: {
   },
   props: {
-      listButtons: { type: Array, default: () => [] }
+    listButtons: { type: Array, default: () => [] }
   },
   methods: {
     detectChoice(id) {
@@ -26,7 +26,7 @@ export default {
           this.$emit('changeQuestions', true);
           break;
         case 3:
-          this.$router.push({ name: 'Jeu' });
+          this.$router.push({ name: 'Developpeur' });
           break;
         case 4:
           this.$router.push({ name: 'Jeu' });

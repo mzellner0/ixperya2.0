@@ -3,6 +3,7 @@
       <div class="menu__links">
         <router-link class="menu__link" to="/">Accueil</router-link>
         <router-link class="menu__link" to="/jeu">Jeu</router-link>
+        <router-link class="menu__link" to="/developpeur-web">Développeuse web</router-link>
       </div>
   </div>
   <router-view/>
@@ -29,12 +30,12 @@ export default {
     .menu{
         position: fixed;
         right: 0px;
-        width: 175px;
+        width: 225px;
         background-color: $color-header-dark;
         height: 100vh;
         top: 0px;
         z-index: 8;
-        transform: translateX(175px);
+        transform: translateX(225px);
         transition: 100ms ease-in-out;
         &--open {
             transform: translateX(0px);
