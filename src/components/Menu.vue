@@ -40,8 +40,7 @@ export default {
             transform: translateX(0px);
         }
         &__links{
-            display: flex;
-            flex-direction: column;
+            @include flex(column, initial, initial);
             margin-top: 115px;
             font-family: $police-logo;
             text-transform: uppercase;

@@ -36,18 +36,14 @@ export default {
 <style lang="scss" scoped>
 header {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(row, center, space-between);
     z-index: 10;
     > * {
         z-index: inherit;
     }
     .text-header {
         height: 140px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex(column, center, initial);
         width: 20%;
         margin-right: 40%;
         h1 {

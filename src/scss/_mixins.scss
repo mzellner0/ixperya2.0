@@ -9,3 +9,28 @@
         }
     }
 }
+
+@mixin border-futura($height, $width) {
+    border-left: 1px solid $color-header-dark;
+    border-top: 1px solid $color-header-dark;
+    height: $height;
+    width: $width;
+    position: absolute;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-left: 2px solid $color-header-dark;
+        border-top: 2px solid $color-header-dark;
+        margin-top: -8px;
+        margin-left: 5px;
+    }
+}
+
+@mixin flex($direction, $align, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
