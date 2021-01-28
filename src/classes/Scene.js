@@ -2,12 +2,12 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 export default class Scene {
-    constructor(htmlElmt, camPos, widthFactor, heightFactor) {
+    constructor(htmlElmt, camPos, widthFactor, heightFactor, isOrbitControls) {
         this.widthFactor = widthFactor;
         this.heightFactor = heightFactor;
         this.camPos = camPos;
         this.htmlElmt = htmlElmt;
-        this.isOrbitControls = false
+        this.isOrbitControls = isOrbitControls;
 
         this.init3DScene();
     }

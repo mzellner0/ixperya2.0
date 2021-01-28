@@ -4,6 +4,9 @@
 		<div class="developpeur__portfolio">
 			<Portfolio />
 		</div>
+		<div class="developpeur__apropos">
+			<AProposComponent />
+		</div>
 		<div class="developpeur__technos">
 			<h2>Technologies front-end que j'utilise :</h2>
 			<div class="frontend">
@@ -20,7 +23,6 @@
 			</div>
 		</div>
 		<div class="developpeur__buttons">
-			<Button :text="'A propos'" :composant-name="'APropos'" />
 			<Button :text="'Contactez-moi'" :composant-name="'Contact'" />
 		</div>
 	</div>
@@ -29,6 +31,7 @@
 <script>
 import Portfolio from "@/components/Portfolio.vue";
 import Button from "@/components/Button.vue";
+import AProposComponent from "@/components/AProposComponent.vue";
 import Title from "@/components/Title.vue";
 
 export default {
@@ -36,7 +39,8 @@ export default {
 	components: {
 		Portfolio,
 		Button,
-		Title
+		Title,
+		AProposComponent
 	}
 }
 </script>
@@ -46,6 +50,9 @@ export default {
 	width: 100%;
 	&__portfolio {
 		margin-top: 250px;
+	}
+	&__apropos {
+		margin-top: 80px
 	}
 	&__technos {
 		@include flex(column, center, center);

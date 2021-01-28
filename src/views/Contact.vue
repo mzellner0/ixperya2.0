@@ -28,7 +28,7 @@ export default {
     }
   },
   mounted() {
-    this.scene = new Scene(document.getElementById("threeContact"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5);
+    this.scene = new Scene(document.getElementById("threeContact"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5, false);
     this.robot = new Gltf(this.scene, "src/gltf/robot_v003.glb", true, this.callbackRobot.bind(this));
   },
   beforeUnmount() {

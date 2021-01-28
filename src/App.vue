@@ -41,6 +41,4 @@ body {
       background-clip: content-box;
   }
 }
-#app {
-}
 </style>

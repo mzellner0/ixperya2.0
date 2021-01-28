@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Accueil from '../views/Accueil.vue'
 import Developpeur from '../views/Developpeur.vue'
-import APropos from '../views/APropos.vue'
 import Contact from '../views/Contact.vue'
 import SiteECommerce from '../views/SiteECommerce.vue'
 import SiteInformatif from '../views/SiteInformatif.vue'
@@ -17,11 +16,6 @@ const routes = [
     path: '/developpeur-web',
     name: 'Developpeur',
     component: Developpeur
-  },
-  {
-    path: '/a-propos',
-    name: 'APropos',
-    component: APropos
   },
   {
     path: '/contact',

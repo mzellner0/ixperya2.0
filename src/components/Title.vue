@@ -26,6 +26,10 @@ export default {
     font-family: $police-logo;
     font-weight: 500;
     font-size: 25px;
+    text-transform: uppercase;
+    max-width: 800px;
+    margin: auto;
+    line-height: 35px;
   }
   .border-futura-left {
     @include border-futura-left(160px, 400px);
