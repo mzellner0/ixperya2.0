@@ -5,6 +5,7 @@ import Contact from '../views/Contact.vue'
 import SiteECommerce from '../views/SiteECommerce.vue'
 import SiteInformatif from '../views/SiteInformatif.vue'
 import SiteAvecJeu from '../views/SiteAvecJeu.vue'
+import Projet from '../views/Projet.vue'
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     component: SiteECommerce
   },
   {
+    path: '/projet',
+    name: 'Projet',
+    component: Projet
+  },
+  {
     path: '/jeu',
     name: 'Jeu',
     // route level code-splitting
@@ -49,7 +55,10 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior () {
+    return { top: 0 };
+  }
 })
 
 export default router

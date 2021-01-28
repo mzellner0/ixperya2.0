@@ -5,9 +5,6 @@
         <router-link @click="toggleMenu" class="menu__link" to="/jeu">Jeu</router-link>
         <router-link @click="toggleMenu" class="menu__link" to="/developpeur-web">Développeuse web</router-link>
         <router-link @click="toggleMenu" class="menu__link" to="/contact">Contact</router-link>
-        <router-link @click="toggleMenu" class="menu__link" to="/site-avec-jeu">Site avec jeu</router-link>
-        <router-link @click="toggleMenu" class="menu__link" to="/site-informatif">Site informatif</router-link>
-        <router-link @click="toggleMenu" class="menu__link" to="/site-ecommerce">Site e-commerce</router-link>
       </div>
   </div>
   <router-view/>

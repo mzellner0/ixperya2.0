@@ -1,0 +1,109 @@
+<template>
+  <div class="projet">
+    <div class="projet__texts">
+      <h2>{{ $route.query.title }}</h2>
+      <h3>{{ subtitle }}</h3>
+      <p>{{ text }}</p>
+      <a :href="url" target="_blank">Découvrez le site</a>
+    </div>
+    <div class="projet__images">
+      <img 
+        v-for="(img, index) in images"
+        :key="index"
+        :src="img"
+        :alt="`image-projet${index}`"
+      >
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Projet",
+  data: function() {
+    return {
+      subtitle: "",
+      text: "",
+      images: [],
+      url: ""
+    }
+  },
+  mounted() {
+    switch (this.$route.query.title) {
+      case "Hôtel de Paris Saint Tropez": 
+        this.subtitle = "Réalisation du design et de l'intégration du site.";
+        this.text = "Cet hôtel cherchait à rafraîchir son ancien site internet. Nous leurs avons donc réalisés 3 nouvelles propostions graphiques pour qu'il puisse choisir celle qui leurs correspondait le mieux. Une fois le design décidé, nous l'avons integré avec soin.";
+        this.images = [
+          require('@/assets/img/projets/hdp-1.jpeg'),
+          require('@/assets/img/projets/hdp-3.jpeg'),
+          require('@/assets/img/projets/hdp-2.jpeg'),
+          require('@/assets/img/projets/hdp-4.jpeg'),
+        ]
+        this.url = "https://hoteldeparis-sainttropez.com/"
+        break;
+      case "Création d'avatar":
+        this.subtitle = "Réalisation d'un module de personnalisation d'avatar pour le site de Sandbox.game.";
+        this.text = "Sandbox.game souhaitait intégrer, à leur site internet, un module permettant à chaque utilisateur de personnaliser son propre avatar 3D. Je me suis donc occupée, en tant que développeuse front-end, d'intégrer leur maquette déjà réalisée au préalable et de coder cette fonctionnalité en javascript (à l'aide de vue.js et de three.js) pour que cette idée puisse prendre vie.";
+        this.images = [
+          require('@/assets/img/projets/avatar-portfolio.jpg'),
+          require('@/assets/img/projets/avatar-phone.png')
+        ]
+        this.url = "https://www.sandbox.game/en/me/avatar/"
+        break;
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.projet {
+  width: 100%;
+  margin: auto;
+  margin-top: 100px;
+  @include flex(column, flex-start, center);
+  &__images {
+    margin: 60px 20px;
+    margin-bottom: 80px;
+    width: 100%;
+    @include flex(row, center, center);
+    img {
+      max-height: 600px;
+      border-radius: 5px;
+      margin: 0px 10px;
+    }
+  }
+  &__texts {
+    color: white;
+    background-color: $color-header-dark;
+    width: 100%;
+    padding: 40px;
+    padding-left: 10%;
+    padding-bottom: 100px;
+    h2 {
+      font-family: $police-logo;
+      text-transform: uppercase;
+    }
+    h3 {
+      font-family: $police-logo;
+      text-transform: uppercase;
+      font-weight: normal;
+      margin-bottom: 40px;
+    }
+    p {
+      font-family: $police-text;
+      max-width: 50%;
+      line-height: 20px;
+    }
+    a {
+      color: $color-header-middleLight;
+      font-family: $police-text;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 200ms;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+</style>

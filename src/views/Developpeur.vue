@@ -2,7 +2,7 @@
 	<div class="developpeur">
 		<Title :title="'Vous cherchez un développeur web ?'" />
 		<div class="developpeur__portfolio">
-			<Portfolio />
+			<Portfolio :projets-list="projetsList" />
 		</div>
 		<div class="developpeur__apropos">
 			<AProposComponent />
@@ -41,7 +41,27 @@ export default {
 		Button,
 		Title,
 		AProposComponent
-	}
+	},
+	data: () => {
+    return {
+      projetsList: [
+        { 
+          title: 'Hôtel de Paris Saint Tropez', 
+          urlImage: 'hdp-portfolio-2.jpg',
+          params: {
+            title: 'Hôtel de Paris Saint Tropez'
+          }
+        },
+        { 
+          title: "Création d'avatar", 
+          urlImage: 'avatar-portfolio.jpg',
+          params: {
+            title: "Création d'avatar"
+          }
+        }
+      ]
+    }
+  }
 }
 </script>
 

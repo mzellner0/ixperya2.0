@@ -5,31 +5,26 @@
       <h1 class="portfolio__title--dark">Portfolio</h1>
     </div>
     <div class="portfolio__projets">
-      <Projet
+      <ProjetPortfolio
         v-for="(projet, index) in projetsList"
         :key="index"
         :title-projet="projet.title"
         :image-projet="projet.urlImage"
+        :params="projet.params"
       />
     </div>
   </div>
 </template>
 
 <script>
-import Projet from "@/components/Projet.vue"
+import ProjetPortfolio from "@/components/ProjetPortfolio.vue"
 export default {
   name: "Portfolio",
   components: {
-    Projet
+    ProjetPortfolio
   },
-  data: () => {
-    return {
-      projetsList: [
-        { title: 'Hôtel de Paris Saint Tropez', urlImage: 'hdp-portfolio-2.jpg' },
-        { title: 'Création d\'avatar', urlImage: 'avatar-portfolio.jpg' }
-        // { title: 'Hôtel de Paris Saint Tropez', urlImage: 'hdp-portfolio-2.jpg' }
-      ]
-    }
+  props: {
+    projetsList: { type: Array, default: () => [] }
   }
 }
 </script>

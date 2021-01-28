@@ -4,10 +4,12 @@
       :title1="'La solutions pour que votre site vous rapporte enfin de l\'argent (au lieu de vous en coûter) :'"
       :title2="'Vous avez un site informatif ?'"
       :title3="'Ensemble, Créons votre site'"
-      :paragraph1="'GRÂCE À UNE CHARTE GRAPHIQUE RÉUSSIE, GAGNEZ EN CRÉDIBILTIÉ (ÉVITEZ QUE VOTRE SITE NE FASSE PEUR)'"
+      :paragraph1="'GRÂCE À UNE CHARTE GRAPHIQUE RÉUSSIE, GAGNEZ EN CRÉDIBILTIÉ (ÉVITEZ QUE VOTRE SITE NE FASSE PEUR).'"
     >
       <template v-slot:content>
-        <p>Yo</p>
+        <div class="siteInfo__portfolio">
+          <Portfolio :projets-list="projetsList" />
+        </div>
       </template>
       <template v-slot:paragraph2>
         <p>
@@ -26,15 +28,34 @@
 
 <script>
 import BasePageSpecialisee from "@/components/BasePageSpecialisee.vue";
+import Portfolio from "@/components/Portfolio.vue";
 
 export default {
   name: "SiteInformatif",
   components: {
-    BasePageSpecialisee
+    BasePageSpecialisee,
+    Portfolio
+  },
+  data: () => {
+    return {
+      projetsList: [
+        { 
+          title: 'Hôtel de Paris Saint Tropez', 
+          urlImage: 'hdp-portfolio-2.jpg',
+          params: {
+            title: 'Hôtel de Paris Saint Tropez'
+          }
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  
+.siteInfo {
+  &__portfolio {
+    margin-top: 80px;
+  }
+}
 </style>

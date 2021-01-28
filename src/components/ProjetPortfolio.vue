@@ -1,5 +1,5 @@
 <template>
-  <div class="projet">
+  <div class="projet" @click="redirect">
     <img class="projet__photo" alt="image projet" :src="require(`@/assets/img/projets/${imageProjet}`)" />
     <h3 class="projet__title">{{ titleProjet }}</h3>
   </div>
@@ -10,7 +10,13 @@ export default {
   name: "Projet",
   props: {
     titleProjet: { type: String, default: null },
-    imageProjet: { type: String, default: 'hdp-portfolio.jpg' }
+    imageProjet: { type: String, default: 'hdp-portfolio.jpg' },
+    params: { type: Object, default: () => {} }
+  },
+  methods: {
+    redirect() {
+      this.$router.push({ name: 'Projet', query: this.params });
+    }
   }
 }
 </script>
@@ -19,6 +25,11 @@ export default {
   .projet {
     margin: 50px 50px;
     @include flex(column, center, center);
+    transition: 200ms;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.02);
+    }
     &__title {
       font-family: $police-text-2;
       text-transform: uppercase;
