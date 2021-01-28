@@ -72,10 +72,15 @@ export default {
 		margin-top: 250px;
 	}
 	&__apropos {
-		margin-top: 80px
+		margin-top: 50px;
+		margin-bottom: 100px;
 	}
 	&__technos {
+		margin-top: 80px;
+		margin-bottom: 50px;
 		@include flex(column, center, center);
+		color: white;
+		background-color: $color-header-dark;
 		.frontend, .backend {
 			@include flex(row, center, center);
 			img {
@@ -86,11 +91,11 @@ export default {
 				margin-bottom: 55px;
 			}
 			&:last-of-type {
-				margin-bottom: 50px;
+				margin-bottom: 40px;
 			}
 		}
 		h2 {
-			margin-top: 100px;
+			margin-top: 70px;
 			margin-bottom: 50px;
 			font-family: $police-logo;
 			text-transform: uppercase;
