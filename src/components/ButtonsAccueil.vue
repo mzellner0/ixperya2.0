@@ -29,13 +29,13 @@ export default {
           this.$router.push({ name: 'Developpeur' });
           break;
         case 4:
-          this.$router.push({ name: 'Jeu' });
+          this.$router.push({ name: 'SiteAvecJeu' });
           break;
         case 5:
-          this.$router.push({ name: 'Jeu' });
+          this.$router.push({ name: 'SiteECommerce' });
           break;
         case 6:
-          this.$router.push({ name: 'Jeu' });
+          this.$router.push({ name: 'SiteInformatif' });
           break;
       }
     }

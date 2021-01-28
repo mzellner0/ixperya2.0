@@ -1,6 +1,6 @@
 <template>
   <div class="projet">
-    <img class="projet__photo" :src="require(`@/assets/img/${imageProjet}`)" />
+    <img class="projet__photo" alt="image projet" :src="require(`@/assets/img/projets/${imageProjet}`)" />
     <h3 class="projet__title">{{ titleProjet }}</h3>
   </div>
 </template>

@@ -21,6 +21,9 @@ export default {
 body {
   margin: 0px;
   overflow-x: hidden;
+  background: linear-gradient(#fff 22%, #bbc4cc 100%);
+  min-height: 100vh;
+  color: $color-header-dark;
   &::-webkit-scrollbar {
     width: 12px;
   }

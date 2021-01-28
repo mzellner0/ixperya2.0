@@ -1,6 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Accueil from '../views/Accueil.vue'
 import Developpeur from '../views/Developpeur.vue'
+import APropos from '../views/APropos.vue'
+import Contact from '../views/Contact.vue'
+import SiteECommerce from '../views/SiteECommerce.vue'
+import SiteInformatif from '../views/SiteInformatif.vue'
+import SiteAvecJeu from '../views/SiteAvecJeu.vue'
 
 const routes = [
   {
@@ -12,6 +17,31 @@ const routes = [
     path: '/developpeur-web',
     name: 'Developpeur',
     component: Developpeur
+  },
+  {
+    path: '/a-propos',
+    name: 'APropos',
+    component: APropos
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/site-informatif',
+    name: 'SiteInformatif',
+    component: SiteInformatif
+  },
+  {
+    path: '/site-avec-jeu',
+    name: 'SiteAvecJeu',
+    component: SiteAvecJeu
+  },
+  {
+    path: '/site-ecommerce',
+    name: 'SiteECommerce',
+    component: SiteECommerce
   },
   {
     path: '/jeu',

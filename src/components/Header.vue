@@ -88,6 +88,7 @@ header {
             font-size: 12px;
             font-weight: 600;
             transition: 200ms;
+            font-weight: 700;
         }
         div {
             background-color: $color-header-middle;
