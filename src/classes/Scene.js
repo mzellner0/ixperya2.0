@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import TWEEN from '@tweenjs/tween.js'
 
 export default class Scene {
     constructor(htmlElmt, camPos, widthFactor, heightFactor, isOrbitControls) {
@@ -64,9 +65,10 @@ export default class Scene {
         this.idAnimateFunction = requestAnimationFrame(this.animate.bind(this))
     }
 
-    animate(){
+    animate(time){
         this.playAnimate();
         this.renderer.render(this.scene, this.camera);
+        TWEEN.update(time)
     }
 
     onResize(){
