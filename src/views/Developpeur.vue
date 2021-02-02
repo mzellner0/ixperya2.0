@@ -7,21 +7,7 @@
 		<div class="developpeur__apropos">
 			<AProposComponent />
 		</div>
-		<div class="developpeur__technos">
-			<h2>Technologies front-end que j'utilise :</h2>
-			<div class="frontend">
-				<img :src="require('@/assets/img/logos/vue.png')" alt="logo vue">
-				<img :src="require('@/assets/img/logos/trio.png')" alt="logo css-html-js">
-				<img :src="require('@/assets/img/logos/sass.png')" alt="logo sass">
-				<img :src="require('@/assets/img/logos/three.png')" alt="logo three.js">
-			</div>
-			<h2>Connaissances back-end :</h2>
-			<div class="backend">
-				<img :src="require('@/assets/img/logos/node.png')" alt="logo node">
-				<img :src="require('@/assets/img/logos/expressjs.png')" alt="logo express">
-				<img :src="require('@/assets/img/logos/mysql.png')" alt="logo mysql" class="mysql">
-			</div>
-		</div>
+		<Technologies />
 		<div class="developpeur__buttons">
 			<Button :text="'Contactez-moi'" :composant-name="'Contact'" />
 		</div>
@@ -33,6 +19,8 @@ import Portfolio from "@/components/Portfolio.vue";
 import Button from "@/components/Button.vue";
 import AProposComponent from "@/components/AProposComponent.vue";
 import Title from "@/components/Title.vue";
+import Technologies from "@/components/Technologies.vue";
+import { mapActions } from 'vuex'
 
 export default {
 	name: "Developpeur",
@@ -40,7 +28,8 @@ export default {
 		Portfolio,
 		Button,
 		Title,
-		AProposComponent
+		AProposComponent,
+		Technologies
 	},
 	data: () => {
     return {
@@ -61,7 +50,14 @@ export default {
         }
       ]
     }
-  }
+	},
+	beforeRouteLeave(to, from, next) {
+		this.updateLinkBackPortfolio(from.name);
+		next();
+	},
+	methods: {
+		...mapActions(['updateLinkBackPortfolio'])
+	}
 }
 </script>
 

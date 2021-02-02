@@ -1,6 +1,6 @@
 <template>
     <header>
-        <img alt="logo" src="@/assets/svg/logoEpais.svg">
+        <img alt="logo" src="@/assets/svg/logoEpais.svg" @click="goToAccueil">
         <div class="text-header">
             <h1>IXPERYA</h1>
             <p>Développement web</p>
@@ -28,7 +28,10 @@ export default {
       ...mapState(['menuOpen'])
   },
   methods: {
-      ...mapActions(['toggleMenu'])
+      ...mapActions(['toggleMenu']),
+      goToAccueil() {
+        this.$router.push({ name: 'Accueil' });
+      }
   }
 }
 </script>
@@ -73,6 +76,7 @@ header {
         user-select: none;
         max-width: 50px;
         margin-left: 30px;
+        cursor: pointer;
     }
     .menuOpener {
         width: 50px;

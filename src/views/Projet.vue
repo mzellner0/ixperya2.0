@@ -5,6 +5,11 @@
       <h3>{{ subtitle }}</h3>
       <p>{{ text }}</p>
       <a :href="url" target="_blank">Découvrez le site</a>
+      <font-awesome-icon 
+        class="projet__arrow" 
+        :icon="['fas', 'arrow-circle-left']"
+        @click="back"
+      />
     </div>
     <div class="projet__images">
       <img 
@@ -18,6 +23,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: "Projet",
   data: function() {
@@ -51,6 +58,14 @@ export default {
         this.url = "https://www.sandbox.game/en/me/avatar/"
         break;
     }
+  },
+  computed: {
+    ...mapState(['linkBackPortfolio'])
+  },
+  methods: {
+    back() {
+      this.$router.push({ name: this.linkBackPortfolio });
+    }
   }
 }
 </script>
@@ -72,13 +87,24 @@ export default {
       margin: 0px 10px;
     }
   }
+  &__arrow {
+    color: white;
+    margin-top: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 200ms;
+    &:hover {
+      animation: leftRightArrow 500ms ease-in-out infinite;
+    }
+  }
   &__texts {
     color: white;
     background-color: $color-header-dark;
     width: 100%;
     padding: 40px;
     padding-left: 10%;
-    padding-bottom: 100px;
+    padding-bottom: 90px;
+    @include flex(column, flex-start, center);
     h2 {
       font-family: $police-logo;
       text-transform: uppercase;
@@ -87,7 +113,8 @@ export default {
       font-family: $police-logo;
       text-transform: uppercase;
       font-weight: normal;
-      margin-bottom: 40px;
+      margin-bottom: 25px;
+      margin-top: 0px;
     }
     p {
       font-family: $police-text;

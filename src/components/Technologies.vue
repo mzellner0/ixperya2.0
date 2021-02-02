@@ -1,0 +1,57 @@
+<template>
+  <div class="technos">
+    <h2>Technologies front-end que j'utilise :</h2>
+    <div class="frontend">
+      <img :src="require('@/assets/img/logos/vue.png')" alt="logo vue">
+      <img :src="require('@/assets/img/logos/trio.png')" alt="logo css-html-js">
+      <img :src="require('@/assets/img/logos/sass.png')" alt="logo sass">
+      <img :src="require('@/assets/img/logos/three.png')" alt="logo three.js">
+    </div>
+    <h2>Connaissances back-end :</h2>
+    <div class="backend">
+      <img :src="require('@/assets/img/logos/node.png')" alt="logo node">
+      <img :src="require('@/assets/img/logos/expressjs.png')" alt="logo express">
+      <img :src="require('@/assets/img/logos/mysql.png')" alt="logo mysql" class="mysql">
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Technologies"
+}
+</script>
+
+<style lang="scss" scoped>
+.technos {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  @include flex(column, center, center);
+  color: white;
+  background-color: $color-header-dark;
+  .frontend, .backend {
+    @include flex(row, center, center);
+    img {
+      max-height: 100px;
+      margin: 0px 20px;
+    }
+    .mysql {
+      margin-bottom: 55px;
+    }
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+  h2 {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    font-family: $police-logo;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 800;
+    &:last-of-type {
+      margin-bottom: 5px;
+    }
+  }
+}
+</style>

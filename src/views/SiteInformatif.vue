@@ -29,6 +29,7 @@
 <script>
 import BasePageSpecialisee from "@/components/BasePageSpecialisee.vue";
 import Portfolio from "@/components/Portfolio.vue";
+import { mapActions } from 'vuex'
 
 export default {
   name: "SiteInformatif",
@@ -48,7 +49,14 @@ export default {
         }
       ]
     }
-  }
+  },
+  beforeRouteLeave(to, from, next) {
+		this.updateLinkBackPortfolio(from.name);
+		next();
+	},
+	methods: {
+		...mapActions(['updateLinkBackPortfolio'])
+	}
 }
 </script>
 

@@ -6,6 +6,8 @@ import SiteECommerce from '../views/SiteECommerce.vue'
 import SiteInformatif from '../views/SiteInformatif.vue'
 import SiteAvecJeu from '../views/SiteAvecJeu.vue'
 import Projet from '../views/Projet.vue'
+import PortfolioPage from '../views/PortfolioPage.vue'
+import QuiSuisJe from '../views/QuiSuisJe.vue'
 
 const routes = [
   {
@@ -42,6 +44,16 @@ const routes = [
     path: '/projet',
     name: 'Projet',
     component: Projet
+  },
+  {
+    path: '/portfolio',
+    name: 'PortfolioPage',
+    component: PortfolioPage
+  },
+  {
+    path: '/qui-suis-je',
+    name: 'QuiSuisJe',
+    component: QuiSuisJe
   },
   {
     path: '/jeu',

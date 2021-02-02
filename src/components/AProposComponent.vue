@@ -76,6 +76,7 @@ export default {
 .a-propos {
   width: 70%;
   margin: 20px auto;
+	line-height: 25px;
   &__texts {
     margin-top: 20px;
     @include flex(column, flex-start, center);
