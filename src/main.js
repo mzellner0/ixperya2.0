@@ -4,9 +4,14 @@ import router from './router'
 import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
+import { faArrowCircleLeft, faHandPointer, faLongArrowAltDown, faHandPaper, faBoxOpen, faBan } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faArrowCircleLeft)
+library.add(faHandPointer)
+library.add(faHandPaper)
+library.add(faBoxOpen)
+library.add(faBan)
+library.add(faLongArrowAltDown)
 
 createApp(App)
     .use(store)

@@ -2,8 +2,8 @@ import Gltf from "./Gltf";
 import TWEEN from '@tweenjs/tween.js';
 
 export default class ObjectJeu extends Gltf {
-  constructor(scene, importFile, isAnimations, opacityInit, distanceToRobot, callback){
-    super(scene, importFile, isAnimations, opacityInit, distanceToRobot, callback)
+  constructor(scene, importFile, isAnimations, opacityInit, callback, distanceToRobot){
+    super(scene, importFile, isAnimations, opacityInit, callback)
     this.distanceToRobot = distanceToRobot;
   }
 

@@ -6,6 +6,7 @@ import ObjectJeu from "./ObjectJeu.js"
 
 export default class MoveRobot {
   constructor(jeu){
+      this.store = jeu.$store;
       this.jeu = jeu
       this.robot = jeu.robot
       this.cameraGroup = jeu.scene.cameraGroup
@@ -40,7 +41,7 @@ export default class MoveRobot {
   }
 
   hideTuto(){
-      this.tuto.hideGrabCursor()
+    this.store.dispatch('hideHideGrabTuto');
   }
 
   checkIntersectionsBeforeMoving(){
@@ -165,7 +166,7 @@ export default class MoveRobot {
       this.canvas.addEventListener('mousedown', (event) => {
           this.canvas.style.cursor = 'grabbing'
 
-          // this.hideTuto()
+          this.hideTuto()
           this.updateRotateRobotBeforeMove(event, this.calculateRotationMouse.bind(this))
           this.addEventToMoveRobot('mousemove', eventFunction)
       })
@@ -188,7 +189,7 @@ export default class MoveRobot {
       this.canvas.addEventListener('touchstart', (event) => {
           event.preventDefault()
 
-          // this.hideTuto()
+          this.hideTuto()
           this.updateRotateRobotBeforeMove(event, this.calculateRotationTouch.bind(this))
           this.addEventToMoveRobot('touchmove', eventFunction)
       }, {passive: false})

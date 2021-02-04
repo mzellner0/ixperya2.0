@@ -7,6 +7,12 @@
       @click="onClickOnPlay">
       PLAY
     </button>
+    <MenuJeu
+      :card="card"
+      :robot="robot"
+      :particules="particules"
+    />
+    <TutoJeu />
     <canvas id="threeJeu"></canvas>
   </div>
 </template>
@@ -19,10 +25,18 @@ import TWEEN from '@tweenjs/tween.js';
 import ObjectJeu from "@/classes/ObjectJeu.js";
 import MoveRobot from "@/classes/MoveRobot.js";
 import Door from "@/classes/Door.js";
+import Particules from "@/classes/Particules.js";
 import { getRandom } from "@/utils/utils.js"
+import { mapActions } from 'vuex'
+import MenuJeu from "@/components/MenuJeu.vue";
+import TutoJeu from "@/components/TutoJeu.vue";
 
 export default {
   name: "Jeu",
+  components: {
+    MenuJeu,
+    TutoJeu
+  },
   data: function() {
     return {
       delayOfAnimationStart: 400,
@@ -40,8 +54,8 @@ export default {
 
     this.scene = new SceneJeu(document.getElementById("threeJeu"), { x: 0, y: 8, z: 20 }, 1, 1, false);
     this.robot = new Robot(this.scene, "src/gltf/robot_v003.glb", true);
-    this.card = new ObjectJeu(this.scene, 'src/gltf/carte_v001.glb', false, 1, this.callbackCardLoaded.bind(this));
-    this.door = new Door(this.scene, 'src/gltf/door_v002.glb', true, 1, this.callBackDoorLoaded.bind(this));
+    this.card = new ObjectJeu(this.scene, 'src/gltf/carte_v001.glb', false, 0, this.callbackCardLoaded.bind(this), 8);
+    this.door = new Door(this.scene, 'src/gltf/door_v002.glb', true, 0, this.callBackDoorLoaded.bind(this), 15);
 
     this.assetsToCollide.push(this.door);
     this.assetsToIntercept.push(this.door, this.card);
@@ -51,15 +65,26 @@ export default {
     this.door.stopAnimate();
     this.robot.stopAnimate();
     this.scene.stopAnimate();
+    if (this.particules) {
+      this.particules.stopAnimate();
+    }
   },
   methods: {
+    ...mapActions([
+      'toggleHideInventory', 
+      'toggleHideButtonsMenu', 
+      'showHideGrabTuto', 
+      'toggleHideExplanation', 
+      'toggleHideArrowInventory',
+      'toggleHideArrowCatch'
+    ]),
     onClickOnPlay() {
       this.animCamOnFirstClick();
       this.gameStarting = true;
       setTimeout(() => {
         this.gameStart = true;
         this.gameStarting = false;
-        this.moveRobot = new MoveRobot(this);
+        this.onceGameStart();
       }, this.delayOfAnimationStart);
     },
     animCamOnFirstClick(){
@@ -70,9 +95,22 @@ export default {
       const randomX = getRandom(-this.scene.numberOfPoint*10/2, this.scene.numberOfPoint*10/2 - 10);
       const randomZ = getRandom(this.doorPositionMinZ + 20, this.scene.numberOfLine*10/2 - 10);
       this.card.moveGltf(randomX, 0, randomZ);
+
+      this.particules = new Particules(require('@/assets/sprites_textures/particule_blue.png'), this)
     },
     callBackDoorLoaded() {
       this.door.moveGltf(0, 0, this.doorPositionMinZ);
+    },
+    onceGameStart() {
+      this.moveRobot = new MoveRobot(this);
+
+      this.door.fadeInElmt(this.delayOfAnimationStart);
+      this.card.fadeInElmt(this.delayOfAnimationStart);
+      this.particules.fadeInElmt(this.delayOfAnimationStart);
+
+      this.showHideGrabTuto();
+      this.toggleHideButtonsMenu();
+      this.toggleHideExplanation();
     }
   },
 }
@@ -86,6 +124,7 @@ export default {
   width: 100%;
   height: 100vh;
 }
+
 .jeu {
   &__button {
     position: absolute;
@@ -105,7 +144,7 @@ export default {
     outline: none;
     cursor: pointer;
     transition: 200ms;
-    z-index: 1;
+    z-index: 10;
     @media (max-width: 1000px){
         margin-left: 35%;
         width: 30%;
