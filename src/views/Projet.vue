@@ -57,6 +57,15 @@ export default {
         ]
         this.url = "https://www.sandbox.game/en/me/avatar/"
         break;
+      case "Création d'un jeu 3D":
+        this.subtitle = "Réalisation d'un jeu 3D.";
+        this.text = "Poussée par l'envie d'en connaître plus sur Three.js, j'ai créé un jeu en 3D sur internet.";
+        this.images = [
+          require('@/assets/img/projets/jeu.png'),
+          require('@/assets/img/projets/jeu-2.png'),
+        ]
+        this.url = "https://www.ixperya.com/jeu"
+        break;
     }
   },
   computed: {
@@ -76,15 +85,28 @@ export default {
   margin: auto;
   margin-top: 100px;
   @include flex(column, flex-start, center);
+  @include breakpoint(500) {
+    margin-top: 50px;
+  }
   &__images {
-    margin: 60px 20px;
+    margin: 60px 0px;
     margin-bottom: 80px;
     width: 100%;
     @include flex(row, center, center);
     img {
-      max-height: 600px;
+      max-width: 800px;
+      max-height: 500px;
       border-radius: 5px;
       margin: 0px 10px;
+    }
+    @include breakpoint(1630) {
+      @include flex(column, center, center);
+      margin: 20px 0px;
+      img {
+        width: 80%;
+        max-height: none;
+        margin: 10px 0px;
+      }
     }
   }
   &__arrow {
@@ -96,15 +118,24 @@ export default {
     &:hover {
       animation: leftRightArrow 500ms ease-in-out infinite;
     }
+    @include breakpoint(500) {
+      padding: 0px 20px;
+    }
   }
   &__texts {
     color: white;
     background-color: $color-header-dark;
-    width: 100%;
+    width: 80%;
     padding: 40px;
     padding-left: 10%;
+    padding-right: 10%;
     padding-bottom: 90px;
     @include flex(column, flex-start, center);
+    @include breakpoint(500) {
+      width: 100%;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
     h2 {
       font-family: $police-logo;
       text-transform: uppercase;
@@ -129,6 +160,28 @@ export default {
       transition: 200ms;
       &:hover {
         color: white;
+      }
+    }
+    @include breakpoint(500) {
+      h2 {
+        font-size: 18px;
+        padding: 0px 20px;
+        line-height: 20px;
+      }
+      h3 {
+        font-size: 16px;
+        padding: 0px 20px;
+        line-height: 25px;
+      }
+      p {
+        font-size: 16px;
+        padding: 0px 20px;
+        max-width: 70%;
+        line-height: 20px;
+      }
+      a {
+        font-size: 16px;
+        padding: 0px 20px;
       }
     }
   }

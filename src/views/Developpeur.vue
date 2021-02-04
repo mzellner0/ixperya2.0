@@ -47,6 +47,13 @@ export default {
           params: {
             title: "Création d'avatar"
           }
+				},
+				{ 
+          title: "Création d'un jeu 3D", 
+          urlImage: 'jeu.png',
+          params: {
+            title: "Création d'un jeu 3D"
+          }
         }
       ]
     }
