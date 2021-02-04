@@ -12,7 +12,6 @@
       <slot name="paragraph2"></slot>
     </div>
     <div class="page-spec__buttons">
-      <Button :text="'A propos'" :composant-name="'Developpeur'" />
       <Button :text="'Contact'" :composant-name="'Contact'" />
     </div>
   </div>

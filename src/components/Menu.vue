@@ -3,7 +3,7 @@
       <div class="menu__links">
         <router-link @click="toggleMenu" class="menu__link" to="/">Accueil</router-link>
         <router-link @click="toggleMenu" class="menu__link" to="/jeu">Jeu</router-link>
-        <router-link @click="toggleMenu" class="menu__link" to="/qui-suis-je">Qui suis je ?</router-link>
+        <router-link @click="toggleMenu" class="menu__link" to="/a-propos">A propos</router-link>
         <router-link @click="toggleMenu" class="menu__link" to="/portfolio">Portfolio</router-link>
         <router-link @click="toggleMenu" class="menu__link" to="/contact">Contact</router-link>
       </div>

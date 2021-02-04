@@ -16,7 +16,7 @@ import AProposComponent from "@/components/AProposComponent.vue";
 import Technologies from "@/components/Technologies.vue";
 
 export default {
-	name: "Developpeur",
+	name: "APropos",
 	components: {
 		Button,
     AProposComponent,

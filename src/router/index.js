@@ -7,7 +7,7 @@ import SiteInformatif from '../views/SiteInformatif.vue'
 import SiteAvecJeu from '../views/SiteAvecJeu.vue'
 import Projet from '../views/Projet.vue'
 import PortfolioPage from '../views/PortfolioPage.vue'
-import QuiSuisJe from '../views/QuiSuisJe.vue'
+import APropos from '../views/APropos.vue'
 
 const routes = [
   {
@@ -51,9 +51,9 @@ const routes = [
     component: PortfolioPage
   },
   {
-    path: '/qui-suis-je',
-    name: 'QuiSuisJe',
-    component: QuiSuisJe
+    path: '/a-propos',
+    name: 'APropos',
+    component: APropos
   },
   {
     path: '/jeu',

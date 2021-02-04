@@ -5,7 +5,7 @@
 			<Portfolio :projets-list="projetsList" />
 		</div>
 		<div class="developpeur__apropos">
-			<AProposComponent />
+			<AProposDevComponent />
 		</div>
 		<Technologies />
 		<div class="developpeur__buttons">
@@ -17,7 +17,7 @@
 <script>
 import Portfolio from "@/components/Portfolio.vue";
 import Button from "@/components/Button.vue";
-import AProposComponent from "@/components/AProposComponent.vue";
+import AProposDevComponent from "@/components/AProposDevComponent.vue";
 import Title from "@/components/Title.vue";
 import Technologies from "@/components/Technologies.vue";
 import { mapActions } from 'vuex'
@@ -28,7 +28,7 @@ export default {
 		Portfolio,
 		Button,
 		Title,
-		AProposComponent,
+		AProposDevComponent,
 		Technologies
 	},
 	data: () => {

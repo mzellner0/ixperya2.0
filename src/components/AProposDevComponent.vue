@@ -3,7 +3,7 @@
     <img :src="require('@/assets/img/maud.jpg')" alt="maud zellner">
     <LineTop />
     <div class="a-propos__texts">
-      <h1>A propos</h1>
+      <h1>Qui suis-je ?</h1>
       <p>
         Vous cherchez un développeur pour agrandir le potentiel de création de votre entreprise et ainsi pouvoir livrer à vos clients des sites web toujours plus performants.
       </p>
@@ -64,7 +64,7 @@ import LineTop from "@/components/LineTop.vue";
 import LineBottom from "@/components/LineBottom.vue";
 
 export default {
-  name: "AProposComponent",
+  name: "AProposDevComponent",
   components: {
     LineTop,
     LineBottom
