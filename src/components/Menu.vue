@@ -36,11 +36,12 @@ export default {
     .menu{
         position: fixed;
         right: 0px;
-        width: 225px;
+        width: 180px;
         background-color: $color-header-dark;
         height: 100vh;
         top: 0px;
         z-index: 8;
+        border-left:$color-header-middle 5px solid;
         transform: translateX(225px);
         transition: 100ms ease-in-out;
         &--open {

@@ -47,8 +47,8 @@ header {
     .text-header {
         height: 140px;
         @include flex(column, center, initial);
-        width: 20%;
-        margin-right: 40%;
+        width: 30%;
+        margin-right: 35%;
         h1 {
             font-family: $police-logo;
             font-weight: 400;
@@ -64,6 +64,7 @@ header {
             margin: 0;
             font-family: $police-logo;
             font-size: 20px;
+            text-align: center;
             color: $color-header-dark;
             user-select: none;
             pointer-events: none;
@@ -106,6 +107,9 @@ header {
         &__bar1 {
             &--active {
                 transform: rotateZ(-36deg);
+                @include breakpoint(500) {
+                    transform: rotateZ(-42deg);
+                }
             }
         }
         &__bar2 {
@@ -116,14 +120,17 @@ header {
         &__bar3 {
             &--active {
                 transform: rotateZ(36deg);
+                @include breakpoint(500) {
+                    transform: rotateZ(42deg);
+                }
             }
         }
     }
-    @media (max-width: 500px){
+    @include breakpoint(500){
         .text-header {
             height: 110px;
             h1 {
-                font-size: 40px;
+                font-size: 30px;
             }
             p {
                 font-size: 15px;
@@ -135,7 +142,13 @@ header {
         }
         .menuOpener {
             font-size: 30px;
-            margin-right: 15px;
+            margin-right: 0px;
+            p {
+                font-size: 10px;
+            }
+            div {
+                width: 45px;
+            }
         }
     }
 }
