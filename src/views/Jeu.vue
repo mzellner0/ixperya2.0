@@ -11,9 +11,11 @@
       :card="card"
       :robot="robot"
       :particules="particules"
+      :door="door"
     />
     <TutoJeu />
-    <canvas id="threeJeu"></canvas>
+    <PopUpJeuWin />
+    <canvas id="threeJeu" :class="{'disableCanvas': disableCanvasJeu }"></canvas>
   </div>
 </template>
 
@@ -27,15 +29,17 @@ import MoveRobot from "@/classes/MoveRobot.js";
 import Door from "@/classes/Door.js";
 import Particules from "@/classes/Particules.js";
 import { getRandom } from "@/utils/utils.js"
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import MenuJeu from "@/components/MenuJeu.vue";
 import TutoJeu from "@/components/TutoJeu.vue";
+import PopUpJeuWin from "@/components/PopUpJeuWin.vue";
 
 export default {
   name: "Jeu",
   components: {
     MenuJeu,
-    TutoJeu
+    TutoJeu,
+    PopUpJeuWin
   },
   data: function() {
     return {
@@ -47,6 +51,22 @@ export default {
       canvas: null,
       moveRobot: null,
       doorPositionMinZ: -100
+    }
+  },
+  computed: {
+    ...mapState(['restartGame', 'disableCanvasJeu', 'win'])
+  },
+  watch: {
+    restartGame: function() {
+      if (this.restartGame) {
+        this.resetGame();
+      }
+    },
+    win: function() {
+      if (this.win) {
+        this.toggleDisableCanvasJeu();
+        this.resetEvent();
+      }
     }
   },
   mounted() {
@@ -61,22 +81,19 @@ export default {
     this.assetsToIntercept.push(this.door, this.card);
   },
   beforeUnmount() {
-    this.card.stopAnimate();
-    this.door.stopAnimate();
-    this.robot.stopAnimate();
-    this.scene.stopAnimate();
-    if (this.particules) {
-      this.particules.stopAnimate();
-    }
+    this.stopAnimate();
   },
   methods: {
     ...mapActions([
-      'toggleHideInventory', 
       'toggleHideButtonsMenu', 
-      'showHideGrabTuto', 
-      'toggleHideExplanation', 
-      'toggleHideArrowInventory',
-      'toggleHideArrowCatch'
+      'showGrabTuto', 
+      'toggleHideExplanation',
+      'toggleDisableCanvasJeu',
+      'toggleRestartGame',
+      'hideWin',
+      'toggleShowCatchArrowPossible',
+      'toggleShowInventoryArrowPossible',
+      'hideGrabTuto'
     ]),
     onClickOnPlay() {
       this.animCamOnFirstClick();
@@ -102,15 +119,64 @@ export default {
       this.door.moveGltf(0, 0, this.doorPositionMinZ);
     },
     onceGameStart() {
-      this.moveRobot = new MoveRobot(this);
+      if(!this.moveRobot){
+        this.moveRobot = new MoveRobot(this);
+      }
+
+      if (this.particules) {
+        this.particules = new Particules(require('@/assets/sprites_textures/particule_blue.png'), this)
+      }
 
       this.door.fadeInElmt(this.delayOfAnimationStart);
       this.card.fadeInElmt(this.delayOfAnimationStart);
       this.particules.fadeInElmt(this.delayOfAnimationStart);
 
-      this.showHideGrabTuto();
+      this.showGrabTuto();
       this.toggleHideButtonsMenu();
       this.toggleHideExplanation();
+    },
+    resetGame() {
+      this.gameStart = false;
+      this.hideWin();
+      this.resetStyle();
+      this.robot.resetPosition();
+      this.toggleRestartGame();
+      this.resetEvent();
+      this.scene.resetCamera();
+      this.resetMeshElmts();
+      this.toggleShowCatchArrowPossible();
+      this.toggleShowInventoryArrowPossible();
+    },
+    resetEvent() {
+      if (this.moveRobot) {
+        this.moveRobot.move = false;
+        this.moveRobot.removeEventToStopeRobot('mousemove', this.moveRobot.onMouseMoveBind);
+        this.moveRobot.removeEventToStopeRobot('touchmove', this.moveRobot.onTouchMoveBind);
+      }
+    },
+    resetStyle() {
+      this.toggleHideButtonsMenu();
+      this.hideGrabTuto();
+    },
+    resetMeshElmts(){
+      this.particules.removeSprites();
+      this.door.fadeOutElmt(this.delayOfAnimationStart);
+      this.card.fadeOutElmt(this.delayOfAnimationStart);
+      if(this.door.doorOpen){
+          this.door.closeDoors();
+      }
+    },
+    stopAnimate() {
+      this.card.stopAnimate();
+      this.door.stopAnimate();
+      this.robot.stopAnimate();
+      this.scene.stopAnimate();
+      if (this.particules) {
+        this.particules.stopAnimate();
+      }
+      if (this.moveRobot) {
+        this.moveRobot.stopAnimate();
+      }
     }
   },
 }
@@ -123,6 +189,12 @@ export default {
   top: 0;
   width: 100%;
   height: 100vh;
+  cursor: grab;
+}
+
+.disableCanvas {
+  pointer-events: none;
+  cursor: auto;
 }
 
 .jeu {

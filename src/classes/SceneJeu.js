@@ -17,6 +17,13 @@ export default class SceneJeu extends Scene {
       this.animate();
   }
 
+  resetCamera(){
+    this.camera.position.z = this.camPos.z
+    this.camera.position.y = this.camPos.y
+    this.camera.position.x = this.camPos.x
+    this.cameraGroup.rotation.x = 0
+  }
+
   createPointsGround(){
       let x = 0;
       let z = 0;

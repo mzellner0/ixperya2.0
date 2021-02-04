@@ -7,35 +7,35 @@ export default class ObjectJeu extends Gltf {
     this.distanceToRobot = distanceToRobot;
   }
 
-  changeColorGltf(color){
+  changeColor(){
     this.gltf.traverse((node) => {
         if (node.isMesh) {
-            node.material.color.setHex(color)
+            node.material.emissive.setHex(0x182836)
         }
     })
-  }
+	}
 
   revertColor(){
     this.gltf.traverse((node) => {
-        if (node.isMesh) {
-            node.material.emissive.setHex(0x000000)
-        }
+			if (node.isMesh) {
+					node.material.emissive.setHex(0x000000)
+			}
     })
   }
 
   fadeInElmt (delay) {
-      this.gltf.traverse((node) => {
-          if (node.isMesh) {
-              new TWEEN.Tween(node.material).to({ opacity: 1 }, delay).easing(TWEEN.Easing.Quadratic.Out).start()
-          }
-      })
+		this.gltf.traverse((node) => {
+			if (node.isMesh) {
+					new TWEEN.Tween(node.material).to({ opacity: 1 }, delay).easing(TWEEN.Easing.Quadratic.Out).start()
+			}
+		})
   }
 
   fadeOutElmt (delay) {
-      this.gltf.traverse((node) => {
-          if (node.isMesh) {
-              new TWEEN.Tween(node.material).to({ opacity: 0 }, delay).easing(TWEEN.Easing.Quadratic.Out).start()
-          }
-      })
+		this.gltf.traverse((node) => {
+			if (node.isMesh) {
+					new TWEEN.Tween(node.material).to({ opacity: 0 }, delay).easing(TWEEN.Easing.Quadratic.Out).start()
+			}
+		})
   }
 }

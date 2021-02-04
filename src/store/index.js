@@ -11,7 +11,17 @@ export default createStore({
     hideGrabTuto: true,
     hideExplanation: true,
     hideArrowInventory: true,
-    hideArrowCatch: true
+    hideArrowCatch: true,
+
+    showArrowInventoryPossible: true,
+    showArrowCatchPossible: true,
+
+    cardInInventory: false,
+
+    disableCanvasJeu: true,
+
+    win: false,
+    restartGame: false
   },
   mutations: {
     TOGGLE_MENU (state) {
@@ -28,21 +38,52 @@ export default createStore({
       state.hideButtonsMenu = !state.hideButtonsMenu;
     },
 
-    SHOW_HIDEGRABTUTO (state) {
+    SHOW_GRABTUTO (state) {
       state.hideGrabTuto = false;
     },
-    HIDE_HIDEGRABTUTO (state) {
+    HIDE_GRABTUTO (state) {
       state.hideGrabTuto = true;
     },
     TOGGLE_HIDEEXPLANATION (state) {
       state.hideExplanation = !state.hideExplanation;
     },
-    TOGGLE_HIDEARROWINVENTORY (state) {
-      state.hideArrowInventory = !state.hideArrowInventory;
+    SHOW_ARROWINVENTORY (state) {
+      state.hideArrowInventory = false;
     },
-    TOGGLE_HIDEARROWCATCH (state) {
-      state.hideArrowCatch = !state.hideArrowCatch;
+    SHOW_ARROWCATCH (state) {
+      state.hideArrowCatch = false;
     },
+    HIDE_ARROWINVENTORY (state) {
+      state.hideArrowInventory = true;
+    },
+    HIDE_ARROWCATCH (state) {
+      state.hideArrowCatch = true;
+    },
+
+    TOGGLE_SHOWARROWINVENTORYPOSSIBLE (state) {
+      state.showArrowInventoryPossible = !state.showArrowInventoryPossible;
+    },
+    TOGGLE_SHOWARROWCATCHPOSSIBLE (state) {
+      state.showArrowCatchPossible = !state.showArrowCatchPossible;
+    },
+
+    TOGGLE_CARDININVENTORY(state) {
+      state.cardInInventory = !state.cardInInventory;
+    },
+
+    SHOW_WIN(state) {
+      state.win = true;
+    },
+    HIDE_WIN(state) {
+      state.win = false;
+    },
+    TOGGLE_RESTARTGAME(state) {
+      state.restartGame = !state.restartGame;
+    },
+
+    TOGGLE_DISABLECANVASJEU (state) {
+      state.disableCanvasJeu = !state.disableCanvasJeu;
+    }
   },
   actions: {
     toggleMenu ({ commit }) {
@@ -59,20 +100,51 @@ export default createStore({
       commit('TOGGLE_HIDEBUTTONSMENU');
     },
 
-    showHideGrabTuto({ commit }) {
-      commit('SHOW_HIDEGRABTUTO');
+    showGrabTuto({ commit }) {
+      commit('SHOW_GRABTUTO');
     },
-    hideHideGrabTuto({ commit }) {
-      commit('HIDE_HIDEGRABTUTO');
+    hideGrabTuto({ commit }) {
+      commit('HIDE_GRABTUTO');
     },
     toggleHideExplanation({ commit }) {
       commit('TOGGLE_HIDEEXPLANATION');
     },
-    toggleHideArrowInventory({ commit }) {
-      commit('TOGGLE_HIDEARROWINVENTORY');
+    showArrowInventory({ commit }) {
+      commit('SHOW_ARROWINVENTORY');
     },
-    toggleHideArrowCatch({ commit }) {
-      commit('TOGGLE_HIDEARROWCATCH');
+    hideArrowInventory({ commit }) {
+      commit('HIDE_ARROWINVENTORY');
+    },
+    showArrowCatch({ commit }) {
+      commit('SHOW_ARROWCATCH');
+    },
+    hideArrowCatch({ commit }) {
+      commit('HIDE_ARROWCATCH');
+    },
+
+    toggleShowCatchArrowPossible({ commit }) {
+      commit('TOGGLE_SHOWARROWCATCHPOSSIBLE');
+    },
+    toggleShowInventoryArrowPossible({ commit }) {
+      commit('TOGGLE_SHOWARROWINVENTORYPOSSIBLE');
+    },
+
+    toggleCardInInventory({ commit }) {
+      commit('TOGGLE_CARDININVENTORY');
+    },
+
+    showWin({ commit }) {
+      commit('SHOW_WIN');
+    },
+    hideWin({ commit }) {
+      commit('HIDE_WIN');
+    },
+    toggleRestartGame({ commit }) {
+      commit('TOGGLE_RESTARTGAME');
+    },
+
+    toggleDisableCanvasJeu({commit}) {
+      commit('TOGGLE_DISABLECANVASJEU');
     }
   },
   modules: {

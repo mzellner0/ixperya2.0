@@ -17,7 +17,10 @@
         :icon="['fas', 'long-arrow-alt-down']"
       />
       <font-awesome-icon 
-        :class="['tuto-container__arrow tuto-container__arrowInventory', { 'hidden': hideArrowInventory }]" 
+        :class="[
+          'tuto-container__arrow tuto-container__arrowInventory', 
+          { 'hidden': hideArrowInventory || !hideInventory || !showArrowInventoryPossible }
+        ]" 
         :icon="['fas', 'long-arrow-alt-down']"
       />
   </div>
@@ -29,13 +32,20 @@ import { mapState, mapActions } from 'vuex'
 export default {
   name: "TutoJeu",
   computed: {
-    ...mapState(['hideExplanation', 'hideGrabTuto', 'hideArrowCatch', 'hideArrowInventory'])
+    ...mapState([
+    'hideExplanation', 
+    'hideGrabTuto', 
+    'hideArrowCatch', 
+    'hideArrowInventory', 
+    'hideInventory', 
+    'showArrowInventoryPossible'
+  ])
   },
   methods: {
-    ...mapActions(['toggleHideExplanation']),
+    ...mapActions(['toggleHideExplanation', 'toggleDisableCanvasJeu']),
     startGame() {
       this.toggleHideExplanation();
-      document.getElementById("threeJeu").style.cursor = "grab";
+      this.toggleDisableCanvasJeu();
     }
   }
 }

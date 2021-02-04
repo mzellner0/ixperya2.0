@@ -7,7 +7,7 @@
             :icon="['fas', 'hand-paper']"
           />
         </button>
-        <button class="menu-jeu__inventoryButton">
+        <button class="menu-jeu__inventoryButton" @click="onClickInventoryButton">
           <font-awesome-icon
             class="icon"
             :icon="['fas', 'box-open']"
@@ -16,11 +16,14 @@
     </div>
     <div :class="['menu-jeu__inventory', { 'hidden': hideInventory }]">
         <ul class="menu-jeu__inventoryList">
-            <li class="menu-jeu__inventoryEmpty">
+            <li class="menu-jeu__inventoryEmpty" v-if="!cardInInventory">
               <font-awesome-icon
                 class="icon"
                 :icon="['fas', 'ban']"
               />
+            </li>
+            <li v-if="cardInInventory" @click="onClickOnCard">
+              <img src="@/assets/img/imgMenuJeu/card.png" alt="card" />
             </li>
         </ul>
     </div>
@@ -28,19 +31,26 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: "MenuJeu",
   props: {
     robot: { type: Object, default: () => {} },
     card: { type: Object, default: () => {} },
+    door: { type: Object, default: () => {} },
     particules: { type: Object, default: () => {} }
   },
   computed: {
-    ...mapState(['hideButtonsMenu', 'hideInventory'])
+    ...mapState(['hideButtonsMenu', 'hideInventory', 'cardInInventory'])
   },
   methods: {
+    ...mapActions([
+      'toggleShowCatchArrowPossible', 
+      'toggleHideInventory', 
+      'toggleCardInInventory', 
+      'toggleShowInventoryArrowPossible'
+    ]),
     onClickCatchButton(){
       this.robot.changeAnimationToCatchObject()
       if(this.robot.firstGltfChild.position.x <= this.card.firstGltfChild.position.x + this.card.distanceToRobot 
@@ -51,9 +61,30 @@ export default {
             this.card.fadeOutElmt(this.delayOfAnimationStart);
             // this.inventory.addObject('card', this.addEventOnObjectCard.bind(this))
             this.particules.removeSprites("doorRobot");
-            // this.tuto.deleteArrowCatch();
-            // this.tuto.showArrowCatchPossible = false;
+            this.toggleCardInInventory();
+            this.toggleShowCatchArrowPossible();
+            this.toggleHideInventory();
+
+            setTimeout(() => {
+              this.toggleHideInventory();
+            }, 1000);
         }, 1300)
+      }
+    },
+    onClickInventoryButton() {
+      this.toggleHideInventory();
+    },
+    onClickOnCard() {
+      if(this.robot.firstGltfChild.position.x <= this.door.firstGltfChild.position.x + this.door.distanceToRobot 
+      && this.robot.firstGltfChild.position.x >= this.door.firstGltfChild.position.x - this.door.distanceToRobot
+      && this.robot.firstGltfChild.position.z <= this.door.firstGltfChild.position.z + this.door.distanceToRobot
+      && this.robot.firstGltfChild.position.z >= this.door.firstGltfChild.position.z - this.door.distanceToRobot){
+          this.toggleCardInInventory();
+          this.door.openDoors();
+          this.toggleShowInventoryArrowPossible();
+          setTimeout(() => {
+            this.toggleHideInventory();
+          }, 200);
       }
     }
   }

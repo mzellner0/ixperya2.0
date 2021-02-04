@@ -1,6 +1,6 @@
 <template>
     <header>
-        <img alt="logo" src="@/assets/svg/logoEpais.svg" @click="goToAccueil">
+        <img alt="logo" src="@/assets/img/svg/logoEpais.svg" @click="goToAccueil">
         <div class="text-header">
             <h1>IXPERYA</h1>
             <p>Développement web</p>
