@@ -78,6 +78,9 @@ export default {
     transform-origin: center;
     animation: waves 900ms ease-in-out infinite;
     transition: $fadeDurationTuto;
+    @include breakpoint(500) {
+      margin-top: 150px;
+    }
   }
   &__arrow{
     z-index: inherit;
@@ -110,11 +113,14 @@ export default {
     height: 270px;
     border: solid 2px #182836;
     border-radius: 40px;
-    @media (max-width: 500px){
+    @include breakpoint(500){
       width: 80%;
       min-width: auto;
-      padding: 15px 20px;
-      margin-top: 95px;
+      height: 225px;
+      border-radius: 20px;
+      padding: 15px 10px;
+      margin-top: 70px;
+      font-size: 17px;
     }
   }
   p{
@@ -140,6 +146,9 @@ export default {
       color: $color-header-dark;
       animation: waves 1000ms ease-in-out infinite;
       border-color: $color-header-dark;
+    }
+    @include breakpoint(500){
+      font-size: 15px;
     }
   }
 }

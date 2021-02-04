@@ -32,6 +32,11 @@ export default {
   left: 35%;
   width: 30%;
   z-index: 2;
+  @include breakpoint(500){
+    top: 70px;
+    left: 5%;
+    width: 90%;
+  }
   &__text {
     @include flex(column, center, space-around);
     text-align: center;
@@ -46,11 +51,14 @@ export default {
     height: 270px;
     border: solid 2px #182836;
     border-radius: 40px;
-    @media (max-width: 500px){
-      width: 80%;
+    @include breakpoint(500){
+      width: 90%;
       min-width: auto;
-      padding: 15px 20px;
-      margin-top: 95px;
+      height: 125px;
+      border-radius: 20px;
+      padding: 15px 10px;
+      margin-top: 120px;
+      font-size: 17px;
     }
   }
 }
@@ -75,5 +83,8 @@ button {
     animation: waves 1000ms ease-in-out infinite;
     border-color: $color-header-dark;
   }
+    @include breakpoint(500){
+    font-size: 15px;
   }
+}
 </style>
