@@ -36,7 +36,7 @@ export default {
     }
   },
   mounted() {
-    this.scene = new Scene(document.getElementById("threeCustom"), { x: 0, y: 0, z: 6 }, 2.5, 2, true);
+    this.scene = new Scene(document.getElementById("threeCustom"), { x: 0, y: 0, z: 6 }, 2.5, 2, 2.5, 2, true, 1000);
     this.clock = new Clock(this.scene, "src/gltf/clock.glb", false, 1, this.callbackClock.bind(this));
   },
   beforeUnmount() {

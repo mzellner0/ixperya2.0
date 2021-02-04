@@ -2,11 +2,26 @@ import Scene from "./Scene";
 import * as THREE from 'three';
 
 export default class SceneJeu extends Scene {
-  constructor(htmlElmt, camPos, widthFactor, heightFactor, isOrbitControls) {
-    super(htmlElmt, camPos, widthFactor, heightFactor, isOrbitControls);
+  constructor(htmlElmt, 
+    camPos, 
+    widthFactorLargeScreen, 
+    heightFactorLargeScreen, 
+    widthFactorSmallScreen,
+    heightFactorSmallScreen, 
+    isOrbitControls,
+    smallScreenSize) {
+    super(htmlElmt, 
+      camPos, 
+      widthFactorLargeScreen, 
+      heightFactorLargeScreen, 
+      widthFactorSmallScreen,
+      heightFactorSmallScreen,
+      isOrbitControls,
+      smallScreenSize);
   }
 
   init3DScene () {
+      this.checkScreen();
       this.createScene();
       this.createCamera();
       this.createRenderer();

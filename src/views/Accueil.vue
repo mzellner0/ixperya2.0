@@ -1,23 +1,25 @@
 <template>
   <div class="accueil">
-    <div class="accueil__question">
-      <div class="accueil__border-futura anim-border-left" />
-      <div class="accueil__text">
-        <p>{{ question }}</p>
-      </div>
-      <div class="accueil__answers">
-        <ButtonsAccueil 
-          :list-buttons="listButtons" 
-          @change-questions="getRedirect"
+    <div class="accueil__container">
+      <div class="accueil__question">
+        <div class="accueil__border-futura anim-border-left" />
+        <div class="accueil__text">
+          <p>{{ question }}</p>
+        </div>
+        <div class="accueil__answers">
+          <ButtonsAccueil 
+            :list-buttons="listButtons" 
+            @change-questions="getRedirect"
+          />
+        </div>
+        <font-awesome-icon 
+          :class="['arrow', { 'hide': hideArrow }]" 
+          :icon="['fas', 'arrow-circle-left']"
+          @click="backQuestions"
         />
       </div>
-      <font-awesome-icon 
-        :class="['arrow', { 'hide': hideArrow }]" 
-        :icon="['fas', 'arrow-circle-left']"
-        @click="backQuestions"
-      />
+      <canvas id="threeAccueil"></canvas>
     </div>
-    <canvas id="threeAccueil"></canvas>
   </div>
 </template>
 
@@ -35,7 +37,7 @@ export default {
     return {
       scene: null,
       robot: null,
-      question: "Bonjour, que cherchez vous ?",
+      question: "Bonjour, que cherchez-vous ?",
       firstListButtons: [
         { id: 1, question: "Je veux créer/refaire mon site de zéro." },
         { id: 2, question: "Je veux améliorer mon site." },
@@ -54,7 +56,7 @@ export default {
     this.listButtons = this.firstListButtons;
   },
   mounted() {
-    this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5, false);
+    this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5, 1.5, 3, false, 1150);
     this.robot = new Gltf(this.scene, "src/gltf/robot_v003.glb", true, 1, this.callbackRobot.bind(this));
   },
   beforeUnmount() {
@@ -84,6 +86,11 @@ export default {
   z-index: 0;
   top: 140px;
   right: 15%;
+  @include breakpoint(1150) {
+    position: relative;
+    right: 0%;
+    top: 0px;
+  }
 }
 
 .hide {
@@ -103,9 +110,19 @@ export default {
 }
 
 .accueil {
+  &__container {
+    @include breakpoint(1150) {
+      width: 100%;
+      @include flex(column, center, center);
+    }
+  }
   &__question {
     margin-left: 25%;
     margin-top: 150px;
+    @include breakpoint(1150) {
+      margin-top: 60px;
+      margin-left: 0%;
+    }
   }
   &__text {
     position: absolute;

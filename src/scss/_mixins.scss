@@ -55,3 +55,9 @@
     align-items: $align;
     justify-content: $justify;
 }
+
+@mixin breakpoint($maxValue) {
+    @media (max-width: $maxValue + "px"){
+        @content;
+    }
+}

@@ -3,16 +3,29 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import TWEEN from '@tweenjs/tween.js'
 
 export default class Scene {
-    constructor(htmlElmt, camPos, widthFactor, heightFactor, isOrbitControls) {
-        this.widthFactor = widthFactor;
-        this.heightFactor = heightFactor;
+    constructor(htmlElmt, 
+        camPos, 
+        widthFactorLargeScreen,
+        heightFactorLargeScreen,
+        widthFactorSmallScreen,
+        heightFactorSmallScreen,
+        isOrbitControls,
+        smallScreenSize) {
         this.camPos = camPos;
         this.htmlElmt = htmlElmt;
         this.isOrbitControls = isOrbitControls;
 
+        this.heightFactorLargeScreen = heightFactorLargeScreen
+        this.widthFactorLargeScreen = widthFactorLargeScreen
+        this.heightFactorSmallScreen = heightFactorSmallScreen
+        this.widthFactorSmallScreen = widthFactorSmallScreen
+
+        this.smallScreenSize = smallScreenSize
+
         this.init3DScene();
     }
     init3DScene () {
+        this.checkScreen();
         this.createScene();
         this.createCamera();
         this.createRenderer();
@@ -24,6 +37,20 @@ export default class Scene {
 
     createScene () {
         this.scene = new THREE.Scene();
+    }
+
+    isSmallScreen() {
+        return this.smallScreenSize > window.innerWidth
+    }
+
+    checkScreen() {
+        if (this.isSmallScreen()) {
+            this.heightFactor = this.heightFactorSmallScreen
+            this.widthFactor = this.widthFactorSmallScreen
+        } else {
+            this.heightFactor = this.heightFactorLargeScreen
+            this.widthFactor = this.widthFactorLargeScreen
+        }
     }
 
     createCamera() {
@@ -73,7 +100,7 @@ export default class Scene {
 
     onResize(){
         window.addEventListener('resize', () => {
-            // this.checkScreen()
+            this.checkScreen();
             this.renderer.setSize( (window.innerWidth / this.widthFactor), (window.innerHeight / this.heightFactor) );
             this.camera.aspect = (window.innerWidth / this.widthFactor) / (window.innerHeight / this.heightFactor);
             this.camera.updateProjectionMatrix();
