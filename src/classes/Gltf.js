@@ -2,11 +2,13 @@ import * as THREE from 'three';
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
 export default class Gltf {
-    constructor(scene, importFile, isAnimations, callback) {
+    constructor(scene, importFile, isAnimations, opacityInit, callback) {
         this.scene = scene;
         this.importFile = importFile;
         this.isAnimations = isAnimations;
         this.callback = callback;
+        this.opacityInit = opacityInit;
+        this.boundingBox = [];
         this.clock = new THREE.Clock();
         this.init();
     }
@@ -32,7 +34,7 @@ export default class Gltf {
                 if (node.isMesh) {
                     node.frustumCulled = false
                     node.material.transparent = true
-                    // node.material.opacity = this.opacityInit
+                    node.material.opacity = this.opacityInit
                     node.material.envMap = textureCube
                     node.material.envMapIntensity = 2
                     if(node.material.map){
@@ -44,7 +46,7 @@ export default class Gltf {
             this.gltf = object.scene
             this.firstGltfChild = object.scene.children[0]
 
-            // this.createBoudingBox();
+            this.createBoudingBox();
 
             if(this.isAnimations){
                 this.animationsList = object.animations;
@@ -70,6 +72,23 @@ export default class Gltf {
         mixerOfAnimation.play()
     }
 
+    createBoudingBox(){
+        this.boundingBox.push(new THREE.Box3().setFromObject(this.firstGltfChild));
+    }
+
+    moveGltf(x, y, z){
+        this.firstGltfChild.position.x = x
+        this.firstGltfChild.position.y = y
+        this.firstGltfChild.position.z = z
+        this.boundingBox.map(boundingBox => boundingBox.setFromObject(this.firstGltfChild));
+    }
+
+    animateBoundingBox(){
+        if(this.boundingBox){
+            this.boundingBox.map(boundingBox => boundingBox.setFromObject(this.firstGltfChild))
+        }
+    }
+
     stopAnimate(){
         cancelAnimationFrame(this.idAnimateFunction);
     }
@@ -86,6 +105,6 @@ export default class Gltf {
             this.mixer.update(delta)
         }
 
-        // this.animateBoundingBox()
+        this.animateBoundingBox()
     }
 }

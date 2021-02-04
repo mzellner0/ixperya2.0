@@ -3,13 +3,23 @@ import * as THREE from 'three';
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
 export default class Robot extends Gltf {
-  constructor(scene, importFile, isAnimations, callback){
-    super(scene, importFile, isAnimations, callback)
+  constructor(scene, importFile, isAnimations, opacityInit, callback){
+    super(scene, importFile, isAnimations, opacityInit, callback)
 
-    this.animationsActions = []
-    this.activeAnimation
-    this.changeAnimation = false
-    this.onCatching = false
+    this.animationsActions = [];
+    this.activeAnimation;
+    this.changeAnimation = false;
+    this.onCatching = false;
+    this.boundingBox = null;
+
+    this.initRobot();
+  }
+
+  init() {}
+
+  initRobot() {
+    this.importGltf();
+    this.animate();
   }
 
   importGltf(){
@@ -36,7 +46,7 @@ export default class Robot extends Gltf {
         })
         
         this.gltf = object.scene
-        this.moveGltfNull = object.scene.children[0]
+        this.firstGltfChild = object.scene.children[0]
 
         const geometry = new THREE.BoxBufferGeometry( 5, 9, 6 )
         const material = new THREE.MeshBasicMaterial( { transparent : true, opacity: 0, depthWrite: false, depthTest: false } )
@@ -44,7 +54,7 @@ export default class Robot extends Gltf {
         this.boundingBoxObject.position.set(0, 8, 0)
         this.boundingBox = new THREE.Box3().setFromObject(this.boundingBoxObject)
 
-        this.moveGltfNull.add(this.boundingBoxObject)
+        this.firstGltfChild.add(this.boundingBoxObject)
         
         this.idleAnimation = THREE.AnimationClip.findByName(object.animations, 'idle')
         this.moveAnimation = THREE.AnimationClip.findByName(object.animations, 'move')
@@ -72,8 +82,8 @@ export default class Robot extends Gltf {
   }
 
   resetPosition(){
-    this.moveGltfNull.position.set(0, 0, 0)
-    this.moveGltfNull.rotation.y = 0
+    this.firstGltfChild.position.set(0, 0, 0)
+    this.firstGltfChild.rotation.y = 0
   }
 
   checkIntersections(box){
@@ -120,5 +130,19 @@ export default class Robot extends Gltf {
             this.changeAnimation = false
         }
     }
+  }
+
+  animate(){
+    this.playAnimate()
+
+    if (this.mixer) {
+        const delta = this.clock.getDelta()
+        this.mixer.update(delta)
+    }
+    if(this.boundingBox){
+        this.boundingBox.setFromObject(this.boundingBoxObject)
+    }
+
+    this.updateAnimation()
   }
 }

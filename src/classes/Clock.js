@@ -3,8 +3,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
 export default class Clock extends Gltf{
-    constructor(scene, importFile, isAnimations, callback){
-      super(scene, importFile, isAnimations, callback)
+    constructor(scene, importFile, isAnimations, opacityInit, callback){
+      super(scene, importFile, isAnimations, opacityInit, callback)
     }
 
     importGltf(){
