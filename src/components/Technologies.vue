@@ -24,8 +24,6 @@ export default {
 
 <style lang="scss" scoped>
 .technos {
-  margin-top: 80px;
-  margin-bottom: 50px;
   @include flex(column, center, center);
   color: white;
   background-color: $color-header-dark;

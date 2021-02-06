@@ -7,7 +7,9 @@
 		<div class="developpeur__portfolio">
 			<Portfolio :projets-list="projetsList" />
 		</div>
-		<Technologies />
+		<div class="developpeur__technos">
+			<Technologies />
+		</div>
 		<div class="developpeur__buttons">
 			<Button :text="'Contactez-moi'" :composant-name="'Contact'" />
 		</div>
@@ -79,35 +81,8 @@ export default {
 		margin-bottom: 100px;
 	}
 	&__technos {
-		margin-top: 80px;
-		margin-bottom: 10px;
-		@include flex(column, center, center);
-		color: white;
-		background-color: $color-header-dark;
-		.frontend, .backend {
-			@include flex(row, center, center);
-			img {
-				max-height: 100px;
-				margin: 0px 20px;
-			}
-			.mysql {
-				margin-bottom: 55px;
-			}
-			&:last-of-type {
-				margin-bottom: 40px;
-			}
-		}
-		h2 {
-			margin-top: 70px;
-			margin-bottom: 50px;
-			font-family: $police-logo;
-			text-transform: uppercase;
-			font-size: 15px;
-			font-weight: 800;
-			&:last-of-type {
-				margin-bottom: 5px;
-			}
-		}
+		margin-top: 10px;
+		margin-bottom: 50px;
 	}
 	&__buttons {
 		@include flex(row, center, center);

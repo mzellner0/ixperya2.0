@@ -32,7 +32,7 @@ export default {
 	width: 100%;
 	&__apropos {
     margin-top: -20px;
-		margin-bottom: 70px;
+		margin-bottom: 60px;
 	}
 	&__buttons {
 		@include flex(row, center, center);
@@ -40,6 +40,7 @@ export default {
 	}
 	&__technos {
 		margin-bottom: 100px;
+		margin-top: 60px;
 	}
 }
 </style>
