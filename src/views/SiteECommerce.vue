@@ -2,7 +2,7 @@
   <div class="siteECommerce">
     <BasePageSpecialisee
       :title1="'La solutions pour que votre site vous rapporte enfin de l\'argent (au lieu de vous en coûter) :'"
-      :title2="'Vous vendez des produits ?'"
+      :title2="'Faites de votre site un jeu interactif !'"
       :title3="'Ensemble, Créons votre site'"
       :paragraph1="'GRÂCE À NOTRE OUTIL PERMETTANT LA PERSONNALISATION D’OBJETS SOUS FORME DE JEU 3D, IMPLIQUEZ VOS VISITEURS DANS LA CRÉATION DE LEURS PROPRES COMMANDES ET AINSI AUGMENTEZ VOS VENTES.'"
     >

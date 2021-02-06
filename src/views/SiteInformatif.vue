@@ -2,7 +2,7 @@
   <div class="siteInfo">
     <BasePageSpecialisee
       :title1="'La solutions pour que votre site vous rapporte enfin de l\'argent (au lieu de vous en coûter) :'"
-      :title2="'Vous avez un site informatif ?'"
+      :title2="'Mettez en avant votre marque avec un design élégant.'"
       :title3="'Ensemble, Créons votre site'"
       :paragraph1="'GRÂCE À UNE CHARTE GRAPHIQUE RÉUSSIE, GAGNEZ EN CRÉDIBILTIÉ (ÉVITEZ QUE VOTRE SITE NE FASSE PEUR).'"
     >

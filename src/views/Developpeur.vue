@@ -1,11 +1,11 @@
 <template>
 	<div class="developpeur">
-		<Title :title="'Vous cherchez un développeur web ?'" />
-		<div class="developpeur__portfolio">
-			<Portfolio :projets-list="projetsList" />
-		</div>
+		<Title :title="'Me voici !'" />
 		<div class="developpeur__apropos">
 			<AProposDevComponent />
+		</div>
+		<div class="developpeur__portfolio">
+			<Portfolio :projets-list="projetsList" />
 		</div>
 		<Technologies />
 		<div class="developpeur__buttons">
@@ -72,7 +72,7 @@ export default {
 .developpeur {
 	width: 100%;
 	&__portfolio {
-		margin-top: 250px;
+		margin-top: 100px;
 	}
 	&__apropos {
 		margin-top: 50px;
@@ -80,7 +80,7 @@ export default {
 	}
 	&__technos {
 		margin-top: 80px;
-		margin-bottom: 50px;
+		margin-bottom: 10px;
 		@include flex(column, center, center);
 		color: white;
 		background-color: $color-header-dark;

@@ -1,11 +1,13 @@
 <template>
-	<div class="qui-suis-je">
-		<div class="qui-suis-je__apropos">
+	<div class="apropos">
+		<div class="apropos__apropos">
 			<AProposComponent />
 		</div>
-    <Technologies />
-		<div class="qui-suis-je__buttons">
+		<div class="apropos__buttons">
 			<Button :text="'Contactez-moi'" :composant-name="'Contact'" />
+		</div>
+		<div class="apropos__technos">
+			<Technologies	/>
 		</div>
 	</div>
 </template>
@@ -26,16 +28,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.qui-suis-je {
+.apropos {
 	width: 100%;
 	&__apropos {
     margin-top: -20px;
-		margin-bottom: 100px;
+		margin-bottom: 70px;
 	}
 	&__buttons {
 		@include flex(row, center, center);
 		width: 100%;
-		margin-bottom: 80px;
+	}
+	&__technos {
+		margin-bottom: 100px;
 	}
 }
 </style>
