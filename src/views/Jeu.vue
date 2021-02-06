@@ -69,11 +69,14 @@ export default {
       }
     }
   },
+  created() {
+    this.showLoader();
+  },
   mounted() {
     this.canvas = document.getElementById("threeJeu");
 
     this.scene = new SceneJeu(document.getElementById("threeJeu"), { x: 0, y: 8, z: 20 }, 1, 1, 1, 1, false, 1000);
-    this.robot = new Robot(this.scene, "src/gltf/robot_v003.glb", true);
+    this.robot = new Robot(this.scene, "src/gltf/robot_v003.glb", true, 1, this.callbackRobotLoaded.bind(this));
     this.card = new ObjectJeu(this.scene, 'src/gltf/carte_v001.glb', false, 0, this.callbackCardLoaded.bind(this), 8);
     this.door = new Door(this.scene, 'src/gltf/door_v002.glb', true, 0, this.callBackDoorLoaded.bind(this), 15);
 
@@ -93,7 +96,9 @@ export default {
       'hideWin',
       'toggleShowCatchArrowPossible',
       'toggleShowInventoryArrowPossible',
-      'hideGrabTuto'
+      'hideGrabTuto',
+      'hideLoader',
+      'showLoader'
     ]),
     onClickOnPlay() {
       this.animCamOnFirstClick();
@@ -107,6 +112,9 @@ export default {
     animCamOnFirstClick(){
       new TWEEN.Tween(this.scene.cameraGroup.rotation).to({ x: MathUtils.degToRad(-20) }, this.delayOfAnimationStart).easing(TWEEN.Easing.Quadratic.Out).start()
       new TWEEN.Tween(this.scene.camera.position).to({ z: 35 }, this.delayOfAnimationStart).easing(TWEEN.Easing.Quadratic.Out).start()
+    },
+    callbackRobotLoaded() {
+      this.hideLoader();
     },
     callbackCardLoaded() {
       const randomX = getRandom(-this.scene.numberOfPoint*10/2, this.scene.numberOfPoint*10/2 - 10);

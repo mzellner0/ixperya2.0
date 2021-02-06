@@ -2,6 +2,8 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    showLoader: false,
+
     menuOpen: false,
     linkBackPortfolio: null,
 
@@ -24,6 +26,13 @@ export default createStore({
     restartGame: false
   },
   mutations: {
+    SHOW_LOADER (state) {
+      state.showLoader = true;
+    },
+    HIDE_LOADER (state) {
+      state.showLoader = false;
+    },
+
     TOGGLE_MENU (state) {
       state.menuOpen = !state.menuOpen;
     },
@@ -86,6 +95,13 @@ export default createStore({
     }
   },
   actions: {
+    showLoader ({ commit }) {
+      commit('SHOW_LOADER')
+    },
+    hideLoader ({ commit }) {
+      commit('HIDE_LOADER')
+    },
+
     toggleMenu ({ commit }) {
       commit('TOGGLE_MENU');
     },

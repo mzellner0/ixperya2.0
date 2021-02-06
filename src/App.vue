@@ -1,18 +1,21 @@
 <template>
   <Header/>
   <Menu/>
+  <Loader />
 </template>
 
 <script>
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Menu from '@/components/Menu.vue'
+import Loader from "@/components/Loader.vue";
 
 export default {
   name: 'Ixperya',
   components: {
     Header,
-    Menu
+    Menu,
+    Loader
   }
 }
 </script>

@@ -20,6 +20,7 @@
 <script>
 import Scene from "@/classes/Scene.js";
 import Gltf from "@/classes/Gltf.js";
+import { mapActions } from 'vuex'
 
 export default {
   name: "Contact",
@@ -28,6 +29,9 @@ export default {
       scene: null,
       robot: null
     }
+  },
+  created() {
+    this.showLoader();
   },
   mounted() {
     this.scene = new Scene(document.getElementById("threeContact"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5, 1.5, 3, false, 1150);
@@ -38,9 +42,11 @@ export default {
     this.scene.stopAnimate();
   },
   methods: {
+    ...mapActions(['showLoader', 'hideLoader']),
     callbackRobot() {
       this.robot.playAnimation("hello");
       this.robot.firstGltfChild.rotation.y = -0.3;
+      this.hideLoader();
     },
   }
 }

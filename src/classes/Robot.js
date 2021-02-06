@@ -76,8 +76,11 @@ export default class Robot extends Gltf {
         this.animationsActions.push(this.move)
         this.animationsActions.push(this.catch)
 
-        this.scene.importObj(this.gltf)
+        if(this.callback){
+          this.callback()
+        }
 
+        this.scene.importObj(this.gltf)
     })
   }
 

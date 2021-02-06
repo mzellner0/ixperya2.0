@@ -27,6 +27,8 @@
 import Scene from "@/classes/Scene.js";
 import Gltf from "@/classes/Gltf.js";
 import ButtonsAccueil from "@/components/ButtonsAccueil.vue";
+import { mapActions } from 'vuex'
+
 
 export default {
   name: 'Accueil',
@@ -54,6 +56,7 @@ export default {
   },
   created() {
     this.listButtons = this.firstListButtons;
+    this.showLoader();
   },
   mounted() {
     this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5, 1.5, 3, false, 1150);
@@ -64,9 +67,11 @@ export default {
     this.scene.stopAnimate();
   },
   methods: {
+    ...mapActions(['showLoader', 'hideLoader']),
     callbackRobot() {
       this.robot.playAnimation("hello");
       this.robot.firstGltfChild.rotation.y = -0.3;
+      this.hideLoader();
     },
     getRedirect() {
       this.listButtons = this.secondListButtons;

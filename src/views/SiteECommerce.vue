@@ -27,16 +27,19 @@
 <script>
 import BasePageSpecialisee from "@/components/BasePageSpecialisee.vue";
 import OutilPersonnalisation from "@/components/OutilPersonnalisation.vue";
+import { mapActions } from 'vuex'
 
 export default {
   name: "SiteECommerce",
   components: {
     BasePageSpecialisee,
     OutilPersonnalisation
+  },
+  created() {
+    this.showLoader();
+  },
+  methods: {
+    ...mapActions(['showLoader']),
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  
-</style>
