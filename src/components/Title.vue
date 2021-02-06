@@ -1,16 +1,21 @@
 <template>
   <div class="title">
-    <div class="border-futura-left anim-border-left" />
+    <div :class="['border-futura-left', { 'anim-border-left': !loader }]" />
     <h1>{{ title }}</h1>
-    <div class="border-futura-right anim-border-right" />
+    <div :class="['border-futura-right', { 'anim-border-right': !loader }]" />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: "Title",
   props: {
     title: { type: String, default: "" }
+  },
+  computed: {
+    ...mapState(['loader'])
   }
 }
 </script>

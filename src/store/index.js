@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    showLoader: false,
+    loader: false,
 
     menuOpen: false,
     linkBackPortfolio: null,
@@ -27,10 +27,10 @@ export default createStore({
   },
   mutations: {
     SHOW_LOADER (state) {
-      state.showLoader = true;
+      state.loader = true;
     },
     HIDE_LOADER (state) {
-      state.showLoader = false;
+      state.loader = false;
     },
 
     TOGGLE_MENU (state) {

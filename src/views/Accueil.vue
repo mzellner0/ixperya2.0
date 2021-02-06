@@ -2,7 +2,7 @@
   <div class="accueil">
     <div class="accueil__container">
       <div class="accueil__question">
-        <div class="accueil__border-futura anim-border-left" />
+        <div :class="['accueil__border-futura', { 'anim-border-left': !loader }]" />
         <div class="accueil__text">
           <p>{{ question }}</p>
         </div>
@@ -27,7 +27,7 @@
 import Scene from "@/classes/Scene.js";
 import Gltf from "@/classes/Gltf.js";
 import ButtonsAccueil from "@/components/ButtonsAccueil.vue";
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 
 export default {
@@ -52,6 +52,9 @@ export default {
       listButtons: null,
       hideArrow: true
     }
+  },
+  computed: {
+    ...mapState(['loader'])
   },
   created() {
     this.listButtons = this.firstListButtons;

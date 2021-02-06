@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showLoader" class="loader bg">
+  <div v-if="loader" class="loader bg">
       <span class="loader__circle"></span>
       <p>Chargement ...</p>
   </div>
@@ -11,7 +11,7 @@ import { mapState } from 'vuex'
 export default {
   name: "Loader",
     computed: {
-    ...mapState(['showLoader'])
+    ...mapState(['loader'])
   }
 }
 </script>

@@ -2,7 +2,7 @@
   <div class="contact">
     <div class="contact__container">
       <div class="contact__blockLeft">
-        <div class="contact__border-futura anim-border-left" />
+        <div :class="['contact__border-futura', { 'anim-border-left': !loader }]" />
         <div class="contact__texts">
           <h2>Des questions ?</h2>
           <h1>Contact :</h1>
@@ -20,7 +20,7 @@
 <script>
 import Scene from "@/classes/Scene.js";
 import Gltf from "@/classes/Gltf.js";
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: "Contact",
@@ -29,6 +29,9 @@ export default {
       scene: null,
       robot: null
     }
+  },
+  computed: {
+    ...mapState(['loader'])
   },
   created() {
     this.showLoader();
