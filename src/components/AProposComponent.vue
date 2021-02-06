@@ -6,12 +6,11 @@
       <h1>Maud Zellner</h1>
       <h2>Développeuse Web</h2>
       <p>
-        Mon but premier est d'aider votre entreprise à se réaliser. <br>
+        Mon but premier est d'aider votre entreprise à augmenter son chiffre d'affaire. <br>
         Je suis avant tout à VOTRE écoute pour qu'ensemble, nous mettions tout en oeuvre pour réaliser votre projet de la meilleure manière possible. 
       </p>
       <p>
-        Il y a quelques temps, j’ai voulu découvrir le monde du web. Ce domaine m'a tellement passionné que j'ai décidé d'en faire mon métier. <br>
-        Etant anciennement infographiste 3D, j’apprécie réellement marier le code et le design pour permettre à vos applications web d'être à la fois fluides, rapides et élégantes. 
+        Etant à la fois développeuse web et infographiste 3D, j’apprécie réellement marier le code et le design pour permettre à vos applications web d'être à la fois fluides, rapides et élégantes. 
       </p>
       <p>
         Riche de mes expériences, je ne demande qu’à vous aider. <br>

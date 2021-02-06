@@ -1,10 +1,10 @@
 <template>
   <div class="siteInfo">
     <BasePageSpecialisee
-      :title1="'La solutions pour que votre site vous rapporte enfin de l\'argent (au lieu de vous en coûter) :'"
-      :title2="'Mettez en avant votre marque avec un design élégant.'"
+      :title1="'La solution pour que votre site vous rapporte enfin de l\'argent (au lieu de vous en coûter) :'"
+      :title2="'Créez une charte graphique réussie et ainsi, gagnez en crédibilité (évitez que votre site ne fasse peur).'"
       :title3="'Ensemble, Créons votre site'"
-      :paragraph1="'GRÂCE À UNE CHARTE GRAPHIQUE RÉUSSIE, GAGNEZ EN CRÉDIBILTIÉ (ÉVITEZ QUE VOTRE SITE NE FASSE PEUR).'"
+      :paragraph1="'Voici un exemple de design que nous pouvons réaliser :'"
     >
       <template v-slot:content>
         <div class="siteInfo__portfolio">
@@ -63,7 +63,7 @@ export default {
 <style lang="scss" scoped>
 .siteInfo {
   &__portfolio {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 }
 </style>

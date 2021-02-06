@@ -41,8 +41,7 @@ export default {
       robot: null,
       question: "Bonjour, que cherchez-vous ?",
       firstListButtons: [
-        { id: 1, question: "Je veux créer/refaire mon site de zéro." },
-        { id: 2, question: "Je veux améliorer mon site." },
+        { id: 1, question: "Je veux créer/refaire mon site." },
         { id: 3, question: "Je cherche un développeur web." },
         { id: 4, question: "Je veux créer un jeu vidéo sur le web." }
       ],

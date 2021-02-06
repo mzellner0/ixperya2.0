@@ -1,6 +1,6 @@
 <template>
 	<div class="developpeur">
-		<Title :title="'Me voici !'" />
+		<Title :title="'Voici la développeuse web qu\'il vous manquait !'" />
 		<div class="developpeur__apropos">
 			<AProposDevComponent />
 		</div>
@@ -77,7 +77,7 @@ export default {
 		margin-top: 100px;
 	}
 	&__apropos {
-		margin-top: 50px;
+		margin-top: 100px;
 		margin-bottom: 100px;
 	}
 	&__technos {

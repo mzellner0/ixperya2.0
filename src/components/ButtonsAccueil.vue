@@ -22,7 +22,6 @@ export default {
     detectChoice(id) {
       switch (id) {
         case 1:
-        case 2:
           this.$emit('changeQuestions', true);
           break;
         case 3:

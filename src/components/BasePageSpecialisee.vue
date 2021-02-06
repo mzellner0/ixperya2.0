@@ -12,7 +12,7 @@
       <slot name="paragraph2"></slot>
     </div>
     <div class="page-spec__buttons">
-      <Button :text="'Contact'" :composant-name="'Contact'" />
+      <Button :text="'Contactez-moi'" :composant-name="'Contact'" />
     </div>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
     margin: auto;
     margin-top: 200px;
     max-width: 800px;
-    line-height: 25px;
+    line-height: 30px;
     @include breakpoint(900) {
       width: 80%;
       margin: 0px 10%;

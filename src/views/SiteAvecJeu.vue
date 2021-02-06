@@ -1,7 +1,7 @@
 <template>
   <div class="siteJeu">
     <BasePageSpecialisee
-      :title1="'Vous souhaitez créer un jeu sur le web ?'"
+      :title1="'Rendez votre site interactif et captez l\'attention de vos visiteurs.'"
       :title2="'Grâce à la 3D tout devient possible !'"
       :title3="'Ensemble, Créons votre site'"
       :paragraph1="'Vous vous demandez à quoi cela peut bien ressembler ? Regardez plutôt un exemple :'"
