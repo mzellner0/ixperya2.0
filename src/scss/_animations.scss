@@ -53,6 +53,19 @@
     }
 }
 
+@keyframes rightLeftArrow {
+    0%{
+        transform: translateX(0px) rotateZ(180deg);
+    }
+    50% {
+        transform: translateX(5px) rotateZ(180deg);
+
+    }
+    100%{
+        transform: translateX(0px) rotateZ(180deg);
+    }
+}
+
 @keyframes titleUp {
     0%{
         opacity: 0;

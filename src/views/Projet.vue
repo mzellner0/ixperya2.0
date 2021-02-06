@@ -17,22 +17,35 @@
         :key="index"
         :src="img"
         :alt="`image-projet${index}`"
+        @click="onClickOnImage(event, index)"
       >
     </div>
+    <CarrousselImage
+      v-if="showCarroussel"
+      :images="images"
+      :imageStart="imageStart"
+      @close-pop-up="closeCarroussel"
+    />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import CarrousselImage from "@/components/CarrousselImage.vue"
 
 export default {
   name: "Projet",
+  components: {
+    CarrousselImage
+  },
   data: function() {
     return {
       subtitle: "",
       text: "",
       images: [],
-      url: ""
+      url: "",
+      showCarroussel: false,
+      imageStart: 0
     }
   },
   mounted() {
@@ -74,6 +87,13 @@ export default {
   methods: {
     back() {
       this.$router.push({ name: this.linkBackPortfolio });
+    },
+    onClickOnImage(event, index) {
+      this.imageStart = index;
+      this.showCarroussel = true;
+    },
+    closeCarroussel() {
+      this.showCarroussel = false;
     }
   }
 }
@@ -89,10 +109,12 @@ export default {
     margin-top: 50px;
   }
   &__images {
+    user-select: none;
     margin: 60px 0px;
     margin-bottom: 80px;
     width: 100%;
     @include flex(row, center, center);
+    cursor: pointer;
     img {
       max-width: 800px;
       max-height: 500px;

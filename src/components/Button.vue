@@ -7,11 +7,17 @@ export default {
   name: "Button",
   props: {
     text: { type: String, default: null },
-    composantName: { type: String, default: null }
+    composantName: { type: String, default: null },
+    newTab: { type: Boolean, default: false }
   },
   methods: {
     goTo() {
-      this.$router.push({ name: this.composantName });
+      if (!this.newTab) {
+        this.$router.push({ name: this.composantName });
+      } else {
+        const route = this.$router.resolve({ name: this.composantName });
+        window.open(route.href, '_blank');
+      }
     }
   }
 }

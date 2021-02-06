@@ -8,7 +8,7 @@
     >
       <template v-slot:content>
         <div class="siteJeu__button">
-          <Button :text="'Jeu'" :composant-name="'Jeu'" />
+          <Button :text="'Jeu'" :composant-name="'Jeu'" :new-tab="true" />
         </div>
       </template>
       <template v-slot:paragraph2>
