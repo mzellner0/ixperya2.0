@@ -38,6 +38,9 @@ export default {
 .menu-colors {
   margin: 10px 0px;
   @include flex(row, center, space-between);
+  @include breakpoint(600) {
+    flex-direction: column;
+  }
   &__colors {
     @include flex(row, center, center);
   }

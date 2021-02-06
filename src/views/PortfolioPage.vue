@@ -53,5 +53,8 @@ export default {
 <style lang="scss" scoped>
   .portfolio {
     margin: 150px 0px;
+    @include breakpoint(800) {
+      margin: 80px 0px;
+    }
   }
 </style>

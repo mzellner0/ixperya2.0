@@ -30,14 +30,30 @@ export default {
     max-width: 800px;
     margin: auto;
     line-height: 35px;
+    @include breakpoint(950) {
+      font-size: 20px;
+      max-width: 400px;
+    }
+    @include breakpoint(500) {
+      font-size: 20px;
+      max-width: 250px;
+    }
   }
   .border-futura-left {
     @include border-futura-left(160px, 400px);
     left: 20%;
+    @include breakpoint(1440) {
+      @include border-futura-left(160px, 240px);
+      left: 5%;
+    }
   }
   .border-futura-right {
     @include border-futura-right(100px, 300px);
     right: 20%;
+    @include breakpoint(1440) {
+      @include border-futura-right(100px, 180px);
+      right: 5%;
+    }
   }
 }
 </style>

@@ -30,6 +30,9 @@ export default {
     &:hover {
       transform: scale(1.02);
     }
+    @include breakpoint(800) {
+      margin: 25px 0px;
+    }
     &__title {
       font-family: $police-text-2;
       text-transform: uppercase;
@@ -40,6 +43,21 @@ export default {
     &__photo {
       max-width: 700px;
       max-height: 300px;
+      @include breakpoint(1850) {
+        max-height: initial;
+        width: initial;
+        height: 320px;
+      }
+      @include breakpoint(1280) {
+        max-height: initial;
+        width: 600px;
+        height: initial;
+      }
+      @include breakpoint(800) {
+        max-height: initial;
+        width: 300px;
+        height: initial;
+      }
     }
   }
 </style>

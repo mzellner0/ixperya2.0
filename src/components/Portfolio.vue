@@ -37,6 +37,12 @@ export default {
     @include flex(column, flex-start, center);
     &__title {
       margin-left: 10%;
+      @include breakpoint(500) {
+        margin-left: 6%;
+      }
+      @include breakpoint(360) {
+        margin-left: 2%;
+      }
       h1 {
         font-family: $police-logo;
         text-transform: uppercase;
@@ -57,6 +63,13 @@ export default {
     &__projets {
       width: 100%;
       @include flex(row, center, center);
+      @include breakpoint(1850) {
+        @include flex(row, center, space-around);
+        flex-flow: row wrap;
+      }
+      @include breakpoint(1280) {
+        @include flex(column, center, center);
+      }
     }
   }
 </style>

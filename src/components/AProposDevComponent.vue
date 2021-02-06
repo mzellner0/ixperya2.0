@@ -77,6 +77,9 @@ export default {
   width: 70%;
   margin: 20px auto;
 	line-height: 25px;
+  @include breakpoint(800) {
+    width: 80%;
+  }
   &__texts {
     margin-top: 20px;
     @include flex(column, flex-start, center);

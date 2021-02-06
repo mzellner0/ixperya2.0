@@ -41,16 +41,38 @@ export default {
     &:last-of-type {
       margin-bottom: 40px;
     }
+    @include breakpoint(1000) {
+      .mysql {
+        margin-bottom: 30px;
+      }
+      img {
+        max-height: 70px;
+      }
+      &:last-of-type {
+        margin-bottom: 30px;
+      }
+    }
+    @include breakpoint(700) {
+      flex-direction: column;
+      img {
+        margin: 20px 0px;
+      }
+    }
   }
   h2 {
+    margin: 0px 20px;
     margin-top: 70px;
     margin-bottom: 50px;
     font-family: $police-logo;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 800;
+    text-align: center;
     &:last-of-type {
       margin-bottom: 5px;
+    }
+    @include breakpoint(700) {
+      margin-bottom: 30px;
     }
   }
 }

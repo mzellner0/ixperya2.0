@@ -48,12 +48,25 @@ export default {
     margin-top: 200px;
     max-width: 800px;
     line-height: 25px;
+    @include breakpoint(900) {
+      width: 80%;
+      margin: 0px 10%;
+      margin-top: 200px;
+    }
+    @include breakpoint(500) {
+      text-align: left;
+      margin-top: 180px;
+    }
   }
   &__paragraph2 {
     width: 70%;
     margin: 100px auto;
     font-family: $police-text;
     font-size: 16px;
+    @include breakpoint(500) {
+      width: 80%;
+      margin: 60px auto;
+    }
   }
   h2 {
     font-family: $police-logo;
@@ -64,6 +77,9 @@ export default {
   &__buttons {
     @include flex(column, center, center);
     margin-bottom: 100px;
+    @include breakpoint(500) {
+      margin-bottom: 80px;
+    }
   }
 }
 </style>

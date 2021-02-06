@@ -68,5 +68,9 @@ export default {
 .menus-colors {
   width: 400px;
   margin: auto;
+  @include breakpoint(600) {
+    width: auto;
+    margin-top: -20px;
+  }
 }
 </style>
