@@ -99,12 +99,18 @@ export default {
 
 .menu-jeu{
   position: absolute;
-  width: 100%;
+  width: 20%;
+  margin-left: 40%;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   bottom: 30px;
   z-index: 1;
+  height: 70px;
+  @include breakpoint (600) {
+    width: 80%;
+    margin-left: 10%;
+  }
   button {
     z-index: inherit;
     margin: 0px 5px;
@@ -132,8 +138,8 @@ export default {
     background-color: $color-header-dark;
     border-radius: 10px;
     z-index: 10;
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 120px;
+    min-width: 120px;
     transition: 200ms;
     ul{
       z-index: inherit;
@@ -157,8 +163,8 @@ export default {
     }
   }
   &__inventoryEmpty{
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 104px;
+    min-height: 104px;
     display: flex;
     justify-content: center;
     align-items: center;

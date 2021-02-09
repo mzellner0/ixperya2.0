@@ -45,7 +45,6 @@ export default {
     return {
       delayOfAnimationStart: 400,
       gameStarting: false,
-      gameStart: false,
       assetsToCollide: [],
       assetsToIntercept: [],
       canvas: null,
@@ -54,7 +53,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['restartGame', 'disableCanvasJeu', 'win'])
+    ...mapState(['restartGame', 'disableCanvasJeu', 'win', 'gameStart'])
   },
   watch: {
     restartGame: function() {
@@ -98,13 +97,14 @@ export default {
       'toggleShowInventoryArrowPossible',
       'hideGrabTuto',
       'hideLoader',
-      'showLoader'
+      'showLoader',
+      'toggleGameStart'
     ]),
     onClickOnPlay() {
       this.animCamOnFirstClick();
       this.gameStarting = true;
       setTimeout(() => {
-        this.gameStart = true;
+        this.toggleGameStart();
         this.gameStarting = false;
         this.onceGameStart();
       }, this.delayOfAnimationStart);
@@ -144,7 +144,7 @@ export default {
       this.toggleHideExplanation();
     },
     resetGame() {
-      this.gameStart = false;
+      this.toggleGameStart();
       this.hideWin();
       this.resetStyle();
       this.robot.resetPosition();

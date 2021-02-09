@@ -10,28 +10,28 @@
 		<div class="developpeur__technos">
 			<Technologies />
 		</div>
-		<div class="developpeur__buttons">
-			<Button :text="'Contactez-moi'" :composant-name="'Contact'" />
-		</div>
+		<div class="contact">
+      <ContactComponent />
+    </div>
 	</div>
 </template>
 
 <script>
 import Portfolio from "@/components/Portfolio.vue";
-import Button from "@/components/Button.vue";
 import AProposDevComponent from "@/components/AProposDevComponent.vue";
 import Title from "@/components/Title.vue";
 import Technologies from "@/components/Technologies.vue";
+import ContactComponent from "@/components/ContactComponent.vue"
 import { mapActions } from 'vuex'
 
 export default {
 	name: "Developpeur",
 	components: {
 		Portfolio,
-		Button,
 		Title,
 		AProposDevComponent,
-		Technologies
+		Technologies,
+		ContactComponent
 	},
 	data: () => {
     return {
@@ -71,6 +71,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact {
+  margin-bottom: 30px;
+  @include flex(row, center, center);
+  @include breakpoint(1150) {
+    margin-top: 70px;
+  }
+}
+
 .developpeur {
 	width: 100%;
 	&__portfolio {
@@ -82,12 +90,6 @@ export default {
 	}
 	&__technos {
 		margin-top: 10px;
-		margin-bottom: 50px;
-	}
-	&__buttons {
-		@include flex(row, center, center);
-		width: 100%;
-		margin-bottom: 80px;
 	}
 }
 </style>

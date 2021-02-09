@@ -3,9 +3,9 @@
 		<div class="apropos__apropos">
 			<AProposComponent />
 		</div>
-		<div class="apropos__buttons">
-			<Button :text="'Contactez-moi'" :composant-name="'Contact'" />
-		</div>
+		<div class="contact">
+      <ContactComponent />
+    </div>
 		<div class="apropos__technos">
 			<Technologies	/>
 		</div>
@@ -13,34 +13,36 @@
 </template>
 
 <script>
-import Button from "@/components/Button.vue";
 import AProposComponent from "@/components/AProposComponent.vue";
 import Technologies from "@/components/Technologies.vue";
+import ContactComponent from "@/components/ContactComponent.vue"
 
 export default {
 	name: "APropos",
 	components: {
-		Button,
     AProposComponent,
-    Technologies
+    Technologies,
+		ContactComponent
 	}
 }
 </script>
 
 <style lang="scss" scoped>
+.contact {
+  @include flex(row, center, center);
+  @include breakpoint(1150) {
+    margin-top: 100px;
+  }
+}
+
 .apropos {
 	width: 100%;
 	&__apropos {
     margin-top: -20px;
-		margin-bottom: 60px;
-	}
-	&__buttons {
-		@include flex(row, center, center);
-		width: 100%;
 	}
 	&__technos {
 		margin-bottom: 100px;
-		margin-top: 60px;
+		margin-top: 50px;
 	}
 }
 </style>

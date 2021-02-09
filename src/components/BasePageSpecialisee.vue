@@ -11,8 +11,8 @@
       <h2>{{ title3 }}</h2>
       <slot name="paragraph2"></slot>
     </div>
-    <div class="page-spec__buttons">
-      <Button :text="'Contactez-moi'" :composant-name="'Contact'" />
+    <div class="contact">
+      <ContactComponent />
     </div>
   </div>
 </template>
@@ -20,14 +20,14 @@
 <script>
 import Title from "@/components/Title.vue";
 import LineTop from "@/components/LineTop.vue";
-import Button from "@/components/Button.vue";
+import ContactComponent from "@/components/ContactComponent.vue"
 
 export default {
   name: "BasePageSpecialisee",
   components: {
     Title,
     LineTop,
-    Button
+    ContactComponent
   },
   props: {
     title1: { type: String, default: "" },
@@ -39,6 +39,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.contact {
+  margin-bottom: 30px;
+  @include flex(row, center, center);
+  @include breakpoint(1150) {
+    margin-top: 70px;
+  }
+}
+
 .page-spec {
   &__paragraph1 {
     font-family: $police-logo;
@@ -63,9 +71,11 @@ export default {
     margin: 100px auto;
     font-family: $police-text;
     font-size: 16px;
+    margin-bottom: 0px;
     @include breakpoint(500) {
       width: 80%;
       margin: 60px auto;
+      margin-bottom: 0px;
     }
   }
   h2 {
@@ -73,13 +83,6 @@ export default {
     text-transform: uppercase;
     font-size: 20px;
     margin-bottom: 20px;
-  }
-  &__buttons {
-    @include flex(column, center, center);
-    margin-bottom: 100px;
-    @include breakpoint(500) {
-      margin-bottom: 80px;
-    }
   }
 }
 </style>

@@ -10,7 +10,7 @@
       <p>
         Des tonnes de développeurs s’offrent à vous. <br>
         Tous semblent intéressants et talentueux. <br>
-        Mais comment choisir LA bon personne ? Comment être sûr que quelques semaines plus tard, cette nouvelle recrue ne livre pas vos projets en retard et ne soit pas à la hauteur de vos attentes ?
+        Mais comment choisir LA bonne personne ? Comment être sûr que quelques semaines plus tard, cette nouvelle recrue ne livre pas vos projets en retard et ne soit pas à la hauteur de vos attentes ?
       </p>
       <p>
         Le développeur parfait n’existe pas mais celui qui tend à l’être, oui !
@@ -50,7 +50,7 @@
         Riche de mes expériences, je ne demande qu’à aider votre entreprise à se réaliser en continuant à me former.
       </p>
       <p>    
-        Pour qu’ensemble nous fusionnons nos connaissances. <br>
+        Pour qu’ensemble nous fusionnions nos connaissances. <br>
         Pour qu’ensemble nous partagions notre passion. <br>
         Pour qu’ensemble nous réalisions des projets incroyables. <br>
       </p>

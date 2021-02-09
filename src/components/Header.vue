@@ -1,7 +1,7 @@
 <template>
     <header>
         <img alt="logo" src="@/assets/img/svg/logoEpais.svg" @click="goToAccueil">
-        <div class="text-header">
+        <div :class="['text-header', { 'hide': gameStart }]">
             <h1>IXPERYA</h1>
             <p>Développement web</p>
         </div>
@@ -25,7 +25,7 @@ export default {
       return {}
   },
   computed: {
-      ...mapState(['menuOpen'])
+      ...mapState(['menuOpen', 'gameStart'])
   },
   methods: {
       ...mapActions(['toggleMenu']),
@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.hide {
+    display: none !important;
+}
 header {
     width: 100%;
     @include flex(row, center, space-between);
@@ -86,6 +89,7 @@ header {
         position: fixed;
         right: 10px;
         top: 10px;
+        user-select: none;
         cursor: pointer;
         p{
             font-family: $police-logo;
@@ -94,6 +98,7 @@ header {
             font-weight: 600;
             transition: 200ms;
             font-weight: 700;
+            user-select: none;
         }
         div {
             background-color: $color-header-middle;
@@ -102,6 +107,7 @@ header {
             width: 100%;
             margin: 7px 0px;
             transform-origin: right center;
+            user-select: none;
             transition: 200ms;
         }
         &__bar1 {

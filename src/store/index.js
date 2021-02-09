@@ -23,7 +23,8 @@ export default createStore({
     disableCanvasJeu: true,
 
     win: false,
-    restartGame: false
+    restartGame: false,
+    gameStart: false
   },
   mutations: {
     SHOW_LOADER (state) {
@@ -88,6 +89,10 @@ export default createStore({
     },
     TOGGLE_RESTARTGAME(state) {
       state.restartGame = !state.restartGame;
+    },
+
+    TOGGLE_GAMESTART (state) {
+      state.gameStart = !state.gameStart;
     },
 
     TOGGLE_DISABLECANVASJEU (state) {
@@ -157,6 +162,10 @@ export default createStore({
     },
     toggleRestartGame({ commit }) {
       commit('TOGGLE_RESTARTGAME');
+    },
+
+    toggleGameStart({ commit }) {
+      commit('TOGGLE_GAMESTART');
     },
 
     toggleDisableCanvasJeu({commit}) {
