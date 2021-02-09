@@ -110,6 +110,7 @@ export default {
   font-size: 50px;
   cursor: pointer;
   transition: 200ms;
+  z-index: 10;
   &:hover {
     animation: leftRightArrow 500ms ease-in-out infinite;
   }
