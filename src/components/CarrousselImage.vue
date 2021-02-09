@@ -72,10 +72,11 @@ export default {
 }
 .carroussel-image-container {
   position: fixed;
-  background-color: #000000e3;
+  background-color: #1c2132d9;
   width: 100%;
   height: 100vh;
   top: 0px;
+  left: 0px;
   z-index: 11;
 }
 .carroussel {

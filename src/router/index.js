@@ -5,7 +5,6 @@ import Contact from '../views/Contact.vue'
 import SiteECommerce from '../views/SiteECommerce.vue'
 import SiteInformatif from '../views/SiteInformatif.vue'
 import SiteAvecJeu from '../views/SiteAvecJeu.vue'
-import Projet from '../views/Projet.vue'
 import PortfolioPage from '../views/PortfolioPage.vue'
 import APropos from '../views/APropos.vue'
 
@@ -39,11 +38,6 @@ const routes = [
     path: '/site-ecommerce',
     name: 'SiteECommerce',
     component: SiteECommerce
-  },
-  {
-    path: '/projet',
-    name: 'Projet',
-    component: Projet
   },
   {
     path: '/portfolio',

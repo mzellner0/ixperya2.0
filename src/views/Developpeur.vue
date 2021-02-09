@@ -5,7 +5,7 @@
 			<AProposDevComponent />
 		</div>
 		<div class="developpeur__portfolio">
-			<Portfolio :projets-list="projetsList" />
+			<Portfolio />
 		</div>
 		<div class="developpeur__technos">
 			<Technologies />
@@ -22,7 +22,6 @@ import AProposDevComponent from "@/components/AProposDevComponent.vue";
 import Title from "@/components/Title.vue";
 import Technologies from "@/components/Technologies.vue";
 import ContactComponent from "@/components/ContactComponent.vue"
-import { mapActions } from 'vuex'
 
 export default {
 	name: "Developpeur",
@@ -32,40 +31,6 @@ export default {
 		AProposDevComponent,
 		Technologies,
 		ContactComponent
-	},
-	data: () => {
-    return {
-      projetsList: [
-        { 
-          title: 'Hôtel de Paris Saint Tropez', 
-          urlImage: 'hdp-portfolio-2.jpg',
-          params: {
-            title: 'Hôtel de Paris Saint Tropez'
-          }
-        },
-        { 
-          title: "Création d'avatar", 
-          urlImage: 'avatar-portfolio.jpg',
-          params: {
-            title: "Création d'avatar"
-          }
-				},
-				{ 
-          title: "Création d'un jeu 3D", 
-          urlImage: 'jeu.png',
-          params: {
-            title: "Création d'un jeu 3D"
-          }
-        }
-      ]
-    }
-	},
-	beforeRouteLeave(to, from, next) {
-		this.updateLinkBackPortfolio(from.name);
-		next();
-	},
-	methods: {
-		...mapActions(['updateLinkBackPortfolio'])
 	}
 }
 </script>

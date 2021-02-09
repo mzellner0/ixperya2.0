@@ -29,7 +29,6 @@
 <script>
 import BasePageSpecialisee from "@/components/BasePageSpecialisee.vue";
 import Portfolio from "@/components/Portfolio.vue";
-import { mapActions } from 'vuex'
 
 export default {
   name: "SiteInformatif",
@@ -41,22 +40,21 @@ export default {
     return {
       projetsList: [
         { 
-          title: 'Hôtel de Paris Saint Tropez', 
+          title: 'Hôtel de Paris Saint Tropez',
+          subtitle: "Réalisation du design et de l'intégration du site.", 
           urlImage: 'hdp-portfolio-2.jpg',
-          params: {
-            title: 'Hôtel de Paris Saint Tropez'
-          }
-        }
+          text: "Cet hôtel cherchait à rafraîchir son ancien site internet. Nous leurs avons donc réalisés 3 nouvelles propostions graphiques pour qu'il puisse choisir celle qui leurs correspondait le mieux. Une fois le design décidé, nous l'avons integré avec soin.",
+          images: [
+            require('@/assets/img/projets/hdp-1.jpeg'),
+            require('@/assets/img/projets/hdp-3.jpeg'),
+            require('@/assets/img/projets/hdp-2.jpeg'),
+            require('@/assets/img/projets/hdp-4.jpeg'),
+          ],
+          url: "https://hoteldeparis-sainttropez.com/"
+        },
       ]
     }
-  },
-  beforeRouteLeave(to, from, next) {
-		this.updateLinkBackPortfolio(from.name);
-		next();
-	},
-	methods: {
-		...mapActions(['updateLinkBackPortfolio'])
-	}
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="projet" @click="redirect">
+  <div class="projet" @click="openProjet">
     <img class="projet__photo" alt="image projet" :src="require(`@/assets/img/projets/${imageProjet}`)" />
     <h3 class="projet__title">{{ titleProjet }}</h3>
   </div>
@@ -10,12 +10,11 @@ export default {
   name: "Projet",
   props: {
     titleProjet: { type: String, default: null },
-    imageProjet: { type: String, default: 'hdp-portfolio.jpg' },
-    params: { type: Object, default: () => {} }
+    imageProjet: { type: String, default: 'hdp-portfolio.jpg' }
   },
   methods: {
-    redirect() {
-      this.$router.push({ name: 'Projet', query: this.params });
+    openProjet() {
+      this.$emit("open-projet", true);
     }
   }
 }

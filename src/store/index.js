@@ -5,7 +5,6 @@ export default createStore({
     loader: false,
 
     menuOpen: false,
-    linkBackPortfolio: null,
 
     hideButtonsMenu: true,
     hideInventory: true,
@@ -36,9 +35,6 @@ export default createStore({
 
     TOGGLE_MENU (state) {
       state.menuOpen = !state.menuOpen;
-    },
-    UPDATE_LINKBACKPORTFOLIO (state, composantName) {
-      state.linkBackPortfolio = composantName;
     },
 
     TOGGLE_HIDEINVENTORY (state) {
@@ -109,9 +105,6 @@ export default createStore({
 
     toggleMenu ({ commit }) {
       commit('TOGGLE_MENU');
-    },
-    updateLinkBackPortfolio ({ commit }, composantName) {
-      commit('UPDATE_LINKBACKPORTFOLIO', composantName);
     },
 
     toggleHideInventory({ commit }) {
