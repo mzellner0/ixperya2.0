@@ -133,11 +133,15 @@ export default {
     width: 100%;
     @include flex(row, center, center);
     img {
-      cursor: pointer;
       max-width: 700px;
       max-height: 500px;
       border-radius: 5px;
       margin: 0px 10px;
+      transition: 200ms;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(1.2);
+      }
     }
     @include breakpoint(1630) {
       @include flex(column, center, center);
