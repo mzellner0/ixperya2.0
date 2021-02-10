@@ -107,15 +107,8 @@ export default {
 
 <style lang="scss" scoped>
 #threeAccueil {
-  position: absolute;
+  position: relative;
   z-index: 0;
-  top: 140px;
-  right: 15%;
-  @include breakpoint(1150) {
-    position: relative;
-    right: 0%;
-    top: 0px;
-  }
 }
 
 .hide {
@@ -135,17 +128,22 @@ export default {
 }
 
 .accueil {
+  @include flex(row, center, center);
+  @include breakpoint(1150) {
+    margin-top: 60px;
+  }
   &__container {
+    width: 70%;
+    @include flex(row, center, space-around);
     @include breakpoint(1150) {
       width: 100%;
       @include flex(column, center, center);
     }
   }
   &__question {
-    margin-left: 25%;
-    margin-top: 150px;
+    margin-left: 15%;
+    margin-top: 10px;
     @include breakpoint(1150) {
-      margin-top: 60px;
       margin-left: 0%;
     }
   }
