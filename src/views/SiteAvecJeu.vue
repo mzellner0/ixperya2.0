@@ -3,7 +3,7 @@
     <BasePageSpecialisee
       :title1="'Rendez votre site interactif et captez l\'attention de vos visiteurs.'"
       :title2="'Grâce à la 3D tout devient possible !'"
-      :title3="'Ensemble, Créons votre site'"
+      :title3="'Ensemble, Créons votre jeu'"
       :paragraph1="'Vous vous demandez à quoi cela peut bien ressembler ? Regardez plutôt un exemple :'"
     >
       <template v-slot:content>
@@ -13,13 +13,13 @@
       </template>
       <template v-slot:paragraph2>
         <p>
-          Nous réalisons vos sites entierement personnalisés pour correspondre au mieux à vos besoins. L'objectif de votre site est unique. Ensemble, nous nous assurerons de trouver le vôtre, pour créer ensuite vos pages internet en partant dans la bonne direction.
+          Chaque projet de jeu est unique. De l'augmentation du temps de visite de votre site à la vente d'items dans le jeu, le champs des possibles est très vaste. 
         </p>
         <p>
-          A votre écoute, nous rechercherons, ensemble, la meilleure approche pour mettre en avant votre entreprise sur le web. Nous la distinguerons par une force visuelle et une originalité marquée.
+          A votre écoute, nous élaborerons, ensemble, les règles et objectifs du jeu que vous souhaitez réaliser. 
         </p>
         <p>
-          Vous avez envie d’avoir l’esprit tranquille ? Pas de soucis : nous nous occupons de la maintenance de vos sites et de leurs mises à jour. Vous n’avez rien à faire.
+          Contactez-moi maintenant pour qu'on en discute !
         </p>
       </template>
     </BasePageSpecialisee>

@@ -93,7 +93,7 @@ header {
         cursor: pointer;
         p{
             font-family: $police-logo;
-            color: $color-header-dark;
+            color: $color-header-middle;
             font-size: 12px;
             font-weight: 600;
             transition: 200ms;

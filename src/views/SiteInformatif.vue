@@ -4,7 +4,7 @@
       :title1="'La solution pour que votre site vous rapporte enfin de l\'argent (au lieu de vous en coûter) :'"
       :title2="'Créez une charte graphique réussie et ainsi, gagnez en crédibilité (évitez que votre site ne fasse peur).'"
       :title3="'Ensemble, Créons votre site'"
-      :paragraph1="'Voici un exemple de design que nous pouvons réaliser :'"
+      :paragraph1="'Voici un exemple de design que nous avons réalisé :'"
     >
       <template v-slot:content>
         <div class="siteInfo__portfolio">
@@ -13,14 +13,19 @@
       </template>
       <template v-slot:paragraph2>
         <p>
-          Nous réalisons vos sites entierement personnalisés pour correspondre au mieux à vos besoins. L'objectif de votre site est unique. Ensemble, nous nous assurerons de trouver le vôtre, pour créer ensuite vos pages internet en partant dans la bonne direction.
+          Nous réalisons vos sites entierement personnalisés pour correspondre au mieux à vos besoins.
         </p>
         <p>
-          A votre écoute, nous rechercherons, ensemble, la meilleure approche pour mettre en avant votre entreprise sur le web. Nous la distinguerons par une force visuelle et une originalité marquée.
+          Votre image de marque est unique.<br>
+          Ensemble, nous nous assurerons de trouver la vôtre, pour créer ensuite vos pages internet en partant dans la bonne direction.
+        </p>
+        <p>
+          A votre écoute, nous chercherons ensemble, la meilleure approche pour mettre en avant votre entreprise sur le web. Nous la distinguerons par une force visuelle et une originalité marquée.
         </p>
         <p>
           Vous avez envie d’avoir l’esprit tranquille ? Pas de soucis : nous nous occupons de la maintenance de vos sites et de leurs mises à jour. Vous n’avez rien à faire.
         </p>
+        <p>Vous voulez en savoir plus ? Contactez-moi !</p>
       </template>
     </BasePageSpecialisee>
   </div>

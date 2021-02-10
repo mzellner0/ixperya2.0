@@ -3,8 +3,7 @@
     <div class="contact__blockLeft">
       <div :class="['contact__border-futura', { 'anim-border-left': !loader }]" />
       <div class="contact__texts">
-        <h2>Des questions ?</h2>
-        <h1>Contact :</h1>
+        <h1>Contactez-moi :</h1>
         <div class="contact__infos">
           <p>maud.zellner@gmail.com</p>
           <p>06 31 18 10 14</p>
@@ -82,22 +81,16 @@ export default {
     text-transform: uppercase;
     margin-left: 30px;
     padding-top: 15px;
-    h2 {
-      font-weight: normal;
-      font-size: 20px;
-    }
     h1 {
       font-size: 22px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
     p {
       font-size: 20px;
       margin: 5px 0px;
     }
     @include breakpoint(1150) {
-      h2 {
-        font-size: 15px;
-      }
+      margin-left: 20px;
       h1 {
         font-size: 18px;
       }
