@@ -63,15 +63,25 @@ export default {
   mounted() {
     this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5, 1.5, 3, false, 1150);
     this.robot = new Gltf(this.scene, "src/gltf/robot_v003.glb", true, 1, this.callbackRobot.bind(this));
+
+    if(innerWidth > 1000) {
+      document.body.addEventListener('mousemove', this.onMouseMove);
+    }
   },
   beforeUnmount() {
     this.robot.stopAnimate();
     this.scene.stopAnimate();
+
+    if(innerWidth > 1000) {
+      document.body.removeEventListener('mousemove', this.onMouseMove);
+    }
   },
   methods: {
     ...mapActions(['showLoader', 'hideLoader']),
     callbackRobot() {
       this.robot.playAnimation("hello");
+      this.robot.firstGltfChild.scale.set(0.9, 0.9, 0.9);
+      this.robot.firstGltfChild.position.y = 1;
       this.robot.firstGltfChild.rotation.y = -0.3;
       this.hideLoader();
     },
@@ -82,6 +92,14 @@ export default {
     backQuestions() {
       this.listButtons = this.firstListButtons;
       this.hideArrow = true;
+    },
+    onMouseMove(event) {
+      const coeffWidth = 2.6 / innerWidth;
+      const coeffHeight = 0.69 / innerWidth;
+      if (this.robot.firstGltfChild) {
+        this.robot.firstGltfChild.rotation.y = event.clientX * coeffWidth - 1.8;
+        this.robot.firstGltfChild.rotation.x = event.clientY * coeffHeight;
+      }
     }
   }
 }
@@ -145,6 +163,9 @@ export default {
   &__answers {
     padding-top: 100px;
     margin-left: 30px;
+    @include breakpoint(500) {
+      margin-left: 20px;
+    }
   }
 }
 </style>

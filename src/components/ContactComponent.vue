@@ -36,6 +36,7 @@ export default {
   mounted() {
     this.scene = new Scene(document.getElementById("threeContact"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5, 1.5, 3, false, 1150);
     this.robot = new Gltf(this.scene, "src/gltf/robot_v003.glb", true, 1, this.callbackRobot.bind(this));
+    this.$emit('get-robot', this.robot);
   },
   beforeUnmount() {
     this.robot.stopAnimate();
@@ -45,6 +46,8 @@ export default {
     ...mapActions(['showLoader', 'hideLoader']),
     callbackRobot() {
       this.robot.playAnimation("hello");
+      this.robot.firstGltfChild.scale.set(0.9, 0.9, 0.9);
+      this.robot.firstGltfChild.position.y = 1;
       this.robot.firstGltfChild.rotation.y = -0.3;
       this.hideLoader();
     },
