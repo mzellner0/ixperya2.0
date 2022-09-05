@@ -2,7 +2,7 @@
     <header>
         <img alt="logo" src="@/assets/img/svg/logoEpais.svg" @click="goToAccueil">
         <div :class="['text-header', { 'hide': gameStart }]">
-            <h1>IXPERYA</h1>
+            <h1>MAUD ZELLNER</h1>
             <p>Développement web</p>
         </div>
         <div class="menuOpener" @click="toggleMenu">
@@ -55,13 +55,14 @@ header {
         h1 {
             font-family: $police-logo;
             font-weight: 400;
-            font-size: 50px;
+            font-size: 40px;
             color: $color-header-dark;
             user-select: none;
             pointer-events: none;
             transition: 200ms;
             opacity: 1;
             margin-bottom: 5px;
+            text-align: center;
         }
         p {
             margin: 0;
@@ -136,7 +137,8 @@ header {
         .text-header {
             height: 110px;
             h1 {
-                font-size: 30px;
+                font-size: 25px;
+                margin-bottom: 10px;
             }
             p {
                 font-size: 15px;
