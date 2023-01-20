@@ -124,6 +124,7 @@ export default {
   }
   @include breakpoint(650) {
     font-size: 35px;
+    bottom: 40px;
   }
   @include breakpoint(450) {
     font-size: 25px;
