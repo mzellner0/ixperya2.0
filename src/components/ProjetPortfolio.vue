@@ -51,11 +51,13 @@ export default {
         max-height: initial;
         width: 600px;
         height: initial;
+        max-height: 500px;
+        object-fit: contain;
       }
       @include breakpoint(800) {
-        max-height: initial;
-        width: 300px;
+        width: 280px;
         height: initial;
+        max-height: 400px;
       }
     }
   }

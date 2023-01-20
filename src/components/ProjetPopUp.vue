@@ -12,7 +12,12 @@
         <p>{{ text }}</p>
         <a :href="url" target="_blank">Découvrez le site</a>
       </div>
-      <div class="projet__images">
+      <div
+        :class="[
+          'projet__images',
+          { 'is-mobile': isMobile }
+        ]"
+      >
         <img 
           v-for="(img, index) in images"
           :key="index"
@@ -45,7 +50,8 @@ export default {
     text: { type: String, default: "" },
     subtitle: { type: String, default: "" },
     url: { type: String, default: "" },
-    images: { type: Array, default: () => [] }
+    images: { type: Array, default: () => [] },
+    isMobile: { type: Boolean, default: false }
   },
   data: function() {
     return {
@@ -150,6 +156,22 @@ export default {
         width: 80%;
         max-height: none;
         margin: 10px 0px;
+      }
+      &.is-mobile {
+        @include flex(row, center, center);
+        img {
+          max-height: 500px;
+          object-fit: contain;
+        }
+      }
+    }
+    @include breakpoint(1000) {
+      &.is-mobile {
+        @include flex(column, center, center);
+        img {
+          max-height: 500px;
+          object-fit: contain;
+        }
       }
     }
   }

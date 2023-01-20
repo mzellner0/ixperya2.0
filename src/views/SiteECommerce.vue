@@ -1,10 +1,10 @@
 <template>
   <div class="siteECommerce">
     <BasePageSpecialisee
-      :title1="'La solution pour que votre site vous rapporte enfin de l\'argent (au lieu de vous en coûter) :'"
-      :title2="'Faites de votre site un jeu interactif !'"
+      :title1="'Augmentez vos ventes en permettant à vos utilisateurs de personnaliser vos produits de manière interactive !'"
+      :title2="'Faites de votre site un jeu !'"
       :title3="'Ensemble, Boostons vos ventes'"
-      :paragraph1="'GRÂCE À NOTRE OUTIL PERMETTANT LA PERSONNALISATION D’OBJETS SOUS FORME DE JEU 3D, IMPLIQUEZ VOS VISITEURS DANS LA CRÉATION DE LEURS PROPRES COMMANDES ET AINSI vendez plus et plus cher.'"
+      :paragraph1="'GRÂCE À MON OUTIL PERMETTANT LA PERSONNALISATION D’OBJETS SOUS FORME DE JEU 3D, IMPLIQUEZ VOS VISITEURS DANS LA CRÉATION DE LEURS PROPRES COMMANDES ET AINSI vendez plus et plus cher.'"
     >
       <template v-slot:content>
         <OutilPersonnalisation />

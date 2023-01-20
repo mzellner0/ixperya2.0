@@ -1,25 +1,31 @@
 <template>
   <div class="technos">
-    <h2>Technologies front-end que j'utilise :</h2>
+    <h1>Technologies utilisées :</h1>
+    <h2>Pour le développement mobile :</h2>
+    <div class="mobile">
+      <img :src="require('@/assets/img/logos/dart.png')" alt="logo dart">
+      <img :src="require('@/assets/img/logos/flutter.webp')" alt="logo flutter">
+    </div>
+    <h2>Pour la partie front-end :</h2>
     <div class="frontend">
       <img :src="require('@/assets/img/logos/vue.png')" alt="logo vue">
       <img :src="require('@/assets/img/logos/trio.png')" alt="logo css-html-js">
       <img :src="require('@/assets/img/logos/sass.png')" alt="logo sass">
       <img :src="require('@/assets/img/logos/three.png')" alt="logo three.js">
     </div>
-    <h2>Technologies back-end que j'utilise :</h2>
+    <h2>Pour la partie back-end :</h2>
     <div class="backend">
       <img :src="require('@/assets/img/logos/node.png')" alt="logo node">
       <img :src="require('@/assets/img/logos/expressjs.png')" alt="logo express">
       <img :src="require('@/assets/img/logos/mysql.png')" alt="logo mysql" class="mysql">
     </div>
-    <h2>Technologies 3D que j'utilise :</h2>
+    <h2>Pour la partie 3D :</h2>
     <div class="trois-d">
       <img :src="require('@/assets/img/logos/logo_blender.png')" alt="logo blender">
       <img :src="require('@/assets/img/logos/houdini_logo.png')" alt="logo houdini">
       <img :src="require('@/assets/img/logos/maya_logo.png')" alt="logo maya">
     </div>
-    <h2>Technologies pour la retouche / le montage que j'utilise :</h2>
+    <h2>Pour la retouche / le montage :</h2>
     <div class="montage">
       <img :src="require('@/assets/img/logos/premiere_logo.png')" alt="logo premiere">
       <img :src="require('@/assets/img/logos/ae_logo.jpg')" alt="logo ae">
@@ -41,52 +47,58 @@ export default {
   color: white;
   padding: 0px 15px;
   background-color: $color-header-dark;
-  .frontend, .backend, .trois-d, .montage {
+  .frontend, .backend, .trois-d, .montage, .mobile {
     @include flex(row, center, center);
+    width: 80%;
     img {
-      max-height: 100px;
+      max-width: 150px;
+      object-fit: contain;
+      height: 100px;
       margin: 0px 20px;
-    }
-    .mysql {
-      margin-bottom: 55px;
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
     &:last-of-type {
       margin-bottom: 60px;
     }
     @include breakpoint(1000) {
-      .mysql {
-        margin-bottom: 30px;
-      }
       img {
-        max-height: 70px;
-      }
-      &:last-of-type {
-        margin-bottom: 45px;
+        height: 70px;
+        max-width: 130px;
       }
     }
     @include breakpoint(700) {
-      // flex-direction: column;
       flex-wrap: wrap;
+      width: 90%;
       img {
-        margin: 20px 20px;
+        margin: 20px 20px !important;
       }
     }
   }
+  h1 {
+    font-size: 20px;
+    margin: 20px 0px;
+    margin-top: 60px;
+    @include breakpoint(500) {
+      font-size: 18px;
+      width: 90%;
+    }
+  }
   h2 {
-    margin: 0px 20px;
-    margin-top: 70px;
-    margin-bottom: 50px;
+    width: 80%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.623);
+    margin: 40px 0px;
+    font-size: 15px;
+    @include breakpoint(700) {
+      width: 90%;
+    }
+  }
+  h1, h2 {
     font-family: $police-logo;
     text-transform: uppercase;
-    font-size: 15px;
     font-weight: 800;
-    text-align: center;
-    &:nth-child(3) {
-      margin-bottom: 40px;
-    }
-    @include breakpoint(700) {
-      margin-bottom: 30px;
-    }
   }
 }
 </style>

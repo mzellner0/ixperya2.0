@@ -23,7 +23,7 @@
           A votre écoute, nous chercherons ensemble, la meilleure approche pour mettre en avant votre entreprise sur le web. Nous la distinguerons par une force visuelle et une originalité marquée.
         </p>
         <p>
-          Vous avez envie d’avoir l’esprit tranquille ? Pas de soucis : nous nous occupons de la maintenance de vos sites et de leurs mises à jour. Vous n’avez rien à faire.
+          Vous avez envie d’avoir l’esprit tranquille ? Pas de soucis : nous nous occupons de la maintenance de vos sites et de leurs mises à jour (sous forme de forfait ou au devis : ne payer pas s'il n'y a aucune modification). Vous n’avez rien à faire.
         </p>
         <p>Vous voulez en savoir plus ? Contactez-moi !</p>
       </template>

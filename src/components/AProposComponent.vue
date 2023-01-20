@@ -1,6 +1,6 @@
 <template>
   <div class="a-propos">
-    <img :src="require('@/assets/img/maud.jpg')" alt="maud zellner">
+    <img :src="require('@/assets/img/maud.webp')" alt="maud zellner">
     <LineTop />
     <div class="a-propos__texts">
       <h1>Maud Zellner</h1>
