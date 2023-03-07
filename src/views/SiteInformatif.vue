@@ -8,7 +8,7 @@
     >
       <template v-slot:content>
         <div class="siteInfo__portfolio">
-          <Portfolio :projets-list="projetsList" />
+          <Portfolio :projects-list-from-props="projetsList" />
         </div>
       </template>
       <template v-slot:paragraph2>
@@ -43,8 +43,8 @@ export default {
   },
   data: () => {
     return {
-      projetsList: [
-        { 
+      projetsList: {
+        "hdp": { 
           title: 'Hôtel de Paris Saint Tropez',
           subtitle: "Réalisation du design et de l'intégration du site.", 
           urlImage: 'hdp-portfolio-2.jpg',
@@ -57,7 +57,7 @@ export default {
           ],
           url: "https://hoteldeparis-sainttropez.com/"
         },
-      ]
+      }
     }
   }
 }

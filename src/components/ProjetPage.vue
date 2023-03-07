@@ -1,47 +1,42 @@
 <template>
-  <div class="pop-up-projet">
-    <font-awesome-icon 
-      class="cross" 
-      :icon="['fas', 'times']"
-      @click="closePopUp"
-    />
-    <div class="projet">
-      <div class="projet__texts">
-        <h2>{{ titleProjet }}</h2>
-        <h3>{{ subtitle }}</h3>
-        <p>{{ text }}</p>
-        <a :href="url" target="_blank">Découvrez le site</a>
-      </div>
-      <div
-        :class="[
-          'projet__images',
-          { 'is-mobile': isMobile }
-        ]"
-      >
-        <img 
-          v-for="(img, index) in images"
-          :key="index"
-          :src="img"
-          :alt="`image-projet${index}`"
-          @click="onClickOnImage(event, index)"
-        >
-      </div>
-      <CarrousselImage
-        v-if="showCarroussel"
-        :images="images"
-        :imageStart="imageStart"
-        @close-pop-up="closeCarroussel"
-      />
+  <div class="projet">
+    <div class="projet__texts">
+      <h2>{{ titleProjet }}</h2>
+      <h3>{{ subtitle }}</h3>
+      <p>{{ text }}</p>
+      <a :href="url" target="_blank">Découvrez le site</a>
     </div>
+    <div
+      :class="[
+        'projet__images',
+        { 'is-mobile': isMobile }
+      ]"
+    >
+      <img 
+        v-for="(img, index) in images"
+        :key="index"
+        :src="img"
+        :alt="`image-projet${index}`"
+      >
+    </div>
+    <CarrousselImage
+      v-if="showCarroussel"
+      :images="images"
+      :imageStart="imageStart"
+      @close-pop-up="closeCarroussel"
+    />
   </div>
 
 </template>
+
+<!-- click on image -->
+<!-- @click="onClickOnImage(event, index)" -->
 
 <script>
 import CarrousselImage from "@/components/CarrousselImage.vue"
 
 export default {
-  name: "ProjetPopUp",
+  name: "ProjetPage",
   components: {
     CarrousselImage
   },
@@ -66,44 +61,18 @@ export default {
     },
     closeCarroussel() {
       this.showCarroussel = false;
-    },
-    closePopUp() {
-      this.$emit("close-projet", true);
-    },
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.pop-up-projet {
-  position: fixed;
-  background-color: #1c2132d9;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  z-index: 11;
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
-    
-  &::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
-      background-color: $color-header-darker;
-      border-radius: 0px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-      background-color: white;
-      border: 4px solid rgba(0, 0, 0, 0);
-      border-radius: 10px;
-      background-clip: content-box;
-  }
-}
 .projet {
+  position: relative;
   background-color: $color-header-darker;
   width: 90%;
-  margin: 80px auto;
+  margin: 30px auto;
+  margin-bottom: 50px;
   top: 0px;
   @include flex(column, flex-start, center);
   &::before {
@@ -112,21 +81,22 @@ export default {
     width: 30%;
     height: 2px;
     position: absolute;
-    top: 80px;
+    top: 15px;
+    left: 15px;
     @include breakpoint(500) {
-      top: 50px;
+      display: none;
     }
   }
   &::after {
     content: "";
     background-color: white;
-    height: 15%;
+    height: 150px;
     width: 2px;
     position: absolute;
-    top: 80px;
+    top: 15px;
+    left: 15px;
     @include breakpoint(500) {
-      top: 50px;
-      height: 25%;
+      display: none;
     }
   }
   @include breakpoint(500) {
@@ -138,30 +108,39 @@ export default {
     margin: 60px 0px;
     width: 100%;
     @include flex(row, center, center);
+    flex-wrap: wrap;
     img {
-      max-width: 700px;
-      max-height: 500px;
+      max-width: 1000px;
+      max-height: 1000px;
       border-radius: 5px;
-      margin: 0px 10px;
+      margin: 10px 10px;
       transition: 200ms;
-      cursor: pointer;
-      &:hover {
-        filter: brightness(1.2);
-      }
+      // cursor: pointer;
+      // &:hover {
+      //   filter: brightness(1.2);
+      // }
     }
+    &.is-mobile {
+        img {
+          max-height: 550px;
+          object-fit: contain;
+        }
+      }
     @include breakpoint(1630) {
       @include flex(column, center, center);
       margin: 20px 0px;
       img {
+        max-width: 700px;
+        max-height: 700px;
         width: 80%;
         max-height: none;
-        margin: 10px 0px;
       }
       &.is-mobile {
         @include flex(row, center, center);
+        flex-wrap: nowrap;
         img {
           max-height: 500px;
-          object-fit: contain;
+          width: auto;
         }
       }
     }
@@ -170,7 +149,14 @@ export default {
         @include flex(column, center, center);
         img {
           max-height: 500px;
-          object-fit: contain;
+        }
+      }
+    }
+    @include breakpoint(500) {
+      &.is-mobile {
+        @include flex(column, center, center);
+        img {
+          max-height: 450px;
         }
       }
     }

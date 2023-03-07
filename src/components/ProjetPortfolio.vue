@@ -1,8 +1,8 @@
 <template>
-  <div class="projet" @click="openProjet">
+  <router-link class="projet" :to="link" >
     <img class="projet__photo" alt="image projet" :src="require(`@/assets/img/projets/${imageProjet}`)" />
     <h3 class="projet__title">{{ titleProjet }}</h3>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -10,11 +10,12 @@ export default {
   name: "Projet",
   props: {
     titleProjet: { type: String, default: null },
-    imageProjet: { type: String, default: 'hdp-portfolio.jpg' }
+    imageProjet: { type: String, default: 'hdp-portfolio.jpg' },
+    linkProjet: { type: String, default: 'hdp' }
   },
-  methods: {
-    openProjet() {
-      this.$emit("open-projet", true);
+  computed: {
+    link() {
+      return `/projet?nom=${this.linkProjet}`
     }
   }
 }
@@ -26,6 +27,7 @@ export default {
     @include flex(column, center, center);
     transition: 200ms;
     cursor: pointer;
+    text-decoration: none;
     &:hover {
       transform: scale(1.02);
     }

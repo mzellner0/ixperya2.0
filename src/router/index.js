@@ -7,6 +7,7 @@ import SiteInformatif from '../views/SiteInformatif.vue'
 import SiteAvecJeu from '../views/SiteAvecJeu.vue'
 import PortfolioPage from '../views/PortfolioPage.vue'
 import APropos from '../views/APropos.vue'
+import Project from '../views/Project.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/developpeur-web',
     name: 'Developpeur',
     component: Developpeur
+  },
+  {
+    path: '/projet',
+    name: 'Project',
+    component: Project
   },
   {
     path: '/contact',
