@@ -1,58 +1,71 @@
 <template>
   <div class="a-propos">
-    <img :src="require('@/assets/img/maud_square.jpg')" alt="maud zellner">
+    <img :src="require('@/assets/img/maud_square.jpg')" alt="maud zellner" />
     <LineTop />
     <div class="a-propos__texts">
       <h1>Qui suis-je ?</h1>
       <p>
-        Vous cherchez un développeur pour agrandir le potentiel de création de votre entreprise et ainsi pouvoir livrer à vos clients des sites web toujours plus performants.
+        Vous cherchez un développeur pour offrir à vos clients des sites web à
+        la hauteur de leurs exigences.
       </p>
       <p>
-        Des tonnes de développeurs s’offrent à vous. <br>
-        Tous semblent intéressants et talentueux. <br>
-        Mais comment choisir LA bonne personne ? Comment être sûr que quelques semaines plus tard, cette nouvelle recrue ne livre pas vos projets en retard et ne soit pas à la hauteur de vos attentes ?
+        Des tonnes de candidats s’offrent à vous. <br />
+        Tous semblent intéressants et talentueux. <br />
+        Mais comment choisir la bonne personne ?
       </p>
       <p>
-        Le développeur parfait n’existe pas mais celui qui tend à l’être, oui !
+        La clé réside dans ceux qui se remettent en question chaque jour, qui
+        sont curieux et constamment en quête d’amélioration. Ces profils sauront
+        s’intégrer dans votre société pour :
+      </p>
+      <ul>
+        <li>apprendre et travailler avec les mêmes outils que votre équipe</li>
+        <li>produire un code propre et maintenable pour garantir la pérennité des
+          projets
+        </li>
+        <li>explorer de nouvelles technologies et apprendre à les utiliser, pour
+          être le plus efficace possible.
+        </li>
+      </ul>
+      <p>
+        Je m’appelle Maud et je suis développeuse web front-end, spécialisée en
+        three.js. <br />
+        Ancienne infographiste 3D spécialisée en texture, shading, grooming et
+        rendu, j’ai travaillé sur de la publicité ou des effets spéciaux pour
+        des entreprises telles qu'I-Réel ou encore Digital Golem.
       </p>
       <p>
-        Si une personne se remet en question chaque jour, si elle est curieuse et ne demande qu’à développer ses compétences, alors elle saura s’intégrer dans votre compagnie pour :
-      </p>
-        <ul>
-          <li>travailler avec les mêmes outils que votre équipe</li>
-          <li>proposer ses idées pour créer des sites web encore plus innovants</li>
-          <li>explorer les nouvelles technologies, les apprendre et les utiliser pour travailler le plus efficacement possible.</li>
-        </ul>
-      <p>
-        Je me présente, je m’appelle Maud et je suis développeuse web full stack avec une grande préférence pour le front-end. <br>
-        Anciennement infographiste 3D, j’apprécie réellement marier le code et le design pour créer des applications web qui soient à la fois fluides, rapides et élégantes. 
+        Maintenant développeuse web, l’alliance du code et du design est au cœur
+        de mon approche, ce qui me permet de concevoir des applications web
+        fluides, rapides et élégantes.
       </p>
       <p>
-        Il y a quelques temps, j’ai voulu découvrir le monde du web et je me suis formée en HTML, CSS et Javascript.
+        J'ai commencé mon apprentissage du WebGL en lisant "Real-Time 3D
+        Graphics with WebGl 2". J'ai ensuite pu explorer la documentation de
+        Three.js en profondeur en travaillant sur de nombreux projets comme
+        "l'avatar creator" sur le site de The Sandbox, qui permet de
+        personnaliser son avatar en ligne. A travers cette expérience, j'ai pu,
+        par exemple, approfondir mes connaissances sur les shaders, en en créant
+        un entièrement. Il permettait de mixer deux textures ensemble et ainsi,
+        permettait à l'utilisateur un meilleur contrôle sur la couleur de son
+        avatar.
       </p>
       <p>
-        Trouvant ce monde fascinant et passionnant j’ai décidé d’arrêter l'infographie pour faire du développement web mon métier.
+        Aujourd'hui à Stereograph, j'explore plus en profondeur l'optimisation
+        liée à la géométrie en travaillant avec du batching et de l'instancing.
       </p>
       <p>
-        J’ai ainsi appris les concepts du back-end (node.js/express.js, mysql) ainsi que pluiseurs frameworks front-end : Angular (ngrx, rxjs), React et Vue.js. Je travaille actuellement principalement sur Vue.
-      </p>
-      <p> 
-        Intéressée par l’union de la 3D et du web, j’ai également découvert Three.js qui m’a permis d’intégrer des objets 3D dans une page internet. 
-      </p>
-      <p>
-        Au cours de cet apprentissage, j’ai compris une chose essentielle. 
-      </p>
-      <p>
-        J’ai réalisé qu’en comprenant les concepts (en n’ayant pas peur de découvrir de nouvelles librairies, de nouveaux frameworks, de nouveaux langages), je m’adapte et apprends chaque jour un peu plus. <br>
-        Je veux en permanence rechercher les meilleurs façons de travailler pour être la plus efficace, la plus productive et la plus créative possible.
+        Au cours de mon parcours, j’ai compris une chose essentielle : un
+        problème donné a toujours une solution. En maîtrisant les concepts
+        fondamentaux de la programmation, j’ai appris à m'adapter rapidement et
+        à évoluer en fonction des besoins. Je suis en permanente remise en
+        question afin d'être la plus productive, la plus efficace et la plus
+        créative possible.
       </p>
       <p>
-        Riche de mes expériences, je ne demande qu’à aider votre entreprise à se réaliser en continuant à me former.
-      </p>
-      <p>    
-        Pour qu’ensemble nous fusionnions nos connaissances. <br>
-        Pour qu’ensemble nous partagions notre passion. <br>
-        Pour qu’ensemble nous réalisions des projets incroyables. <br>
+        Après avoir maintenant travaillé sur de nombreux projets 3D, je serai
+        ravie de vous aider à concevoir des expériences numériques fluides,
+        immersives et innovantes.
       </p>
     </div>
     <LineBottom />
@@ -67,16 +80,16 @@ export default {
   name: "AProposDevComponent",
   components: {
     LineTop,
-    LineBottom
-	}
-}
+    LineBottom,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .a-propos {
   width: 70%;
   margin: 20px auto;
-	line-height: 25px;
+  line-height: 25px;
   @include breakpoint(800) {
     width: 80%;
   }

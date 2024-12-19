@@ -1,19 +1,19 @@
 <template>
-	<div class="developpeur">
-		<Title :title="'Voici la développeuse web qu\'il vous manquait !'" />
-		<div class="developpeur__apropos">
-			<AProposDevComponent />
-		</div>
-		<div class="developpeur__portfolio">
-			<Portfolio />
-		</div>
-		<div class="developpeur__technos">
-			<Technologies />
-		</div>
-		<div class="contact">
+  <div class="developpeur">
+    <Title :title="'Voici la développeuse web qu\'il vous manquait !'" />
+    <div class="developpeur__apropos">
+      <AProposDevComponent />
+    </div>
+    <div class="developpeur__portfolio">
+      <Portfolio />
+    </div>
+    <div class="developpeur__technos">
+      <Technologies />
+    </div>
+    <div class="contact">
       <ContactComponent />
     </div>
-	</div>
+  </div>
 </template>
 
 <script>
@@ -21,18 +21,18 @@ import Portfolio from "@/components/Portfolio.vue";
 import AProposDevComponent from "@/components/AProposDevComponent.vue";
 import Title from "@/components/Title.vue";
 import Technologies from "@/components/Technologies.vue";
-import ContactComponent from "@/components/ContactComponent.vue"
+import ContactComponent from "@/components/ContactComponent.vue";
 
 export default {
-	name: "Developpeur",
-	components: {
-		Portfolio,
-		Title,
-		AProposDevComponent,
-		Technologies,
-		ContactComponent
-	}
-}
+  name: "Developpeur",
+  components: {
+    Portfolio,
+    Title,
+    AProposDevComponent,
+    Technologies,
+    ContactComponent,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -45,16 +45,16 @@ export default {
 }
 
 .developpeur {
-	width: 100%;
-	&__portfolio {
-		margin-top: 100px;
-	}
-	&__apropos {
-		margin-top: 100px;
-		margin-bottom: 100px;
-	}
-	&__technos {
-		margin-top: 10px;
-	}
+  width: 100%;
+  &__portfolio {
+    margin-top: 100px;
+  }
+  &__apropos {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  &__technos {
+    margin-top: 10px;
+  }
 }
 </style>

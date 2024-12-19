@@ -1,21 +1,20 @@
 <template>
   <div class="a-propos">
-    <img :src="require('@/assets/img/maud_square.jpg')" alt="maud zellner">
+    <img :src="require('@/assets/img/maud_square.jpg')" alt="maud zellner" />
     <LineTop />
     <div class="a-propos__texts">
       <h1>Maud Zellner</h1>
       <h2>Développeuse Web</h2>
       <p>
-        Mon but premier est d'aider votre entreprise à augmenter son chiffre d'affaire. <br>
-        Je suis avant tout à VOTRE écoute pour qu'ensemble, nous mettions tout en oeuvre pour réaliser votre projet de la meilleure manière possible. 
+        Passionnée par le code et la 3D depuis 10 ans, je combine créativité et
+        performance technique pour concevoir des expériences numériques fluides,
+        immersives et innovantes.
       </p>
       <p>
-        Etant à la fois développeuse web et infographiste 3D, j’apprécie réellement marier le code et le design pour permettre à vos applications web d'être à la fois fluides, rapides et élégantes. 
+        Je suis avant tout à votre écoute pour réaliser le projet qui
+        corresponde le mieux à vos attentes.
       </p>
-      <p>
-        Riche de mes expériences, je ne demande qu’à vous aider. <br>
-        Alors, appelez-moi. Ainsi, ensemble, nous réaliserons des projets incroyables.
-      </p>
+      <p>Appelez-moi et ensemble, nous créerons des projets incroyables.</p>
     </div>
     <LineBottom />
   </div>
@@ -29,16 +28,16 @@ export default {
   name: "AProposComponent",
   components: {
     LineTop,
-    LineBottom
-	}
-}
+    LineBottom,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .a-propos {
   width: 70%;
   margin: 20px auto;
-	line-height: 25px;
+  line-height: 25px;
   @include breakpoint(800) {
     width: 80%;
   }
