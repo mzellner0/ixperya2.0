@@ -1,38 +1,38 @@
 <template>
   <div class="pop-up-win" v-if="win">
     <div class="pop-up-win__text">
-      <p>Gagné !</p>
-      <button @click="onClickOnRestart">Rejouer</button>
+      <p>You won!</p>
+      <button @click="onClickOnRestart">Play again</button>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "PopUpJeuWin",
   computed: {
-    ...mapState(['win'])
+    ...mapState(["win"]),
   },
   methods: {
-    ...mapActions(['hideWin', 'toggleRestartGame']),
+    ...mapActions(["hideWin", "toggleRestartGame"]),
     onClickOnRestart() {
       this.hideWin();
       this.toggleRestartGame();
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.pop-up-win{
+.pop-up-win {
   position: absolute;
   top: 200px;
   left: 35%;
   width: 30%;
   z-index: 2;
-  @include breakpoint(500){
+  @include breakpoint(500) {
     top: 70px;
     left: 5%;
     width: 90%;
@@ -51,7 +51,7 @@ export default {
     height: 270px;
     border: solid 2px #182836;
     border-radius: 40px;
-    @include breakpoint(500){
+    @include breakpoint(500) {
       width: 90%;
       min-width: auto;
       height: 125px;
@@ -77,13 +77,13 @@ button {
   outline: none;
   cursor: pointer;
   transition: 200ms;
-  &:hover{
+  &:hover {
     background-color: white;
     color: $color-header-dark;
     animation: waves 1000ms ease-in-out infinite;
     border-color: $color-header-dark;
   }
-    @include breakpoint(500){
+  @include breakpoint(500) {
     font-size: 15px;
   }
 }

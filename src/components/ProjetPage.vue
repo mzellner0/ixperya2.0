@@ -4,20 +4,15 @@
       <h2>{{ titleProjet }}</h2>
       <h3>{{ subtitle }}</h3>
       <p>{{ text }}</p>
-      <a :href="url" target="_blank">Découvrez le site</a>
+      <a :href="url" target="_blank">Discover the website</a>
     </div>
-    <div
-      :class="[
-        'projet__images',
-        { 'is-mobile': isMobile }
-      ]"
-    >
-      <img 
+    <div :class="['projet__images', { 'is-mobile': isMobile }]">
+      <img
         v-for="(img, index) in images"
         :key="index"
         :src="img"
         :alt="`image-projet${index}`"
-      >
+      />
     </div>
     <CarrousselImage
       v-if="showCarroussel"
@@ -26,19 +21,18 @@
       @close-pop-up="closeCarroussel"
     />
   </div>
-
 </template>
 
 <!-- click on image -->
 <!-- @click="onClickOnImage(event, index)" -->
 
 <script>
-import CarrousselImage from "@/components/CarrousselImage.vue"
+import CarrousselImage from "@/components/CarrousselImage.vue";
 
 export default {
   name: "ProjetPage",
   components: {
-    CarrousselImage
+    CarrousselImage,
   },
   props: {
     titleProjet: { type: String, default: "" },
@@ -46,13 +40,13 @@ export default {
     subtitle: { type: String, default: "" },
     url: { type: String, default: "" },
     images: { type: Array, default: () => [] },
-    isMobile: { type: Boolean, default: false }
+    isMobile: { type: Boolean, default: false },
   },
-  data: function() {
+  data: function () {
     return {
       showCarroussel: false,
-      imageStart: 0
-    }
+      imageStart: 0,
+    };
   },
   methods: {
     onClickOnImage(event, index) {
@@ -61,9 +55,9 @@ export default {
     },
     closeCarroussel() {
       this.showCarroussel = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -121,11 +115,11 @@ export default {
       // }
     }
     &.is-mobile {
-        img {
-          max-height: 550px;
-          object-fit: contain;
-        }
+      img {
+        max-height: 550px;
+        object-fit: contain;
       }
+    }
     @include breakpoint(1630) {
       @include flex(column, center, center);
       margin: 20px 0px;

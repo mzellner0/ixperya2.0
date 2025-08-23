@@ -4,17 +4,17 @@
     <LineTop />
     <div class="a-propos__texts">
       <h1>Maud Zellner</h1>
-      <h2>Développeuse Web</h2>
+      <h2>Web Developer</h2>
       <p>
-        Passionnée par le code et la 3D depuis 10 ans, je combine créativité et
-        performance technique pour concevoir des expériences numériques fluides,
-        immersives et innovantes.
+        Passionate about coding and 3D for 10 years, I combine creativity and
+        technical performance to design smooth, immersive, and innovative
+        digital experiences.
       </p>
       <p>
-        Je suis avant tout à votre écoute pour réaliser le projet qui
-        corresponde le mieux à vos attentes.
+        Above all, I am here to listen to you and bring to life the project that
+        best meets your expectations.
       </p>
-      <p>Appelez-moi et ensemble, nous créerons des projets incroyables.</p>
+      <p>Call me, and together we will create amazing projects.</p>
     </div>
     <LineBottom />
   </div>

@@ -1,54 +1,56 @@
 <template>
-    <div class="tuto-container">
-      <div :class="['tuto-container__explanation', { 'hidden': hideExplanation }]">
-        <p>
-            Suivez les particules pour trouver la clef et ouvrir la porte.
-        </p>
-        <button class="letsGo" @click="startGame">
-          C'est parti !
-        </button>
-      </div>
-      <font-awesome-icon 
-        :class="['tuto-container__pointerGrab', { 'hidden': hideGrabTuto }]" 
-        :icon="['fas', 'hand-pointer']"
-      />
-      <font-awesome-icon 
-        :class="['tuto-container__arrow tuto-container__arrowCatch', { 'hidden': hideArrowCatch }]" 
-        :icon="['fas', 'long-arrow-alt-down']"
-      />
-      <font-awesome-icon 
-        :class="[
-          'tuto-container__arrow tuto-container__arrowInventory', 
-          { 'hidden': hideArrowInventory || !hideInventory || !showArrowInventoryPossible }
-        ]" 
-        :icon="['fas', 'long-arrow-alt-down']"
-      />
+  <div class="tuto-container">
+    <div :class="['tuto-container__explanation', { hidden: hideExplanation }]">
+      <p>Follow the particles to find the key and open the door.</p>
+      <button class="letsGo" @click="startGame">Let's go!</button>
+    </div>
+    <font-awesome-icon
+      :class="['tuto-container__pointerGrab', { hidden: hideGrabTuto }]"
+      :icon="['fas', 'hand-pointer']"
+    />
+    <font-awesome-icon
+      :class="[
+        'tuto-container__arrow tuto-container__arrowCatch',
+        { hidden: hideArrowCatch },
+      ]"
+      :icon="['fas', 'long-arrow-alt-down']"
+    />
+    <font-awesome-icon
+      :class="[
+        'tuto-container__arrow tuto-container__arrowInventory',
+        {
+          hidden:
+            hideArrowInventory || !hideInventory || !showArrowInventoryPossible,
+        },
+      ]"
+      :icon="['fas', 'long-arrow-alt-down']"
+    />
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "TutoJeu",
   computed: {
     ...mapState([
-    'hideExplanation', 
-    'hideGrabTuto', 
-    'hideArrowCatch', 
-    'hideArrowInventory', 
-    'hideInventory', 
-    'showArrowInventoryPossible'
-  ])
+      "hideExplanation",
+      "hideGrabTuto",
+      "hideArrowCatch",
+      "hideArrowInventory",
+      "hideInventory",
+      "showArrowInventoryPossible",
+    ]),
   },
   methods: {
-    ...mapActions(['toggleHideExplanation', 'toggleDisableCanvasJeu']),
+    ...mapActions(["toggleHideExplanation", "toggleDisableCanvasJeu"]),
     startGame() {
       this.toggleHideExplanation();
       this.toggleDisableCanvasJeu();
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -57,13 +59,13 @@ export default {
   pointer-events: none;
 }
 
-.tuto-container{
+.tuto-container {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 80vh;
   z-index: 99;
-  &__pointerGrab{
+  &__pointerGrab {
     position: absolute;
     background-color: white;
     width: 29px;
@@ -82,7 +84,7 @@ export default {
       margin-top: 150px;
     }
   }
-  &__arrow{
+  &__arrow {
     z-index: inherit;
     font-size: 55px;
     position: absolute;
@@ -90,13 +92,13 @@ export default {
     transition: 200ms;
     animation: upDownArrow 700ms ease-in-out infinite;
   }
-  &__arrowCatch{
+  &__arrowCatch {
     left: calc(50% - 45px);
   }
-  &__arrowInventory{
+  &__arrowInventory {
     left: calc(50% + 15px);
   }
-  &__explanation{
+  &__explanation {
     @include flex(column, center, space-around);
     z-index: 2;
     margin-top: 170px;
@@ -113,7 +115,7 @@ export default {
     height: 270px;
     border: solid 2px #182836;
     border-radius: 40px;
-    @include breakpoint(500){
+    @include breakpoint(500) {
       width: 80%;
       min-width: auto;
       height: 225px;
@@ -123,7 +125,7 @@ export default {
       font-size: 17px;
     }
   }
-  p{
+  p {
     margin: 0;
   }
   button {
@@ -141,13 +143,13 @@ export default {
     outline: none;
     cursor: pointer;
     transition: 200ms;
-    &:hover{
+    &:hover {
       background-color: white;
       color: $color-header-dark;
       animation: waves 1000ms ease-in-out infinite;
       border-color: $color-header-dark;
     }
-    @include breakpoint(500){
+    @include breakpoint(500) {
       font-size: 15px;
     }
   }

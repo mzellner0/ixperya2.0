@@ -1,28 +1,27 @@
 <template>
   <div class="siteECommerce">
     <BasePageSpecialisee
-      :title1="'Augmentez vos ventes en permettant à vos utilisateurs de personnaliser vos produits de manière interactive !'"
-      :title2="'Faites de votre site un jeu !'"
-      :title3="'Ensemble, Boostons vos ventes'"
-      :paragraph1="'GRÂCE À DES OUTILS PERMETTANT LA PERSONNALISATION D’OBJETS SOUS FORME DE JEU 3D, IMPLIQUEZ VOS VISITEURS DANS LA CRÉATION DE LEURS PROPRES COMMANDES ET AINSI vendez plus et plus cher.'"
+      :title1="'Increase your sales by allowing your users to customize your products interactively!'"
+      :title2="'Turn your website into a game!'"
+      :title3="'Together, let\'s boost your sales.'"
+      :paragraph1="'With tools that allow 3D game-like product customization, engage your visitors in creating their own orders, and thus sell more.'"
     >
       <template v-slot:content>
         <OutilPersonnalisation />
       </template>
       <template v-slot:paragraph2>
         <p>
-          Impliquez vos visiteurs dans la création de leur futur achat. Une fois
-          qu'ils auront passé des dizaines de minutes (voir des heures) à créer
-          leur produit parfait, il sera impensable pour eux de ne pas l'acheter
-          !
+          Engage your visitors in creating their future purchase. Once they’ve
+          spent tens of minutes (or even hours) designing their perfect product,
+          it will be unthinkable for them not to buy it!
         </p>
         <p>
-          A votre écoute, nous chercherons, ensemble, la meilleure approche pour
-          mettre en avant vos produits.
+          By listening to you, we will work together to find the best approach
+          to showcase your products.
         </p>
         <p>
-          Chaque projet est unique ! Le mieux est donc de me contacter pour
-          qu'on en discute !
+          Every project is unique! The best thing to do is contact me so we can
+          discuss it!
         </p>
       </template>
     </BasePageSpecialisee>

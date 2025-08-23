@@ -2,18 +2,20 @@
   <div class="accueil">
     <div class="accueil__container">
       <div class="accueil__question">
-        <div :class="['accueil__border-futura', { 'anim-border-left': !loader }]" />
+        <div
+          :class="['accueil__border-futura', { 'anim-border-left': !loader }]"
+        />
         <div class="accueil__text">
           <p>{{ question }}</p>
         </div>
         <div class="accueil__answers">
-          <ButtonsAccueil 
-            :list-buttons="listButtons" 
+          <ButtonsAccueil
+            :list-buttons="listButtons"
             @change-questions="getRedirect"
           />
         </div>
-        <font-awesome-icon 
-          :class="['arrow', { 'hide': hideArrow }]" 
+        <font-awesome-icon
+          :class="['arrow', { hide: hideArrow }]"
           :icon="['fas', 'arrow-circle-left']"
           @click="backQuestions"
         />
@@ -27,57 +29,71 @@
 import Scene from "@/classes/Scene.js";
 import Gltf from "@/classes/Gltf.js";
 import ButtonsAccueil from "@/components/ButtonsAccueil.vue";
-import { mapActions, mapState } from 'vuex'
-
+import { mapActions, mapState } from "vuex";
 
 export default {
-  name: 'Accueil',
+  name: "Accueil",
   components: {
-    ButtonsAccueil
+    ButtonsAccueil,
   },
-  data: function() {
+  data: function () {
     return {
       scene: null,
       robot: null,
-      question: "Bonjour, que cherchez-vous ?",
+      question: "Hello, what are you looking for?",
       firstListButtons: [
-        { id: 1, question: "Je veux créer/refaire mon site." },
-        { id: 3, question: "Je cherche un développeur web." },
-        { id: 4, question: "Je veux créer un jeu vidéo sur le web." }
+        { id: 1, question: "I want to create/remake my website." },
+        { id: 3, question: "I’m looking for a web developer." },
+        { id: 4, question: "I want to create a video game on the web." },
       ],
       secondListButtons: [
-        { id: 5, question: "Je fais du e-commerce." },
-        { id: 6, question: "J'ai/je veux un site informatif." }
+        { id: 5, question: "I do e-commerce." },
+        { id: 6, question: "I have/I want an informational website." },
       ],
       listButtons: null,
-      hideArrow: true
-    }
+      hideArrow: true,
+    };
   },
   computed: {
-    ...mapState(['loader'])
+    ...mapState(["loader"]),
   },
   created() {
     this.listButtons = this.firstListButtons;
     this.showLoader();
   },
   mounted() {
-    this.scene = new Scene(document.getElementById("threeAccueil"), { x: -0.5, y: 8, z: 15 }, 2.5, 1.5, 1.5, 3, false, 1150);
-    this.robot = new Gltf(this.scene, "src/gltf/robot_v003.glb", true, 1, this.callbackRobot.bind(this));
+    this.scene = new Scene(
+      document.getElementById("threeAccueil"),
+      { x: -0.5, y: 8, z: 15 },
+      2.5,
+      1.5,
+      1.5,
+      3,
+      false,
+      1150
+    );
+    this.robot = new Gltf(
+      this.scene,
+      "src/gltf/robot_v003.glb",
+      true,
+      1,
+      this.callbackRobot.bind(this)
+    );
 
-    if(innerWidth > 1000) {
-      document.body.addEventListener('mousemove', this.onMouseMove);
+    if (innerWidth > 1000) {
+      document.body.addEventListener("mousemove", this.onMouseMove);
     }
   },
   beforeUnmount() {
     this.robot.stopAnimate();
     this.scene.stopAnimate();
 
-    if(innerWidth > 1000) {
-      document.body.removeEventListener('mousemove', this.onMouseMove);
+    if (innerWidth > 1000) {
+      document.body.removeEventListener("mousemove", this.onMouseMove);
     }
   },
   methods: {
-    ...mapActions(['showLoader', 'hideLoader']),
+    ...mapActions(["showLoader", "hideLoader"]),
     callbackRobot() {
       this.robot.playAnimation("hello");
       this.robot.firstGltfChild.scale.set(0.9, 0.9, 0.9);
@@ -100,9 +116,9 @@ export default {
         this.robot.firstGltfChild.rotation.y = event.clientX * coeffWidth - 1.8;
         this.robot.firstGltfChild.rotation.x = event.clientY * coeffHeight;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

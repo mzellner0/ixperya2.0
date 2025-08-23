@@ -1,10 +1,10 @@
 <template>
   <div class="siteInfo">
     <BasePageSpecialisee
-      :title1="'Marquez les esprits avec un design élégant !'"
-      :title2="'Créez une charte graphique réussie et ainsi, gagnez en crédibilité (évitez que votre site ne fasse peur).'"
-      :title3="'Ensemble, Créons votre site'"
-      :paragraph1="'Voici un exemple de design que nous avons réalisé :'"
+      :title1="'Make a lasting impression with an elegant design!'"
+      :title2="'Create a successful visual identity and boost your credibility (avoid making your website look scary).'"
+      :title3="'Together, let\'s create your website.'"
+      :paragraph1="'Here\'s an example of a design we created:'"
     >
       <template v-slot:content>
         <div class="siteInfo__portfolio">
@@ -12,27 +12,23 @@
         </div>
       </template>
       <template v-slot:paragraph2>
+        <p>We create fully customized websites to best meet your needs.</p>
         <p>
-          Nous réalisons vos sites entierement personnalisés pour correspondre
-          au mieux à vos besoins.
+          Your brand image is unique.<br />
+          Together, we will make sure to find yours, and then create your web
+          pages in the right direction.
         </p>
         <p>
-          Votre image de marque est unique.<br />
-          Ensemble, nous nous assurerons de trouver la vôtre, pour créer ensuite
-          vos pages internet en partant dans la bonne direction.
+          By listening to you, we will work together to find the best approach
+          to showcase your business on the web. We will make it stand out with
+          strong visuals and distinctive originality.
         </p>
         <p>
-          A votre écoute, nous chercherons ensemble, la meilleure approche pour
-          mettre en avant votre entreprise sur le web. Nous la distinguerons par
-          une force visuelle et une originalité marquée.
+          Want peace of mind? No worries: we take care of your websites’
+          maintenance and updates (either as a package or on a quote basis—don’t
+          pay if no changes are made). You don’t have to do anything.
         </p>
-        <p>
-          Vous avez envie d’avoir l’esprit tranquille ? Pas de soucis : nous
-          nous occupons de la maintenance de vos sites et de leurs mises à jour
-          (sous forme de forfait ou au devis : ne payer pas s'il n'y a aucune
-          modification). Vous n’avez rien à faire.
-        </p>
-        <p>Vous voulez en savoir plus ? Contactez-moi !</p>
+        <p>Want to know more? Contact me!</p>
       </template>
     </BasePageSpecialisee>
   </div>
@@ -53,9 +49,9 @@ export default {
       projetsList: {
         hdp: {
           title: "Hôtel de Paris Saint Tropez",
-          subtitle: "Réalisation du design et de l'intégration du site.",
+          subtitle: "Design and website integration.",
           urlImage: "hdp-portfolio-2.jpg",
-          text: "Cet hôtel cherchait à rafraîchir son ancien site internet. Nous leurs avons donc réalisés 3 nouvelles propostions graphiques pour qu'il puisse choisir celle qui leurs correspondait le mieux. Une fois le design décidé, nous l'avons integré avec soin.",
+          text: "This hotel wanted to refresh its old website. We created three new design proposals for them so they could choose the one that suited them best. Once the design was decided, we carefully integrated it.",
           images: [
             require("@/assets/img/projets/hdp-1.jpeg"),
             require("@/assets/img/projets/hdp-3.jpeg"),
