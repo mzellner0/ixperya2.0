@@ -1,19 +1,19 @@
 <template>
   <div v-if="loader" class="loader bg">
-      <span class="loader__circle"></span>
-      <p>Chargement ...</p>
+    <span class="loader__circle"></span>
+    <p>Loading...</p>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
 export default {
   name: "Loader",
-    computed: {
-    ...mapState(['loader'])
-  }
-}
+  computed: {
+    ...mapState(["loader"]),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -22,7 +22,7 @@ $size-circle: 30px;
 $size-small: 6px;
 $color-circle: $color-header-dark;
 
-.loader{
+.loader {
   width: 100%;
   height: 100%;
   z-index: 99;
@@ -34,7 +34,7 @@ $color-circle: $color-header-dark;
   top: 0%;
   left: 0%;
   transition: 500ms;
-  &__circle{
+  &__circle {
     height: $size-circle;
     width: $size-circle;
     border-radius: $size-circle;
@@ -42,8 +42,8 @@ $color-circle: $color-header-dark;
     border-top-color: $color-circle;
     position: relative;
     animation: rotate-circle 1000ms linear infinite;
-    &::after{
-      content: '';
+    &::after {
+      content: "";
       position: absolute;
       border: solid $size-border transparent;
       border-top-color: $color-circle;
@@ -54,8 +54,8 @@ $color-circle: $color-header-dark;
       border-radius: $size-circle;
       animation: rotate-circle 2000ms linear infinite;
     }
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
       border: solid $size-border transparent;
       border-top-color: $color-circle;
@@ -67,7 +67,7 @@ $color-circle: $color-header-dark;
       animation: rotate-circle 40000ms linear infinite;
     }
   }
-  p{
+  p {
     margin-left: 20px;
     font-family: $police-logo;
     color: $color-circle;
@@ -77,11 +77,11 @@ $color-circle: $color-header-dark;
   }
 }
 
-@keyframes rotate-circle{
-  0%{
+@keyframes rotate-circle {
+  0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }

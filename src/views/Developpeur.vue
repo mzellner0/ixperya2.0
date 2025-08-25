@@ -1,6 +1,6 @@
 <template>
   <div class="developpeur">
-    <Title :title="'Here’s the web developer you’ve been missing!'" />
+    <Title :title="'Here’s the web developer you’ve been looking for!'" />
     <div class="developpeur__apropos">
       <AProposDevComponent />
     </div>

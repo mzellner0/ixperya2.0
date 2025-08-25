@@ -42,13 +42,13 @@ export default {
       robot: null,
       question: "Hello, what are you looking for?",
       firstListButtons: [
-        { id: 1, question: "I want to create/remake my website." },
+        { id: 1, question: "I want to create/update my website." },
         { id: 3, question: "I’m looking for a web developer." },
-        { id: 4, question: "I want to create a video game on the web." },
+        { id: 4, question: "I want to create a web video game." },
       ],
       secondListButtons: [
         { id: 5, question: "I do e-commerce." },
-        { id: 6, question: "I have/I want an informational website." },
+        { id: 6, question: "I want an informational website." },
       ],
       listButtons: null,
       hideArrow: true,

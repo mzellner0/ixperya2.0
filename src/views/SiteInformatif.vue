@@ -2,9 +2,9 @@
   <div class="siteInfo">
     <BasePageSpecialisee
       :title1="'Make a lasting impression with an elegant design!'"
-      :title2="'Create a successful visual identity and boost your credibility (avoid making your website look scary).'"
-      :title3="'Together, let\'s create your website.'"
-      :paragraph1="'Here\'s an example of a design we created:'"
+      :title2="'Create a successful visual identity and boost your credibility. Avoid having a scary website!'"
+      :title3="'Let\'s create your website.'"
+      :paragraph1="'Here\'s an example of a design we have created:'"
     >
       <template v-slot:content>
         <div class="siteInfo__portfolio">
@@ -12,23 +12,21 @@
         </div>
       </template>
       <template v-slot:paragraph2>
-        <p>We create fully customized websites to best meet your needs.</p>
+        <p>We create fully customized websites to meet your needs.</p>
         <p>
-          Your brand image is unique.<br />
-          Together, we will make sure to find yours, and then create your web
-          pages in the right direction.
+          Your brand image is unique, we will make sure to find yours, and then
+          create your web page according to it.
         </p>
         <p>
-          By listening to you, we will work together to find the best approach
-          to showcase your business on the web. We will make it stand out with
-          strong visuals and distinctive originality.
+          We will work together to find the best approach to showcase your
+          business on the web. We will make it stand out with strong visuals and
+          distinctive originality.
         </p>
         <p>
-          Want peace of mind? No worries: we take care of your websites’
-          maintenance and updates (either as a package or on a quote basis—don’t
-          pay if no changes are made). You don’t have to do anything.
+          Do you want peace of mind? No worries: we will take care of your
+          website's maintenance and updates. You don’t have to do anything!
         </p>
-        <p>Want to know more? Contact me!</p>
+        <p>Do you want to know more? Contact me!</p>
       </template>
     </BasePageSpecialisee>
   </div>

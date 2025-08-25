@@ -1,7 +1,7 @@
 <template>
   <div class="technos">
-    <h1>Technologies used:</h1>
-    <h2>For the front-end part:</h2>
+    <h1>Technologies used</h1>
+    <h2>Front-end</h2>
     <div class="frontend">
       <img :src="require('@/assets/img/logos/three.png')" alt="logo three.js" />
       <img :src="require('@/assets/img/logos/react.png')" alt="logo react" />
@@ -13,7 +13,7 @@
       />
       <img :src="require('@/assets/img/logos/sass.png')" alt="logo sass" />
     </div>
-    <h2>For mobile development:</h2>
+    <h2>Mobile development</h2>
     <div class="mobile">
       <img :src="require('@/assets/img/logos/dart.png')" alt="logo dart" />
       <img
@@ -21,7 +21,7 @@
         alt="logo flutter"
       />
     </div>
-    <h2>For the back-end part:</h2>
+    <h2>Back-end</h2>
     <div class="backend">
       <img :src="require('@/assets/img/logos/node.png')" alt="logo node" />
       <img
@@ -34,7 +34,7 @@
         class="mysql"
       />
     </div>
-    <h2>For the 3D part:</h2>
+    <h2>3D software</h2>
     <div class="trois-d">
       <img
         :src="require('@/assets/img/logos/logo_blender.png')"
@@ -46,7 +46,7 @@
       />
       <img :src="require('@/assets/img/logos/maya_logo.png')" alt="logo maya" />
     </div>
-    <h2>For editing / post-production:</h2>
+    <h2>Editing / Post-production</h2>
     <div class="montage">
       <img
         :src="require('@/assets/img/logos/premiere_logo.png')"

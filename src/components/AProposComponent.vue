@@ -10,11 +10,8 @@
         technical performance to design smooth, immersive, and innovative
         digital experiences.
       </p>
-      <p>
-        Above all, I am here to listen to you and bring to life the project that
-        best meets your expectations.
-      </p>
-      <p>Call me, and together we will create amazing projects.</p>
+      <p>I am here to listen to you and bring to life your dream project!</p>
+      <p>Call me, amazing projects are waiting for you!</p>
     </div>
     <LineBottom />
   </div>

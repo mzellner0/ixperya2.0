@@ -1,27 +1,30 @@
 <template>
   <div class="siteJeu">
     <BasePageSpecialisee
-      :title1="'Make your website interactive and capture your visitors\' attention.'"
-      :title2="'With 3D, everything becomes possible!'"
-      :title3="'Together, let\'s create your game.'"
-      :paragraph1="'Wondering what it might look like? Take a look at an example:'"
+      :title1="'Make your website interactive, and capture your visitors\' attention.'"
+      :title2="'Using 3D, everything becomes possible!'"
+      :title3="'Let\'s create your game!'"
+      :paragraph1="'Wondering how it might look like?'"
     >
       <template v-slot:content>
         <div class="siteJeu__button">
-          <Button :text="'Game'" :composant-name="'Jeu'" :new-tab="true" />
+          <Button
+            :text="'Play the game'"
+            :composant-name="'Jeu'"
+            :new-tab="true"
+          />
         </div>
       </template>
       <template v-slot:paragraph2>
         <p>
-          Each game project is unique. From increasing the time visitors spend
-          on your site to selling in-game items, the range of possibilities is
-          very wide.
+          Each game project is unique. From increasing the time each visitor
+          spends on your site, to selling in-game items, the range of
+          possibilities is very massive!
         </p>
         <p>
-          By listening to you, we will work together to develop the rules and
-          objectives of the game you want to create.
+          We will work together to develop the rules and objectives of the game
+          you want to create.
         </p>
-        <p>Contact me now so we can discuss it!</p>
       </template>
     </BasePageSpecialisee>
   </div>

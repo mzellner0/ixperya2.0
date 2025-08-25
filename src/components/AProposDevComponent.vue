@@ -5,53 +5,48 @@
     <div class="a-propos__texts">
       <h1>Who am I?</h1>
       <p>
-        You’re looking for a developer to provide your clients with websites
-        that meet their high standards.
+        One day, you’re looking for a developer to provide your clients with
+        websites that meet their high standards.
       </p>
       <p>
         Tons of candidates are available to you. <br />
-        They all seem interesting and talented. <br />
-        But how do you choose the right person?
+        All of them seem interesting and talented. <br />
+        But, how do you choose the right person?
       </p>
       <p>
-        The key lies in those who challenge themselves every day, who are
-        curious and constantly seeking improvement. These individuals will be
-        able to integrate into your company to:
+        The key lies in those who challenge themselves every day, in those who
+        are curious and constantly seeking for improvement. These are the
+        individuals who will:
       </p>
       <ul>
-        <li>learn and work with the same tools as your team</li>
-        <li>
-          produce clean, maintainable code to ensure the longevity of projects
-        </li>
-        <li>
-          explore new technologies and learn to use them to be as efficient as
-          possible.
-        </li>
+        <li>Learn and work with the same tools as your team</li>
+        <li>Produce clean, maintainable code to ensure the longevity of projects</li>
+        <li>Explore new technologies and learn to use them to be as efficient as possible.</li>
       </ul>
       <p>
         My name is Maud, and I am a front-end web developer specializing in
-        three.js. <br />
-        Former 3D graphic artist specializing in texturing, shading, grooming,
-        and rendering, I have worked on advertising and visual effects for
-        companies such as I-Réel and Digital Golem.
+        Three.js <br />
+        I am a former 3D graphic artist, specialized in texturing, shading,
+        grooming, and rendering. I have worked on advertising and creating
+        visual effects for companies such as I-Réel and Digital Golem.
       </p>
       <p>
-        Now a web developer, the combination of code and design is at the heart
+        Now as a web developer, the combination of code and design is the core
         of my approach, allowing me to create smooth, fast, and elegant web
         applications.
       </p>
       <p>
-        I began learning WebGL by reading *Real-Time 3D Graphics with WebGL 2*.
-        I then explored the Three.js documentation in depth while working on
-        numerous projects, such as the "Avatar Creator" on The Sandbox website,
+        I began learning WebGL by reading "Real-Time 3D Graphics with WebGL 2".
+        Then, I explored the Three.js documentation in depth, while working on
+        different projects, such as the "Avatar Creator" on The Sandbox website,
         which allows users to customize their avatars online. Through this
-        experience, I was able to deepen my knowledge of shaders—for example, by
-        creating one from scratch that blended two textures together, giving
-        users better control over the color of their avatar.
+        experience, I was able to deepen my knowledge on shaders. For example I
+        created one shader from scratch that blended two textures together,
+        giving users better control over the color of their avatar.
       </p>
       <p>
-        Today at Stereograph, I am exploring geometry-related optimization more
-        deeply by working with batching and instancing.
+        As of today, working at Stereograph, I am exploring geometry-related
+        optimizations working with batching and instancing.
       </p>
       <p>
         Throughout my journey, I have learned one essential thing: every problem
@@ -61,7 +56,7 @@
         as possible.
       </p>
       <p>
-        Having now worked on numerous projects, I would be delighted to help you
+        Having now worked on multiple projects, I would be delighted to help you
         create smooth, immersive, and innovative digital experiences.
       </p>
     </div>
