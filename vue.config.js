@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: "/ixperya2.0/",
+    publicPath: "/",
     css: {
       loaderOptions: {
         sass: {

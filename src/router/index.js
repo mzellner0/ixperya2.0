@@ -66,7 +66,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory("/ixperya2.0/"),
+  history: createWebHistory(),
   routes,
   scrollBehavior () {
     return { top: 0 };
