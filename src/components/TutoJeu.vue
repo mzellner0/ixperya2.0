@@ -1,8 +1,8 @@
 <template>
   <div class="tuto-container">
     <div :class="['tuto-container__explanation', { hidden: hideExplanation }]">
-      <p>Follow the particles to find the key and open the door.</p>
-      <button class="letsGo" @click="startGame">Let's go!</button>
+      <p>{{ $t("game.tuto.text_1") }}</p>
+      <button class="letsGo" @click="startGame">{{ $t("game.tuto.text_2") }}</button>
     </div>
     <font-awesome-icon
       :class="['tuto-container__pointerGrab', { hidden: hideGrabTuto }]"

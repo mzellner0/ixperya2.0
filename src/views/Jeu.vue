@@ -5,7 +5,7 @@
       class="jeu__button" 
       :style="{ opacity: gameStarting ? 0 : 1, display: gameStart ? 'none' : 'block' }" 
       @click="onClickOnPlay">
-      PLAY
+      {{ $t("game.button") }} 
     </button>
     <MenuJeu
       :card="card"

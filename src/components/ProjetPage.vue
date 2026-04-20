@@ -4,7 +4,7 @@
       <h2>{{ titleProjet }}</h2>
       <h3>{{ subtitle }}</h3>
       <p>{{ text }}</p>
-      <a v-if="url" target="_blank" :href="url">Discover the website</a>
+      <a v-if="url" target="_blank" :href="url">{{ $t("portfolio.discover") }}</a>
     </div>
     <div :class="['projet__images', { 'is-mobile': isMobile }]">
       <img

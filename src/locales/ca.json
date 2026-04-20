@@ -1,0 +1,118 @@
+{
+  "home_page": {
+    "question": "Hola, què estàs buscant?",
+    "question_create": "Vull crear/actualitzar el meu lloc web.",
+    "question_developer": "Busco una desenvolupadora web.",
+    "question_game": "Vull crear un videojoc web.",
+    "question_ecommerce": "Faig comerç electrònic.",
+    "question_info": "Vull un lloc web informatiu."
+  },
+  "about": {
+    "title": "Aquí tens la desenvolupadora web que estaves buscant!",
+    "web_developer": "Desenvolupadora web",
+    "text_1": "Apassionada per la programació i el 3D des de fa 10 anys, combino creativitat i rendiment tècnic per dissenyar experiències digitals fluides, immersives i innovadores.",
+    "text_2": "Estic aquí per escoltar-te i donar vida al teu projecte somiat!",
+    "text_3": "Truca'm, t’esperen projectes increïbles!",
+    "who": "Qui sóc?",
+    "text_4": "Un dia, estàs buscant una desenvolupadora per oferir als teus clients llocs web que compleixin els seus alts estàndards.",
+    "text_5": "Tens a la teva disposició desenes de candidats.",
+    "text_6": "Tots semblen interessants i talentosos.",
+    "text_7": "Però, com escollir la persona adequada?",
+    "text_8": "La clau està en aquelles persones que es posen a prova cada dia, en aquelles que són curioses i busquen millorar constantment. Aquestes persones:",
+    "text_9": "Aprenen i treballen amb les mateixes eines que el teu equip",
+    "text_10": "Produeixen codi net i mantenible per garantir la longevitat dels projectes",
+    "text_11": "Exploren noves tecnologies i aprenen a utilitzar-les per ser el més eficients possible.",
+    "text_12": "Em dic Maud i sóc desenvolupadora web front-end especialitzada en Three.js",
+    "text_13": "Sóc antiga artista 3D, especialitzada en texturització, shading, grooming i renderització. He treballat en publicitat i en la creació d’efectes visuals per a empreses com I-Réel i Digital Golem.",
+    "text_14": "Ara com a desenvolupadora web, la combinació de codi i disseny és el nucli del meu enfocament, cosa que em permet crear aplicacions web fluides, ràpides i elegants.",
+    "text_15": "Vaig començar a aprendre WebGL llegint \"Real-Time 3D Graphics with WebGL 2\". Després, vaig explorar a fons la documentació de Three.js mentre treballava en diferents projectes, com el \"Avatar Creator\" al lloc web de The Sandbox, que permet als usuaris personalitzar els seus avatars en línia. Gràcies a aquesta experiència, vaig aprofundir en el coneixement dels shaders. Per exemple, vaig crear un shader des de zero que combinava dues textures, donant més control sobre el color de l’avatar.",
+    "text_16": "Actualment, treballant a Stereograph, exploro optimitzacions relacionades amb la geometria treballant amb batching i instancing.",
+    "text_17": "Al llarg del meu recorregut, he après una cosa essencial: cada problema té una solució. Dominant els conceptes fonamentals de la programació, he après a adaptar-me ràpidament i evolucionar segons les necessitats. Em poso constantment a prova per ser el més productiva, eficient i creativa possible.",
+    "text_18": "Havent treballat en múltiples projectes, m’encantaria ajudar-te a crear experiències digitals fluides, immersives i innovadores."
+  },
+  "contact": {
+    "text_1": "Contacta’m:"
+  },
+  "menu": {
+    "home": "Inici",
+    "about": "Sobre mi",
+    "portfolio": "Portafoli",
+    "contact": "Contacte"
+  },
+  "game": {
+    "pop_up": {
+      "win": "Has guanyat!",
+      "play_again": "Torna a jugar"
+    },
+    "tuto": {
+      "text_1": "Segueix les partícules per trobar la clau i obrir la porta.",
+      "text_2": "Som-hi!"
+    },
+    "page": {
+      "title": "Fes el teu lloc web interactiu i captura l’atenció dels teus visitants.",
+      "text_1": "Cada projecte de joc és únic. Des d’augmentar el temps que cada visitant passa al teu lloc web fins a vendre articles dins del joc, les possibilitats són enormes!",
+      "text_2": "Treballarem junts per desenvolupar les regles i els objectius del joc que vulguis crear.",
+      "text_3": "Amb el 3D, tot és possible!",
+      "text_4": "Creem el teu joc!",
+      "text_5": "Et preguntes com podria ser?",
+      "button": "JUGA AL JOC"
+    },
+    "button": "JUGAR"
+  },
+  "portfolio": {
+    "title": "Portafoli",
+    "discover": "Descobreix el lloc web",
+    "project_1": {
+      "title": "Hôtel de Paris Saint Tropez",
+      "subtitle": "Disseny i integració del lloc web.",
+      "text": "Aquest hotel volia renovar el seu antic lloc web. Vam crear 3 noves propostes de disseny perquè poguessin escollir la que millor els convenia. Un cop escollit el disseny, el vam integrar amb cura."
+    },
+    "project_2": {
+      "title": "Tutuyoutoo",
+      "subtitle": "Aplicació mòbil.",
+      "text": "Des de les maquetes fins a la publicació a la Play Store i l’App Store, incloent-hi el desenvolupament (i una landing page), vaig crear una aplicació que permet als usuaris organitzar les seves vacances fàcilment, millorant la comunicació entre els membres del viatge."
+    },
+    "project_3": {
+      "title": "Creació d’avatar",
+      "subtitle": "Desenvolupament d’un mòdul de personalització d’avatars per al lloc web de Sandbox.game.",
+      "text": "Sandbox.game volia integrar un mòdul al seu lloc web que permetés a cada usuari personalitzar el seu avatar 3D. Com a desenvolupadora front-end, vaig integrar el seu disseny predefinit i vaig desenvolupar aquesta funcionalitat en JavaScript (utilitzant Vue.js i Three.js) per donar vida a la idea."
+    },
+    "project_4": {
+      "title": "Creació de joc 3D",
+      "subtitle": "Desenvolupament de videojoc 3D.",
+      "text": "Impulsada pel desig d’aprendre més sobre Three.js, vaig crear un videojoc 3D a la web."
+    }
+  },
+  "technologies": {
+    "title": "Tecnologies utilitzades",
+    "front": "Front-end",
+    "mobile": "Desenvolupament mòbil",
+    "back": "Back-end",
+    "three": "Programari 3D",
+    "editing": "Edició / Postproducció"
+  },
+  "ecommerce": {
+    "title": "Augmenta les teves vendes permetent als teus usuaris personalitzar els teus productes de manera interactiva!",
+    "text_1": "Implica els teus visitants en la creació de les seves futures compres. Un cop hagin passat desenes de minuts (o fins i tot hores) dissenyant el seu producte perfecte, serà impensable que no el comprin!",
+    "text_2": "Treballarem junts per trobar la millor manera de destacar els teus productes.",
+    "text_3": "Cada projecte és únic! Contacta amb mi i en parlarem!",
+    "text_4": "Converteix el teu lloc web en un joc!",
+    "text_5": "Fem créixer les teves vendes.",
+    "text_6": "Amb eines que permeten la personalització de productes en 3D tipus joc, implica els teus visitants en la creació de les seves comandes i ven més.",
+    "hands": "Agulles:",
+    "subdial_hands": "Agulles del subdial:",
+    "case": "Caixa:",
+    "strap": "Corretja:"
+  },
+  "web_info": {
+    "title": "Deixa una impressió duradora amb un disseny elegant!",
+    "text_1": "Creem llocs web totalment personalitzats per adaptar-nos a les teves necessitats.",
+    "text_2": "La imatge de la teva marca és única, ens assegurarem de trobar la teva i després crear la teva pàgina web en conseqüència.",
+    "text_3": "Treballarem junts per trobar la millor manera de destacar el teu negoci a la web. El farem destacar amb visuals potents i una originalitat distintiva.",
+    "text_4": "Vols tranquil·litat? Cap problema: ens encarregarem del manteniment i les actualitzacions del teu lloc web. No hauràs de fer res!",
+    "text_5": "Vols saber-ne més? Contacta amb mi!",
+    "text_6": "Crea una identitat visual forta i augmenta la teva credibilitat. Evita tenir un lloc web que faci por!",
+    "text_7": "Creem el teu lloc web.",
+    "text_8": "Aquí tens un exemple de disseny que hem creat:"
+  }
+}

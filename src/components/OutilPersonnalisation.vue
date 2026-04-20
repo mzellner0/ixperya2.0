@@ -65,16 +65,16 @@ export default {
     getNewColor3D(payload) {
       this.newColor3D;
       switch (payload.menuToChange) {
-        case "Hands:":
+        case this.$t("ecommerce.hands"):
           this.clock.changeColorAiguille(payload.color);
           break;
-        case "Subdial hands:":
+        case this.$t("ecommerce.subdial_hands"):
           this.clock.changeColorAiguilleColor(payload.color);
           break;
-        case "Case:":
+        case this.$t("ecommerce.case"):
           this.clock.changeColorCadran(payload.color);
           break;
-        case "Strap:":
+        case this.$t("ecommerce.strap"):
           this.clock.changeColorBracelet(payload.color);
           break;
       }

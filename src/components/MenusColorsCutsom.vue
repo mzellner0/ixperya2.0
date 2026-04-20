@@ -22,7 +22,7 @@ export default {
     return {
       menus: [
         {
-          title: "Case:",
+          title: this.$t("ecommerce.case"),
           colors: [
             { id: 1, color: "#fbca61", color3D: 0xfcba47 },
             { id: 2, color: "#b1b1b1", color3D: 0xbdbdbd },
@@ -30,7 +30,7 @@ export default {
           ],
         },
         {
-          title: "Hands:",
+          title: this.$t("ecommerce.hands"),
           colors: [
             { id: 1, color: "#fbca61", color3D: 0xfcba47 },
             { id: 2, color: "#b1b1b1", color3D: 0xbdbdbd },
@@ -38,7 +38,7 @@ export default {
           ],
         },
         {
-          title: "Subdial hands:",
+          title: this.$t("ecommerce.subdial_hands"),
           colors: [
             { id: 1, color: "#f85b00", color3D: 0xf85b00 },
             { id: 2, color: "#c90000", color3D: 0xc90000 },
@@ -46,7 +46,7 @@ export default {
           ],
         },
         {
-          title: "Strap:",
+          title: this.$t("ecommerce.strap"),
           colors: [
             { id: 1, color: "#3d2c23", color3D: 0x120a06 },
             { id: 2, color: "#000000", color3D: 0x000000 },

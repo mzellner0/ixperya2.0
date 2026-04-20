@@ -1,7 +1,7 @@
 <template>
   <div class="technos">
-    <h1>Technologies used</h1>
-    <h2>Front-end</h2>
+    <h1>{{ $t("technologies.title") }}</h1>
+    <h2>{{ $t("technologies.front") }}</h2>
     <div class="frontend">
       <img :src="require('@/assets/img/logos/three.png')" alt="logo three.js" />
       <img :src="require('@/assets/img/logos/react.png')" alt="logo react" />
@@ -12,17 +12,19 @@
         alt="logo css-html-js"
       />
       <img :src="require('@/assets/img/logos/sass.png')" alt="logo sass" />
+      <img :src="require('@/assets/img/logos/wordpress.png')" alt="logo wordpress" />
     </div>
-    <h2>Mobile development</h2>
+    <h2>{{ $t("technologies.mobile") }}</h2>
     <div class="mobile">
       <img :src="require('@/assets/img/logos/dart.png')" alt="logo dart" />
       <img
-        :src="require('@/assets/img/logos/flutter.webp')"
+        :src="require('@/assets/img/logos/flutter.png')"
         alt="logo flutter"
       />
     </div>
-    <h2>Back-end</h2>
+    <h2>{{ $t("technologies.back") }}</h2>
     <div class="backend">
+      <img :src="require('@/assets/img/logos/python.png')" alt="logo python" />
       <img :src="require('@/assets/img/logos/node.png')" alt="logo node" />
       <img
         :src="require('@/assets/img/logos/expressjs.png')"
@@ -34,7 +36,7 @@
         class="mysql"
       />
     </div>
-    <h2>3D software</h2>
+    <h2>{{ $t("technologies.three") }}</h2>
     <div class="trois-d">
       <img
         :src="require('@/assets/img/logos/logo_blender.png')"
@@ -46,7 +48,7 @@
       />
       <img :src="require('@/assets/img/logos/maya_logo.png')" alt="logo maya" />
     </div>
-    <h2>Editing / Post-production</h2>
+    <h2>{{ $t("technologies.editing") }}</h2>
     <div class="montage">
       <img
         :src="require('@/assets/img/logos/premiere_logo.png')"

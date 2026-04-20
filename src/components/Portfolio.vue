@@ -2,8 +2,8 @@
   <div>
     <div class="portfolio">
       <div class="portfolio__title">
-        <h1 class="portfolio__title--light">Portfolio</h1>
-        <h1 class="portfolio__title--dark">Portfolio</h1>
+        <h1 class="portfolio__title--light">{{ $t("portfolio.title") }}</h1>
+        <h1 class="portfolio__title--dark">{{ $t("portfolio.title") }}</h1>
       </div>
       <div class="portfolio__projets">
         <ProjetPortfolio
@@ -20,7 +20,6 @@
 
 <script>
 import ProjetPortfolio from "@/components/ProjetPortfolio.vue"
-import { mapState } from 'vuex'
 
 export default {
   name: "Portfolio",
@@ -30,24 +29,78 @@ export default {
   props: {
     projectsListFromProps: { type: Object, default: () => null }
   },
-  computed: {
-    ...mapState(['projectsListFromState'])
-  },
   data() {
     return {
       projectsList: {}
+    }
+  },
+  computed: {
+    projectListFromState() {
+      return {
+        hdp: {
+          title: this.$t("portfolio.project_1.title"),
+          subtitle: this.$t("portfolio.project_1.subtitle"),
+          urlImage: "hdp-portfolio-2.jpg",
+          text: this.$t("portfolio.project_1.text"),
+          images: [
+            require("@/assets/img/projets/hdp-1.jpeg"),
+            require("@/assets/img/projets/hdp-3.jpeg"),
+            require("@/assets/img/projets/hdp-2.jpeg"),
+            require("@/assets/img/projets/hdp-4.jpeg"),
+          ],
+          url: "https://hoteldeparis-sainttropez.com/",
+        },
+        ttyt: {
+          title: this.$t("portfolio.project_2.title"),
+          subtitle: this.$t("portfolio.project_2.subtitle"),
+          urlImage: "phone-group.webp",
+          text:  this.$t("portfolio.project_2.text"),
+          images: [
+            require("@/assets/img/projets/phone-group.webp"),
+            require("@/assets/img/projets/phone-calendar.webp"),
+            require("@/assets/img/projets/phone-balance.webp"),
+          ],
+          url: "https://tutuyoutoo.com/fr",
+          isMobile: true,
+        },
+        avatar: {
+          title: this.$t("portfolio.project_3.title"),
+          subtitle: this.$t("portfolio.project_3.subtitle"),
+          urlImage: "avatar-portfolio.jpg",
+          text:  this.$t("portfolio.project_3.text"),
+          images: [
+            require("@/assets/img/projets/avatar-portfolio.jpg"),
+            require("@/assets/img/projets/avatar-phone.png"),
+          ],
+          url: "https://www.sandbox.game/en/me/avatar/",
+          isMobile: false,
+        },
+        "3D": {
+          title: this.$t("portfolio.project_4.title"),
+          subtitle: this.$t("portfolio.project_4.subtitle"),
+          urlImage: "jeu.png",
+          text:  this.$t("portfolio.project_4.text"),
+          images: [
+            require("@/assets/img/projets/jeu.png"),
+            require("@/assets/img/projets/jeu-2.png"),
+          ],
+          url: "https://maudzellner.fr/jeu",
+          isMobile: false,
+        }
+      }
     }
   },
   mounted() {
     if (
       this.projectsListFromProps == null
     ) {
-      this.projectsList = this.projectsListFromState;
+      this.projectsList = this.projectListFromState
     } else {
       this.projectsList = this.projectsListFromProps;
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

@@ -3,7 +3,7 @@
     <img alt="logo" src="@/assets/img/svg/logoEpais.svg" @click="goToAccueil" />
     <div :class="['text-header', { hide: gameStart }]">
       <h1>MAUD ZELLNER</h1>
-      <p>Web Developer</p>
+      <p>{{ $t("about.web_developer") }}</p>
     </div>
     <div class="menuOpener" @click="toggleMenu">
       <p :style="{ opacity: menuOpen ? 0 : 1 }">Menu</p>

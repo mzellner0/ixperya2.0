@@ -4,14 +4,12 @@
     <LineTop />
     <div class="a-propos__texts">
       <h1>Maud Zellner</h1>
-      <h2>Web Developer</h2>
+      <h2>{{ $t("about.web_developer") }}</h2>
       <p>
-        Passionate about coding and 3D for 10 years, I combine creativity and
-        technical performance to design smooth, immersive, and innovative
-        digital experiences.
+        {{ $t("about.text_1") }}
       </p>
-      <p>I am here to listen to you and bring to life your dream project!</p>
-      <p>Call me, amazing projects are waiting for you!</p>
+      <p>{{ $t("about.text_2") }}</p>
+      <p>{{ $t("about.text_3") }}</p>
     </div>
     <LineBottom />
   </div>

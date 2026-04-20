@@ -5,6 +5,7 @@ import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faArrowCircleLeft, faHandPointer, faLongArrowAltDown, faHandPaper, faBoxOpen, faBan, faTimes } from '@fortawesome/free-solid-svg-icons'
+import i18n from './i18n'
 
 library.add(faArrowCircleLeft)
 library.add(faHandPointer)
@@ -15,6 +16,7 @@ library.add(faLongArrowAltDown)
 library.add(faTimes)
 
 createApp(App)
+    .use(i18n)
     .use(store)
     .use(router)
     .component('font-awesome-icon', FontAwesomeIcon)

@@ -2,17 +2,22 @@
   <div :class="['menu', { 'menu--open': menuOpen }]">
     <div class="menu__links">
       <router-link @click="toggleMenu" class="menu__link" to="/"
-        >Home</router-link
+        >{{ $t("menu.home") }}</router-link
       >
       <router-link @click="toggleMenu" class="menu__link" to="/a-propos"
-        >About</router-link
+        >{{ $t("menu.contact") }}</router-link
       >
       <router-link @click="toggleMenu" class="menu__link" to="/portfolio"
-        >Portfolio</router-link
+        >{{ $t("menu.portfolio") }}</router-link
       >
       <router-link @click="toggleMenu" class="menu__link" to="/contact"
-        >Contact</router-link
+        >{{ $t("menu.contact") }}</router-link
       >
+      <div class="menu__lang">
+        <button :class="$i18n.locale === 'en' && 'menu__lang--active'" @click="switchToEnglish">EN</button>
+        /
+        <button :class="$i18n.locale === 'ca' && 'menu__lang--active'" @click="switchToCatalan">CA</button>
+      </div>
     </div>
   </div>
   <router-view />
@@ -28,6 +33,20 @@ export default {
   },
   methods: {
     ...mapActions(["toggleMenu"]),
+    switchToCatalan() {
+      this.$i18n.locale = 'ca'
+
+      const url = new URL(window.location.href)
+      url.searchParams.set('lang', 'ca')
+      window.history.pushState({}, '', url)
+    },
+    switchToEnglish() {
+      this.$i18n.locale = 'en'
+
+      const url = new URL(window.location.href)
+      url.searchParams.set('lang', 'en')
+      window.history.pushState({}, '', url)
+    }
   },
 };
 </script>
@@ -39,6 +58,7 @@ export default {
   border-radius: 3px;
   width: 100%;
   font-size: 14px;
+  color: white !important;
 }
 .menu {
   position: fixed;
@@ -53,6 +73,36 @@ export default {
   transition: 100ms ease-in-out;
   &--open {
     transform: translateX(0px);
+  }
+  &__lang {
+    @include flex(row, center, flex-end);
+    padding: 5px 5px;
+    width: 80%;
+    margin-left: 20%;
+    font-family: $police-logo;
+    color: $color-body-middle;
+    cursor: default;
+    button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      font-family: $police-logo;
+      color: $color-body-middle;
+      cursor: pointer;
+      margin-right: 5px;
+      transition: 200ms;
+      &:last-of-type {
+        margin-left: 5px;
+        margin-right: 0;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+    &--active {
+      color: white !important;
+      font-weight: bold;
+    }
   }
   &__links {
     @include flex(column, initial, initial);

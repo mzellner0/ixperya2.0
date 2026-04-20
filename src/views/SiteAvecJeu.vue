@@ -1,15 +1,15 @@
 <template>
   <div class="siteJeu">
     <BasePageSpecialisee
-      :title1="'Make your website interactive, and capture your visitors\' attention.'"
-      :title2="'Using 3D, everything becomes possible!'"
-      :title3="'Let\'s create your game!'"
-      :paragraph1="'Wondering how it might look like?'"
+      :title1="$t('game.page.title')"
+      :title2="$t('game.page.text_3')"
+      :title3="$t('game.page.text_4')"
+      :paragraph1="$t('game.page.text_5')"
     >
       <template v-slot:content>
         <div class="siteJeu__button">
           <Button
-            :text="'Play the game'"
+            :text="$t('game.page.button')"
             :composant-name="'Jeu'"
             :new-tab="true"
           />
@@ -17,13 +17,10 @@
       </template>
       <template v-slot:paragraph2>
         <p>
-          Each game project is unique. From increasing the time each visitor
-          spends on your site, to selling in-game items, the range of
-          possibilities is very massive!
+          {{ $t("game.page.text_1") }} 
         </p>
         <p>
-          We will work together to develop the rules and objectives of the game
-          you want to create.
+          {{ $t("game.page.text_2") }} 
         </p>
       </template>
     </BasePageSpecialisee>

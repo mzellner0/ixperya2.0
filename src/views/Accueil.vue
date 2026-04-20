@@ -6,7 +6,7 @@
           :class="['accueil__border-futura', { 'anim-border-left': !loader }]"
         />
         <div class="accueil__text">
-          <p>{{ question }}</p>
+          <p>{{ this.$t("home_page.question") }}</p>
         </div>
         <div class="accueil__answers">
           <ButtonsAccueil
@@ -15,7 +15,7 @@
           />
         </div>
         <font-awesome-icon
-          :class="['arrow', { hide: hideArrow }]"
+          :class="['arrow', { hide: isOnFirstList }]"
           :icon="['fas', 'arrow-circle-left']"
           @click="backQuestions"
         />
@@ -40,22 +40,41 @@ export default {
     return {
       scene: null,
       robot: null,
-      question: "Hello, what are you looking for?",
-      firstListButtons: [
-        { id: 1, question: "I want to create/update my website." },
-        { id: 3, question: "I’m looking for a web developer." },
-        { id: 4, question: "I want to create a web video game." },
-      ],
-      secondListButtons: [
-        { id: 5, question: "I do e-commerce." },
-        { id: 6, question: "I want an informational website." },
-      ],
       listButtons: null,
-      hideArrow: true,
+      isOnFirstList: true,
     };
+  },
+  watch: {
+    '$i18n.locale'() {
+      if (this.isOnFirstList) {
+        this.listButtons = this.firstListButtons;
+      } else {
+        this.listButtons = this.secondListButtons;
+      }
+    },
+    isOnFirstList() {
+      if (this.isOnFirstList) {
+        this.listButtons = this.firstListButtons;
+      } else {
+        this.listButtons = this.secondListButtons;
+      }
+    }
   },
   computed: {
     ...mapState(["loader"]),
+    firstListButtons() {
+      return [
+        { id: 1, question: this.$t("home_page.question_create") },
+        { id: 3, question: this.$t("home_page.question_developer")},
+        { id: 4, question: this.$t("home_page.question_game") },
+      ]
+    },
+    secondListButtons() {
+      return [
+        { id: 5, question: this.$t("home_page.question_ecommerce") },
+        { id: 6, question: this.$t("home_page.question_info") },
+      ]
+    }
   },
   created() {
     this.listButtons = this.firstListButtons;
@@ -103,11 +122,11 @@ export default {
     },
     getRedirect() {
       this.listButtons = this.secondListButtons;
-      this.hideArrow = false;
+      this.isOnFirstList = false;
     },
     backQuestions() {
       this.listButtons = this.firstListButtons;
-      this.hideArrow = true;
+      this.isOnFirstList = true;
     },
     onMouseMove(event) {
       const coeffWidth = 2.6 / innerWidth;

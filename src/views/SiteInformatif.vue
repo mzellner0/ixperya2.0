@@ -1,10 +1,10 @@
 <template>
   <div class="siteInfo">
     <BasePageSpecialisee
-      :title1="'Make a lasting impression with an elegant design!'"
-      :title2="'Create a successful visual identity and boost your credibility. Avoid having a scary website!'"
-      :title3="'Let\'s create your website.'"
-      :paragraph1="'Here\'s an example of a design we have created:'"
+      :title1="$t('web_info.title')"
+      :title2="$t('web_info.text_6')"
+      :title3="$t('web_info.text_7')"
+      :paragraph1="$t('web_info.text_8')"
     >
       <template v-slot:content>
         <div class="siteInfo__portfolio">
@@ -12,21 +12,17 @@
         </div>
       </template>
       <template v-slot:paragraph2>
-        <p>We create fully customized websites to meet your needs.</p>
+        <p>{{ $t("web_info.text_1") }}</p>
         <p>
-          Your brand image is unique, we will make sure to find yours, and then
-          create your web page according to it.
+          {{ $t("web_info.text_2") }}
         </p>
         <p>
-          We will work together to find the best approach to showcase your
-          business on the web. We will make it stand out with strong visuals and
-          distinctive originality.
+         {{ $t("web_info.text_3") }}
         </p>
         <p>
-          Do you want peace of mind? No worries: we will take care of your
-          website's maintenance and updates. You don’t have to do anything!
+          {{ $t("web_info.text_4") }}
         </p>
-        <p>Do you want to know more? Contact me!</p>
+        <p>{{ $t("web_info.text_5") }}</p>
       </template>
     </BasePageSpecialisee>
   </div>
@@ -44,12 +40,16 @@ export default {
   },
   data: () => {
     return {
-      projetsList: {
+      projetsList: {},
+    };
+  },
+  created() {
+    this.projetsList = {
         hdp: {
-          title: "Hôtel de Paris Saint Tropez",
-          subtitle: "Design and website integration.",
+          title: this.$t("portfolio.project_1.title"),
+          subtitle: this.$t("portfolio.project_1.subtitle"),
           urlImage: "hdp-portfolio-2.jpg",
-          text: "This hotel wanted to refresh its old website. We created three new design proposals for them so they could choose the one that suited them best. Once the design was decided, we carefully integrated it.",
+          text: this.$t("portfolio.project_1.text"),
           images: [
             require("@/assets/img/projets/hdp-1.jpeg"),
             require("@/assets/img/projets/hdp-3.jpeg"),
@@ -58,9 +58,8 @@ export default {
           ],
           url: "https://hoteldeparis-sainttropez.com/",
         },
-      },
-    };
-  },
+      }
+  }
 };
 </script>
 

@@ -1,0 +1,118 @@
+{
+  "home_page": {
+    "question": "Hello, what are you looking for?",
+    "question_create": "I want to create/update my website.",
+    "question_developer": "I'm looking for a web developer.",
+    "question_game": "I want to create a web video game.",
+    "question_ecommerce": "I do e-commerce.",
+    "question_info": "I want an informational website."
+  },
+  "about": {
+    "title": "Here's the web developer you've been looking for!",
+    "web_developer": "Web Developer",
+    "text_1": "Passionate about coding and 3D for 10 years, I combine creativity and technical performance to design smooth, immersive, and innovative digital experiences.",
+    "text_2": "I am here to listen to you and bring to life your dream project!",
+    "text_3": "Call me, amazing projects are waiting for you!",
+    "who": "Who am I?",
+    "text_4": "One day, you're looking for a developer to provide your clients with websites that meet their high standards.",
+    "text_5": "Tons of candidates are available to you.",
+    "text_6": "All of them seem interesting and talented.",
+    "text_7": "But, how do you choose the right person?",
+    "text_8": "The key lies in those who challenge themselves every day, in those who are curious and constantly seeking for improvement. These are the individuals who will:",
+    "text_9": "Learn and work with the same tools as your team",
+    "text_10": "Produce clean, maintainable code to ensure the longevity of projects",
+    "text_11": "Explore new technologies and learn to use them to be as efficient as possible.",
+    "text_12": "My name is Maud, and I am a front-end web developer specializing in Three.js",
+    "text_13": "I am a former 3D graphic artist, specialized in texturing, shading, grooming, and rendering. I have worked on advertising and creating visual effects for companies such as I-Réel and Digital Golem.",
+    "text_14": "Now as a web developer, the combination of code and design is the core of my approach, allowing me to create smooth, fast, and elegant web applications.",
+    "text_15": "I began learning WebGL by reading \"Real-Time 3D Graphics with WebGL 2\". Then, I explored the Three.js documentation in depth, while working on different projects, such as the \"Avatar Creator\" on The Sandbox website, which allows users to customize their avatars online. Through this experience, I was able to deepen my knowledge on shaders. For example I created one shader from scratch that blended two textures together, giving users better control over the color of their avatar.",
+    "text_16": "As of today, working at Stereograph, I am exploring geometry-related optimizations working with batching and instancing.",
+    "text_17": "Throughout my journey, I have learned one essential thing: every problem has a solution. By mastering the fundamental concepts of programming, I have learned to adapt quickly and evolve according to needs. I constantly challenge myself to be as productive, efficient, and creative as possible.",
+    "text_18": "Having now worked on multiple projects, I would be delighted to help you create smooth, immersive, and innovative digital experiences."
+  },
+  "contact": {
+    "text_1": "Contact me:"
+  },
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "game": {
+    "pop_up": {
+      "win": "You won!",
+      "play_again": "Play again"
+    },
+    "tuto": {
+      "text_1": "Follow the particles to find the key and open the door.",
+      "text_2": "Let's go!"
+    },
+    "page": {
+      "title": "Make your website interactive, and capture your visitors' attention.",
+      "text_1": "Each game project is unique. From increasing the time each visitor spends on your site, to selling in-game items, the range of possibilities is massive!",
+      "text_2": "We will work together to develop the rules and objectives of the game you want to create.",
+      "text_3": "Using 3D, everything becomes possible!",
+      "text_4": "Let's create your game!",
+      "text_5": "Wondering how it might look like?",
+      "button": "Play the game"
+    },
+    "button": "PLAY"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "discover": "Discover the website",
+    "project_1": {
+      "title": "Hôtel de Paris Saint Tropez",
+      "subtitle": "Design and website integration.",
+      "text": "This hotel wanted to refresh its old website. We created 3 new design proposals for them so they could choose the one that suited them best. Once the design was decided, we carefully integrated it."
+    },
+    "project_2": {
+      "title": "Tutuyoutoo",
+      "subtitle": "Mobile application.",
+      "text": "From mockups to publishing on the Play Store and App Store, including development (including a landing page), I created an application that allows users to organize their vacations easily, improving communication within travel members."
+    },
+    "project_3": {
+      "title": "Avatar Creation",
+      "subtitle": "Development of an avatar customization module for the Sandbox.game website.",
+      "text": "Sandbox.game wanted to integrate a module into their website that would allow each user to customize their own 3D avatar. As a front-end developer, I integrated their pre-made design and developed this functionality in JavaScript (using Vue.js and Three.js) to bring the idea to life."
+    },
+    "project_4": {
+      "title": "3D Game Creation",
+      "subtitle": "3D game development.",
+      "text": "Driven by a desire to learn more about Three.js, I created a 3D game on the web."
+    }
+  },
+  "technologies": {
+    "title": "Technologies used",
+    "front": "Front-end",
+    "mobile": "Mobile development",
+    "back": "Back-end",
+    "three": "3D software",
+    "editing": "Editing / Post-production"
+  },
+  "ecommerce": {
+    "title": "Increase your sales by allowing your users to customize your products interactively!",
+    "text_1": "Engage your visitors in creating their future purchases. Once they've spent tons of minutes (or even hours) designing their perfect product, it will be unthinkable for them not to buy it!",
+    "text_2": "We will work together to find the best approach to showcase your products.",
+    "text_3": "Every project is unique! Contact me and we will discuss it!",
+    "text_4": "Turn your website into a game!",
+    "text_5": "Let's boost your sales.",
+    "text_6": "With tools that allow 3D game-like product customization, engage your visitors in creating their own orders, and thus, sell more.",
+    "hands": "Hands:",
+    "subdial_hands": "Subdial hands:",
+    "case": "Case:",
+    "strap": "Strap:"
+  },
+  "web_info": {
+    "title": "Make a lasting impression with an elegant design!",
+    "text_1": "We create fully customized websites to meet your needs.",
+    "text_2": "Your brand image is unique, we will make sure to find yours, and then create your web page according to it.",
+    "text_3": " We will work together to find the best approach to showcase your business on the web. We will make it stand out with strong visuals and distinctive originality.",
+    "text_4": "Do you want peace of mind? No worries: we will take care of your website's maintenance and updates. You don't have to do anything!",
+    "text_5": "Do you want to know more? Contact me!",
+    "text_6": "Create a successful visual identity and boost your credibility. Avoid having a scary website!",
+    "text_7": "Let's create your website.",
+    "text_8": "Here's an example of a design we have created:"
+  }
+}

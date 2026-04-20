@@ -1,8 +1,8 @@
 <template>
   <div class="pop-up-win" v-if="win">
     <div class="pop-up-win__text">
-      <p>You won!</p>
-      <button @click="onClickOnRestart">Play again</button>
+      <p>{{ $t("game.pop_up.win") }}</p>
+      <button @click="onClickOnRestart">{{ $t("game.pop_up.play_again") }}</button>
     </div>
   </div>
 </template>

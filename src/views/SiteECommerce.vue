@@ -1,25 +1,22 @@
 <template>
   <div class="siteECommerce">
     <BasePageSpecialisee
-      :title1="'Increase your sales by allowing your users to customize your products interactively!'"
-      :title2="'Turn your website into a game!'"
-      :title3="'Let\'s boost your sales.'"
-      :paragraph1="'With tools that allow 3D game-like product customization, engage your visitors in creating their own orders, and thus, sell more.'"
+      :title1="$t('ecommerce.title')"
+      :title2="$t('ecommerce.text_4')"
+      :title3="$t('ecommerce.text_5')"
+      :paragraph1="$t('ecommerce.text_6')"
     >
       <template v-slot:content>
         <OutilPersonnalisation />
       </template>
       <template v-slot:paragraph2>
         <p>
-          Engage your visitors in creating their future purchases. Once they’ve
-          spent tons of minutes (or even hours) designing their perfect product,
-          it will be unthinkable for them not to buy it!
+          {{ $t("ecommerce.text_1") }} 
         </p>
         <p>
-          We will work together to find the best approach to showcase your
-          products.
+          {{ $t("ecommerce.text_2") }} 
         </p>
-        <p>Every project is unique! Contact me and we will discuss it!</p>
+        <p>{{ $t("ecommerce.text_3") }}</p>
       </template>
     </BasePageSpecialisee>
   </div>

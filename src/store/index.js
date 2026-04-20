@@ -2,60 +2,6 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    projectsListFromState: {
-      hdp: {
-        title: "Hôtel de Paris Saint Tropez",
-        subtitle: "Design and website integration.",
-        urlImage: "hdp-portfolio-2.jpg",
-        text: "This hotel wanted to refresh its old website. I created 3 new design proposals for them to choose the one that suited them best.",
-        images: [
-          require("@/assets/img/projets/hdp-1.jpeg"),
-          require("@/assets/img/projets/hdp-3.jpeg"),
-          require("@/assets/img/projets/hdp-2.jpeg"),
-          require("@/assets/img/projets/hdp-4.jpeg"),
-        ],
-        isMobile: false,
-      },
-      ttyt: {
-        title: "Tutuyoutoo",
-        subtitle: "Mobile application.",
-        urlImage: "phone-group.webp",
-        text: "From mockups to publishing on the Play Store and App Store, including development (including a landing page), I created an application that allows users to organize their vacations easily, improving communication within travel members.",
-        images: [
-          require("@/assets/img/projets/phone-group.webp"),
-          require("@/assets/img/projets/phone-calendar.webp"),
-          require("@/assets/img/projets/phone-balance.webp"),
-        ],
-        url: "https://tutuyoutoo.com/fr",
-        isMobile: true,
-      },
-      avatar: {
-        title: "Avatar Creation",
-        subtitle:
-          "Development of an avatar customization module for the Sandbox.game website.",
-        urlImage: "avatar-portfolio.jpg",
-        text: "Sandbox.game wanted to integrate a module into their website that would allow each user to customize their own 3D avatar. As a front-end developer, I integrated their pre-made design and developed this functionality in JavaScript (using Vue.js and Three.js) to bring the idea to life.",
-        images: [
-          require("@/assets/img/projets/avatar-portfolio.jpg"),
-          require("@/assets/img/projets/avatar-phone.png"),
-        ],
-        url: "https://www.sandbox.game/en/me/avatar/",
-        isMobile: false,
-      },
-      "3D": {
-        title: "3D Game Creation",
-        subtitle: "3D game development.",
-        urlImage: "jeu.png",
-        text: "Driven by a desire to learn more about Three.js, I created a 3D game on the web.",
-        images: [
-          require("@/assets/img/projets/jeu.png"),
-          require("@/assets/img/projets/jeu-2.png"),
-        ],
-        url: "https://maudzellner.fr/jeu",
-        isMobile: false,
-      },
-    },
-
     loader: false,
 
     menuOpen: false,

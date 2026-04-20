@@ -5,7 +5,7 @@
         :class="['contact__border-futura', { 'anim-border-left': !loader }]"
       />
       <div class="contact__texts">
-        <h1>Contact me:</h1>
+        <h1>{{ $t("contact.text_1") }}</h1>
         <div class="contact__infos">
           <p>maud.zellner@gmail.com</p>
           <p>+33 6 31 18 10 14</p>
