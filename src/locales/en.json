@@ -5,7 +5,8 @@
     "question_developer": "I'm looking for a web developer.",
     "question_game": "I want to create a web video game.",
     "question_ecommerce": "I do e-commerce.",
-    "question_info": "I want an informational website."
+    "question_info": "I want an informational website.",
+    "menu": "Menu"
   },
   "about": {
     "title": "Here's the web developer you've been looking for!",

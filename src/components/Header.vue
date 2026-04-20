@@ -6,7 +6,7 @@
       <p>{{ $t("about.web_developer") }}</p>
     </div>
     <div class="menuOpener" @click="toggleMenu">
-      <p :style="{ opacity: menuOpen ? 0 : 1 }">Menu</p>
+      <p :style="{ opacity: menuOpen ? 0 : 1 }">{{ $t("home_page.menu") }}</p>
       <div :class="[{ 'menuOpener__bar1--active': menuOpen }]"></div>
       <div :class="[{ 'menuOpener__bar2--active': menuOpen }]"></div>
       <div :class="[{ 'menuOpener__bar3--active': menuOpen }]"></div>

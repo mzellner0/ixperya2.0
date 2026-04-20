@@ -39,6 +39,8 @@ export default {
       const url = new URL(window.location.href)
       url.searchParams.set('lang', 'ca')
       window.history.pushState({}, '', url)
+
+      this.toggleMenu()
     },
     switchToEnglish() {
       this.$i18n.locale = 'en'
@@ -46,6 +48,8 @@ export default {
       const url = new URL(window.location.href)
       url.searchParams.set('lang', 'en')
       window.history.pushState({}, '', url)
+
+      this.toggleMenu()
     }
   },
 };
