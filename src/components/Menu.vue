@@ -1,16 +1,16 @@
 <template>
   <div :class="['menu', { 'menu--open': menuOpen }]">
     <div class="menu__links">
-      <router-link @click="toggleMenu" class="menu__link" to="/"
+      <router-link @click="toggleMenu" class="menu__link" :to="`/?lang=${$i18n.locale}`"
         >{{ $t("menu.home") }}</router-link
       >
-      <router-link @click="toggleMenu" class="menu__link" to="/a-propos"
+      <router-link @click="toggleMenu" class="menu__link" :to="`/a-propos?lang=${$i18n.locale}`"
         >{{ $t("menu.contact") }}</router-link
       >
-      <router-link @click="toggleMenu" class="menu__link" to="/portfolio"
+      <router-link @click="toggleMenu" class="menu__link" :to="`/portfolio?lang=${$i18n.locale}`"
         >{{ $t("menu.portfolio") }}</router-link
       >
-      <router-link @click="toggleMenu" class="menu__link" to="/contact"
+      <router-link @click="toggleMenu" class="menu__link" :to="`/contact?lang=${$i18n.locale}`"
         >{{ $t("menu.contact") }}</router-link
       >
       <div class="menu__lang">

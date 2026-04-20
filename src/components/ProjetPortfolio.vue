@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     link() {
-      return `/projet?nom=${this.linkProjet}`
+      return `/projet?nom=${this.linkProjet}&lang=${this.$i18n.locale}`
     }
   }
 }

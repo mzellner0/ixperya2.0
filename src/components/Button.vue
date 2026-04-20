@@ -13,9 +13,9 @@ export default {
   methods: {
     goTo() {
       if (!this.newTab) {
-        this.$router.push({ name: this.composantName });
+        this.$router.push({ name: this.composantName, query: { lang: this.$i18n.locale } });
       } else {
-        const route = this.$router.resolve({ name: this.composantName });
+        const route = this.$router.resolve({ name: this.composantName, query: { lang: this.$i18n.locale } });
         window.open(route.href, '_blank');
       }
     }

@@ -25,16 +25,16 @@ export default {
           this.$emit('changeQuestions', true);
           break;
         case 3:
-          this.$router.push({ name: 'Developpeur' });
+          this.$router.push({ name: 'Developpeur', query: { lang: this.$i18n.locale } });
           break;
         case 4:
-          this.$router.push({ name: 'SiteAvecJeu' });
+          this.$router.push({ name: 'SiteAvecJeu', query: { lang: this.$i18n.locale } });
           break;
         case 5:
-          this.$router.push({ name: 'SiteECommerce' });
+          this.$router.push({ name: 'SiteECommerce', query: { lang: this.$i18n.locale } });
           break;
         case 6:
-          this.$router.push({ name: 'SiteInformatif' });
+          this.$router.push({ name: 'SiteInformatif', query: { lang: this.$i18n.locale } });
           break;
       }
     }

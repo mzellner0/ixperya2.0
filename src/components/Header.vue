@@ -29,7 +29,7 @@ export default {
   methods: {
     ...mapActions(["toggleMenu"]),
     goToAccueil() {
-      this.$router.push({ name: "Accueil" });
+      this.$router.push({ name: "Accueil", query: { lang: this.$i18n.locale } });
     },
   },
 };
